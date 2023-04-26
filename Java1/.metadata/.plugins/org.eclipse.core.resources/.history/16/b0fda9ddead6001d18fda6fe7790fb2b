@@ -1,0 +1,28 @@
+package chapter07;
+
+public class InnerEx3 {
+	private int outerIv = 0;
+	static int outerCv = 0;
+	
+	class InstanceInner{
+		int iiv = outerIv; //외부 클래스의 private 멤버도 접근 가능하다. 
+		int iiv2 = outerCv;
+	}
+	
+	static class StaticInner{
+		//static class 는 외부 클래스의 인스턴스 멤버에 접근 불가 
+//		int siv = outerIv;
+		static int scv = outerCv; 
+	}
+	
+	void myMethod() {
+		int lv = 0;
+		System.out.println(lv);
+		final int LV = 0; //JDK 1.8부터 final 생략 가능 
+		System.out.println(lv);		
+	}
+	public static void main(String[] args) {
+		InnerEx3 ex3 = new InnerEx3();
+		System.out.println(ex3.myMethod());
+	}
+}

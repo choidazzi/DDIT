@@ -1,0 +1,30 @@
+package chapter07;
+
+public class InterfaceTest3 {
+
+}
+
+class X{
+	
+}
+
+interface Y{
+	public abstract void methodZ();
+}
+
+class Z implements Y{
+	@Override
+	public void methodZ() {
+		System.out.println("methodB in Z class");
+	}
+	
+	public String toString() {
+		return "class B";
+	}
+}
+
+class InstanceManager{
+	public static I getInstance() {
+		return new B();
+	}
+}

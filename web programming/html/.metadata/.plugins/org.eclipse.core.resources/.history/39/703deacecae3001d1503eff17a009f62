@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>형제 선택자</title>
+<style>
+p{
+	font-size: 2.0rem;  /*  rem: root(body)를 기준으로 2배이상 증가  */
+}
+
+div{
+	font-size: 2.0em; /*  em: 부모를 기준으로 2배이상 증가  */
+}
+
+/* 위에서 아래로 실행된다 (순서 중) */
+
+div ~ p{
+	background-color: steelblue;
+	color: #fff;
+}
+
+div + p{
+	background-color: gold;
+}
+
+
+</style>
+</head>
+<body>
+	<p>무궁화 꽃이 피었습니다</p>
+	<p>능소화 꽃이 피었습니다</p>
+	<p>진댤래 꽃이 피었습니다</p>
+	<p>매화 꽃이 피었습니다</p>
+	<div>꽃들이 만발합니다
+		<p>그 중의 제일은 라일락 꽃입니다</p>
+	</div>
+	<p>복숭아 꽃이 피었습니다</p>
+	<p>사과 꽃이 피었습니다</p>
+	<p>배 꽃이 피었습니다</p>
+</body>
+</html>

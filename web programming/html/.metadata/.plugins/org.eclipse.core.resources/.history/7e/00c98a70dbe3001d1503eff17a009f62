@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성선택자</title>
+<style>
+
+</style>
+</head>
+<body>
+	<pre>
+📌 title 속성을 가지고 있는 태그를 선택
+ 
+📌 id가 p3인 요소를 선택 
+
+📌 class가 pp인 요소를 선택 
+
+📌 id가 a로 시작하는 요소를 선택
+ 
+📌 class가 3으로 끝나는 요소를 선택 
+ 
+	</pre>
+	<p title="무궁화">무궁화 꽃이 피었습니다</p>
+	<p title="능소화">능소화 꽃이 피었습니다</p>
+	<p id="p3">진댤래 꽃이 피었습니다</p>
+	<p class="pp3">매화 꽃이 피었습니다</p>
+	<div>
+		꽃들이 만발합니다
+		<p class="pp3">그 중의 제일은 라일락 꽃입니다</p>
+	</div>
+	<p class="pp">복숭아 꽃이 피었습니다</p>
+	<p id="apple" class="pp">사과 꽃이 피었습니다</p>
+	<p class="pp">배 꽃이 피었습니다</p>
+</body>
+</html>

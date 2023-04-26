@@ -1,0 +1,24 @@
+window 단축키
+Win+D | 바탕화면 보기 & 다시 복원
+Ctrl+W | 창 닫기
+Ctrl+Shift+T | 꺼진 인터넷창 복구
+
+텍스트 오토로 설정 하는법
+
+window -> Preference-> auto검색 -> Java -> Editor -> Content Assist -> Auto activation triggers for Java ->
+ .QWERT~qwert 다 작성 -> Apply
+
+세미클론 오토 설정
+window -> Preference-> auto검색 -> Java -> Editor -> Typing -> Semicolons 체크
+
+
+단축키 
+Ctrl + Q : 마지막 편집위치로 가기
+Ctrl + L : 특정줄번호로 가기
+Ctrl + 1 : Quick Fix. 에러가 발생했을 경우 Quick Fix를 통해 쉽게 해결이 가능하다.(Rename에 주로 사용)
+Ctrl + Alt + up/down : 한줄 복사 (duplicate)
+Alt + Shift + UP : 커서를 기준으로 토큰단위 블럭지정 (괄호의 열고 닫기 쌍 확인에 유용)  ==> 괄호의 뒤에 마우스 커서를 위치시킨 후 더블클릭한 것과 같은 효과
+Alt + Shift + DOWN : 커서를 기준으로 토큰단위 블럭해제
+Alt + Shift + J : 설정해 둔 기본주석을 자동으로 달기 (메소드나 멤버변수에 포커스 두고 실행)
+for > Ctrl + Space : 기본 for문 완성
+F4 : 클래스명을 선택하고 누르면 해당 클래스의 Hierarchy(계층?) 를 볼 수 있다.

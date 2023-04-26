@@ -1,0 +1,73 @@
+package kr.or.ddit.basic.exercise;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class HotelTest {
+	private HashMap<Integer, Room> hotelMap;
+	private Scanner scan;
+	
+	//생성자 
+	public HotelTest() {
+		hotelMap = new HashMap<>();
+		scan = new Scanner(System.in);
+		
+		//객실초기화 
+		for (int i = 2; i <= 4; i++) {
+			String type = null;
+			switch (i) {
+			case 2: type = "싱글룸"; break;
+			case 3: type = "더블룸"; break;
+			case 4: type = "스위트룸"; break;
+			}
+			for (int j = 1; j <= 9; j++) {
+				int num = i * 100 + j;
+				hotelMap.put(num, new Room(num,type));
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}
+
+class Room{
+	private int roomNum;			//방번호 
+	private String roomType;		//방종류 
+	private String guestName;	//투숙객 이름 
+	
+	public Room(int roomNum, String roomType) {
+		this.roomNum = roomNum;
+		this.roomType = roomType;
+	}
+
+	public int getRoomNum() {
+		return roomNum;
+	}
+
+	public void setRoomNum(int roomNum) {
+		this.roomNum = roomNum;
+	}
+
+	public String getRoomType() {
+		return roomType;
+	}
+
+	public void setRoomType(String roomType) {
+		this.roomType = roomType;
+	}
+
+	public String getGuestName() {
+		return guestName;
+	}
+
+	public void setGuestName(String guestName) {
+		this.guestName = guestName;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s\t%s\t\t%s", roomNum, roomType, guestName);
+	}
+}

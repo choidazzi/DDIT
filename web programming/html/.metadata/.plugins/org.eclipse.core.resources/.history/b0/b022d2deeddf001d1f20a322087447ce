@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+
+</style>
+</head>
+<body>
+	<form action="" method="post">
+		아이디 <input type="text" name="id" placeholder="아이디"> <br>
+		비밀번호 <input type="password" name="pw" placeholder="비밀번호"> <br>
+		<input type="submit">
+		<button type="submit">전송</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,73 @@
+package ojdbc;
+
+import java.sql.Timestamp;
+
+public class MemoVO {
+	private int no;
+	private String title;
+	private String content;
+	private String writer;
+	private Timestamp registerDate;
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd
+			hh:mm:ss");
+
+	public MemoVO(String title, String content, String writer) {
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+	}
+
+	public MemoVO(int no, String title, String content, String writer) {
+		this.no = no;
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+	}
+
+	public MemoVO(int no, String title, String content, String writer, Timestamp registerDate, Timestamp modifyDate) {
+		this.no = no;
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+		this.registerDate = registerDate;
+		this.modifyDate = modifyDate;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
+
+	public String getTitle() {
+		return title;
+}
+
+public void setTitle(String title) {this.title = title; }
+public String getContent() {
+return content; }
+public void setContent(String content) {
+this.content = content; }
+public String getWriter() {
+return writer; }
+public void setWriter(String writer) {
+this.writer = writer; }
+public String getRegisterDate() {
+return registerDate != null ? registerDate.toLocalDateTime().format
+(formatter) : "null";
+    }
+public void setRegisterDate(Timestamp registerDate) {
+this.registerDate = registerDate; }
+public String getModifyDate() {
+return modifyDate != null ? modifyDate.toLocalDateTime().format(formatter) : "null";
+}
+public void setModifyDate(Timestamp modifyDate) {
+this.modifyDate = modifyDate; }
+@Override
+public String toString() {
+return String.format("%d\t%s\t%s\t%s\t%s\t%s\n", no, title, content, writer,
+getRegisterDate(), getModifyDate());
+    }
+}

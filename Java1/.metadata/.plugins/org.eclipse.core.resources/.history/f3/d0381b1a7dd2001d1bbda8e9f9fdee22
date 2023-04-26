@@ -1,0 +1,15 @@
+package Exercise.Exercise230403;
+
+import java.util.Scanner;
+
+public class Exercise11T {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("어떤 수 출력? >");
+		int dividend = Integer.parseInt(scanner.nextLine());
+		System.out.println("어떤 수로 나눠? >");
+		int divisor = Integer.parseInt(scanner.nextLine());
+		int quotient = dividend / divisor;
+		System.out.printf("%d / %d = %d",dividend,divisor,quotient);
+	}
+}

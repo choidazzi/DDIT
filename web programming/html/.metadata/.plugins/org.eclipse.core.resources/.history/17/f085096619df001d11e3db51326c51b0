@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset = "UTF-8">
+	<meta charset = "UTF-8">
+    <title>list4</title>
+    <style>
+        ul#cir {
+            list-style-type: circle;
+            text-align: center;
+        }
+
+        #squ {
+            list-style-type: square;
+            text-align: center;
+        }
+
+        #limg {
+            list-style-image: url(./images/cloud.png);
+
+        }
+
+        ul {
+            border: 1px solid skyblue;
+            width: 150px;
+            margin: 5px;
+        }
+
+        li {
+            margin: 2px;
+            border: 1px dotted #00ff00;
+        }
+
+        div{
+            border: 5px solid rgb(124, 128, 219);
+            display: flex;
+        }
+
+        img{
+            height: 70px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><a href="https://www.naver.com" target="_blank">NAVER</a></li>
+            <li><a href="https://www.nate.com" target="_blank">네이트</a></li>
+            <li><a href="https://www.daum.net">다음</a></li>
+            <li><a href="https://www.w3schools.com">w3school</a></li>
+            <li><a href="https://www.w3.org">w3c</a></li>
+        </ul>
+
+        <ul id="cir">
+            <li><img src="../images/spongebob.png" alt="스폰지밥"></li> 
+            <!-- alt : 웹 표준속성, 이미지가 안보일 때 대체하는 문자 -->
+            <li><img src="../images/Squidward.png" alt="징징이"></li>
+            <li><img src="../images/ddung.png" alt="뚱이"></li>
+            <li><img src="../images/daram.jpg" alt="다람이"></li>
+            <li><img src="../images/pingpinge.png" alt="핑핑이"></li>
+        </ul>
+
+        <ul id="squ">
+            <li><a href="https://www.naver.com"><img src="../images/spngeob.png" alt="스폰지밥"></a></li> 
+            <!-- alt : 웹 표준속성, 이미지가 안보일 때 대체하는 문자 -->
+            <li><a href="https://www.daum.net"><img src="../images/Squidward.png" alt="징징이"></a></li>
+            <li><a href=""><img src="../images/ddung.png" alt="뚱이"></a></li>
+            <li><a href=""><img src="../images/daram.jpg" alt="다람이"></a></li>
+            <li><a href=""><img src="../images/pingpinge.png" alt="핑핑이"></a></li>
+        </ul>
+
+        <ul id="limg">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+            <li>AJax</li>
+        </ul>
+    </div>
+</body>
+
+</html>

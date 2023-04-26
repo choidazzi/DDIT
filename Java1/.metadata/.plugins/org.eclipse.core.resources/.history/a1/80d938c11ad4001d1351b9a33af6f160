@@ -1,0 +1,23 @@
+package chapter13;
+
+import java.util.Iterator;
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashSetExample {
+	public static void main(String[] args) {
+		Set<String> set = new HashSet<String>();
+//		set = new LinkedHashSet<>();
+//		set = new TreeSet<>();
+		set.add("Java");
+		set.add("JDBC");
+		set.add("Servlet/JSP");
+		set.add("iBatis");
+		
+		Iterator<String> iterator = set.iterator();
+		while (iterator.hasNext()) {
+			String string = iterator.next();
+			System.out.println(string);
+		}
+	}
+}

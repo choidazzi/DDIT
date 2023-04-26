@@ -1,0 +1,18 @@
+package chapter13;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapExample {
+	public static void main(String[] args) {
+		Map<String,Integer> map = new HashMap<>();
+		map.put("신용권", 85); //V put(K key, value)
+		map.put("홍길동", 90);
+		map.put("동장군", 80);
+		map.put("홍길동", 95); // 덮어쓴다. 이전 데이터 없어짐 
+		
+		System.out.println(map.size()); // 갯수 
+		System.out.println("홍길동의 점수: " + map.get("홍길동"));
+		
+	}
+}

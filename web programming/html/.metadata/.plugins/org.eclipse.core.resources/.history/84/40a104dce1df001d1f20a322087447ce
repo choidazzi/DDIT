@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DIV & SPAN</title>
+<style>
+div {
+	border: 5px solid Midnightblue;
+	margin: 5px;
+	padding: 10px;
+	text-align: center;
+}
+
+#d1 {
+	display: flex;
+	width: 80%;
+	height: 300px;
+}
+
+#d2, #d3 {
+	/* width: 50%; */
+	height: 80%;
+}
+
+#d2{
+	width:30%;
+}
+
+#d3{
+	width:70%;
+}
+</style>
+</head>
+<body>
+	<div id="d1">
+		<div id="d2">
+			
+		</div>
+		<div id="d3"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>의사클래스_구조2</title>
+<style>
+table {
+	border-collapse: collapse;
+	border: 2px solid Lightsteelblue	;	
+}
+
+td{
+	width: 250px;
+	height: 50px;
+}
+
+th {
+	height: 50px;
+}
+
+tr:nth-child(2n-1){
+	background: Lavender;
+}
+
+#tab2{
+	border: 5px inset lightsteelblue;
+}
+</style>
+</head>
+<body>
+	<table border="1" id="tab1">
+		<tr>
+			<th>이름</th>
+			<th>주소</th>
+			<th>전화번호</th>
+			<th>이메일</th>
+			<th></th>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	
+	<br>
+	<table border="1" id="tab2">
+		<tr>
+			<th>이름</th>
+			<th>주소</th>
+			<th>전화번호</th>
+			<th>이메일</th>
+			<th></th>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</body>
+</html>

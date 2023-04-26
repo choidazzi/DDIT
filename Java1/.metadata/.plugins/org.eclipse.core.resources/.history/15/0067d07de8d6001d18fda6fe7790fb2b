@@ -1,0 +1,8 @@
+package chapter07;
+
+public class InnerEx1 {
+	class InstanceInner{ //인스턴스 클래스 
+		int iv = 100;
+		static int cv = 100; 
+	}
+}

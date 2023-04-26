@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="입력처리3.jsp" method="post">
+	아이디 <input type="text" name="id"> <br>
+	이름 <input type="text" name="name"> <br>
+	<!-- 하나만 선택 가능 --> 
+	성별 <input type="radio" name="gender" value = "남자"> 남자 
+		  <input type="radio" name="gender" value = "여자"> 여자 
+	<br>
+	<!-- 여러개 선택 가능 --> 
+	취미 
+	<input type="checkbox" name="like" value = "여행"> 여행 
+	<input type="checkbox" name="like" value = "수영"> 수영 
+	<input type="checkbox" name="like" value = "공부"> 공부 
+	<input type="checkbox" name="like" value = "그림그리기"> 그림그리기 
+	<input type="checkbox" name="like" value = "노래하기"> 노래하기 
+	<input type="checkbox" name="like" value = "사진찍기"> 사진 찍기 
+	<br>
+	
+	<input type="submit">
+	<input type="reset">
+</form>
+</body>
+</html>

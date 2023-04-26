@@ -1,0 +1,16 @@
+package ojdbc;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MemoService {
+	public List<MemoVO> getMemos() throws Exception {
+		MemoDAO dao = new MemoDAO();
+		return dao.getMemos();
+	}
+}

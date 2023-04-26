@@ -1,0 +1,82 @@
+package ojdbc;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+//DAO(Data Access Object): DBMS에 직접 접근해서 CRUD를 하는 클래스
+public class MemoDAO {
+   public static void main(String[] args) throws Exception {
+      //TDD(Test Driven Development) : 테스트 주도 개발 
+      MemoDAO dao = new MemoDAO();
+//      dao.insertMemo(new MemoVO("첫번째 메모", "오늘이 자바 마지막 날"));
+      List<MemoVO> memos = dao.getMemos();
+      for (MemoVO vo : memos) {
+         System.out.println(vo);
+      }
+      
+   }
+   //전체  Select, 한개 Select, insert, update,delete
+   
+   
+   //전체
+   public List<MemoVO> getMemos() throws Exception{
+      Class.forName("oracle.jdbc.driver.OracleDriver");
+      Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "pc21", "java");
+      Statement statement = connection.createStatement();
+      String sql ="SELECT id, title, content, register_date, modify_date FROM memo";
+      ResultSet resultSet = statement.executeQuery(sql);
+      List<MemoVO> list = new ArrayList<>();
+      while (resultSet.next()) {
+         int id = resultSet.getInt("id");
+         String title = resultSet.getString("title");
+         String content = resultSet.getString("content");
+         Date registerDAte = resultSet.getDate("register_date");
+         Date modifyDate = resultSet.getDate("modify_date");
+         list.add(new MemoVO(id, title, content, registerDAte, modifyDate));
+      }
+      resultSet.close();
+      statement.close();
+      connection.close();
+      return list;
+   }
+   //한개
+   // select * from memo where id = ?(?가 매개변수 searchID 로 들어감)
+   public MemoVO getmemo(int searchId) {
+      
+      return null;
+   }
+   
+   //insert into memo(title, content) values(?,?)  
+   //Memo vo안에 콘텐츠 벨류값을 다 가지고 있음
+   public int insertMemo(MemoVO vo) throws Exception {
+      // jdbc 연결부터 종료
+      Class.forName("oracle.jdbc.driver.OracleDriver");
+      Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "pc21", "java");
+      String sql = "INSERT into memo(id, title, content) values(memo_seq.nextval,?,?)";
+      PreparedStatement statement = connection.prepareStatement(sql);
+      statement.setString(1, vo.getTitle());
+      statement.setString(2, vo.getContent());
+      int count = statement.executeUpdate();
+      statement.close();
+      connection.close();
+      return count;
+   }
+   
+   //update memo set title = ?, content = ?, modify_date= sysdate where id = ?
+   //Memo vo안에 타이틀 콘텐츠 모디파이 데이트 값을 가지고 있음
+   public int updateMemo(MemoVO vo) {
+      return 0;
+   }
+   
+   // delete from memo where id = ?
+   public int deleteMemo(int deleteId) {
+      return 0;
+   }
+}

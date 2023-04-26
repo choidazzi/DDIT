@@ -1,0 +1,5 @@
+disassembly.addressColor=56,187,56
+disassembly.codeBytesColor=195,26,60
+disassembly.functionOffsetsColor=195,26,60
+eclipse.preferences.version=1
+overriddenByCSS=,disassembly.addressColor,disassembly.codeBytesColor,disassembly.functionOffsetsColor,

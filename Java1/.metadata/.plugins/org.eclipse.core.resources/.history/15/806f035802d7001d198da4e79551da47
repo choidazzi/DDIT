@@ -1,0 +1,15 @@
+package ojdbc;
+
+import java.sql.*;
+
+public class test {
+	public static void main(String[] args) throws Exception {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection connection = DriverManager.getConnection("dbc:oracle:thin:@localhost:1521:xe","system","java");
+		Statement statement = connection.createStatement();
+		String sql = "Select * from member";
+		ResultSet rs = statement.executeQuery(sql);
+		
+		System.out.println("mem_id");
+	}
+}

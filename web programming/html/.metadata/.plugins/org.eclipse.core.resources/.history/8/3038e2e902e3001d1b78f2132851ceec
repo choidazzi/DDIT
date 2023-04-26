@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fieldset</title>
+<style>
+label{
+	display: inline-block;
+	width: 80px;
+	height: 25px;
+}
+
+form{
+	width: 50%;
+	border: 1px solid tomato;
+	padding: 20px;
+}
+
+fieldset {
+	width: 80%;
+	margin: 5px auto;
+}
+</style>
+</head>
+<body>
+	<div>
+		<input type="color">
+	</div>
+	<form>
+		<fieldset> <!-- grouping -->
+			<legend>기본 사항</legend>
+				<label for="id">아이디</label>
+				<input type="text" name="id" id="id"> 
+				<br>
+				
+				<label for="pass">비밀번호</label>
+				<input type="password" name="pass" id="pass"> 
+				<br>
+				
+				<label for="bir">생일</label>
+				<input type="date" name="bir" id="bir">
+				 <br>
+		</fieldset>
+	
+		<fieldset>
+			<legend>경력사항</legend>
+			<label>1차</label>
+			<input type="text">
+			<textarea rows="3" cols="30"></textarea>
+		</fieldset>	
+	</form>
+</body>
+</html>

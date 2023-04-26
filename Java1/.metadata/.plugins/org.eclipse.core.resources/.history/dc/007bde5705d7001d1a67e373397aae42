@@ -1,0 +1,10 @@
+package test;
+
+public class Student extends Human{
+	private String major;
+
+	public Student(String major) {
+		this.major = major;
+	}
+	
+}

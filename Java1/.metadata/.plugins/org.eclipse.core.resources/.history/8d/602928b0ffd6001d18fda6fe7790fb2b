@@ -1,0 +1,43 @@
+package ojdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.List;
+
+//DAO (Data Access Object) : DBMS에 직접 접근해서 CRUD를 하는 클래스
+public class MemoDAO {
+	//전체 Select, 한 개 select, insert, update, delete
+	//ArrayList 사용 => 쌓여야해서
+	public List<MemoVO> getMemos(){
+		return null;
+	}
+	//한 개 
+	public MemoVO getMemo(int searchId) {
+		//select * from memo where id = ?
+		return null;
+	}
+	//insert => insert 됐나? 안됐나?
+	//insert into memo(title, content) values (?,?)
+	public int insertMemo(MemoVO vo) throws Exception {
+		//jdbc 연결부터 종료
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","pc20","java");
+		String sql = "INSERT INTO memo(id, title, content) VALUES (memo_seq.nextval, ?, ?)";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setString(1, vo.getTitle());
+		statement.setString(2, vo.getContent());
+		return 0;
+	}
+	//update memo set title = ?, content=?
+	//modify_date = sysdate where id = ?
+	public int updateMemo(MemoVO vo) {
+		return 0;
+	}
+	//delete from memo where id = ?
+	public int deleteMemo(int deleteId) {
+		return 0;
+	}
+}
+
+//memovo, memocontroller, memoview, 

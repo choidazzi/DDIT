@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>의사클래스 상태</title>
+<style>
+iframe {
+	width: 500px;
+	height: 500px;
+}
+a:hover{
+	background: Aquamarine;
+}
+</style>
+</head>
+<body>
+	<a href="http://www.naver.com" target="_self">네이버 </a>
+	<a href="http://www.w3schools.com" target="self">w3schools</a>
+	<a href="형제선택자.html" target="aa">형제선택자 </a>
+	<a href="../0425/form 연습.html" target="aa">form 연습 </a>
+	<br>
+	
+	<iframe name="aa" src="../0421/입력테스트1.html"></iframe>
+</body>
+</html>

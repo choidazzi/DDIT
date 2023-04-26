@@ -1,0 +1,24 @@
+package ojdbc;
+
+import java.sql.*;
+
+public class test {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		          Class.forName("oracle.jdbc.driver.OracleDriver");
+		          Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","java");
+		          Statement stmt = conn.createStatement();
+		          String sql = "SELECT * FROM member";
+		          ResultSet rs = stmt.executeQuery(sql);
+
+		while(rs.next()) {
+		          System.out.print(rs.getInt("Employee_ID")+ " ");
+		          System.out.print(rs.getString("FIRST_NAME") +" ");
+		          System.out.println(rs.getString("LAST_NAME"));
+
+		}
+
+		rs.close();
+		stmt.close();
+		conn.close();
+}
+}

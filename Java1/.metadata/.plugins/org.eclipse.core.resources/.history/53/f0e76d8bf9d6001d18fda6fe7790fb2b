@@ -1,0 +1,11 @@
+package chapter08;
+
+public class Exception02 {
+	public static void main(String[] args) {
+		try {
+			
+		} catch ( e) {
+			// TODO: handle exception
+		}
+	}
+}

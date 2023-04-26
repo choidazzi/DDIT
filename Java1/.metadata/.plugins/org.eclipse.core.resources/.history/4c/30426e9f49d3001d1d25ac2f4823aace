@@ -1,0 +1,15 @@
+package chapter11;
+
+public class WrapperExample {
+	public static void main(String[] args) {
+		String str = "";
+		
+		int a = 10;
+		Integer b = new Integer(10);
+		int c = new Integer(10);
+		// 정수타입에 객체를 담을 수 없기 때문에 c에는 10이라는 데이터가 저장된다. (unboxing 박스(포장)이 벗겨진다. )
+		// auto unboxing 자동 언박싱 
+		Integer d = 10;
+		// 참조타입에 기본타입을 저장할 수 없다. => 10을 new Integer(10); 으로 포장함 => auto boxing 
+	}
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>table 만들기1</title>
+
+<style>
+
+	table{
+		border: 10px inset green;
+		margin: 20px auto;
+	}
+	td{
+		width: 300px;
+		height: 50px;
+		text-align: center;
+	}
+	
+	#tab1{
+		border: 5px groove blue;
+	}
+	
+	#tab2{
+	
+	}
+</style>
+</head>
+<body>
+	<table border = "1" id = "tab1">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	</table>
+	
+	<table border = "1" id = "tab2">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	</table>
+</body>
+</html>

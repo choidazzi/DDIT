@@ -1,0 +1,36 @@
+package chapter11;
+
+public class WrapperExample {
+	public static void main(String[] args) {
+		String str = "";
+		
+		int a = 10;
+		Integer b = new Integer(10);
+		int c = new Integer(10);
+		// 정수타입에 객체를 담을 수 없기 때문에 c에는 10이라는 데이터가 저장된다. (unboxing 박스(포장)이 벗겨진다. )
+		// auto unboxing 자동 언박싱 
+		Integer d = 10;
+		// 참조타입에 기본타입을 저장할 수 없다. => 10을 new Integer(10); 으로 포장함 => auto boxing 자동 박싱 
+		
+		Integer sum = 0;
+		for (int i = 1; i <= 100; i++) {
+			sum += i;
+		}
+		System.out.println("1부터 100까지의 합: " + sum);
+		
+		int sum2 = 0;
+		for (int i = 1; i <= 100; i++) {
+			sum2 += i;
+		}
+		System.out.println("1부터 100까지의 합: " + sum2); // 위에보다 빠르다 
+		
+		Integer obj1 = 200; // new Integer(200);
+		Integer obj2 = 200;// new Integer(200);
+		System.out.println(obj1 == obj2); //false! 왜냐하면 주소값이 다름 
+		
+		Integer obj3 = 127; // new Integer(127);
+		Integer obj4 = 127;// new Integer(127);
+		System.out.println(obj3 == obj4); // true! 바이트 범위 내에서는 true 
+		
+	}
+}

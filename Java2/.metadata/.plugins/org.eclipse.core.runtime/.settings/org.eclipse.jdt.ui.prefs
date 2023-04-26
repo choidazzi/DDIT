@@ -1,0 +1,25 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.RandomAccess"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Cloneable"><rhs name\="java.util.ArrayList"/><rhs name\="java.util.HashMap"/></lhs><lhs name\="java.util.AbstractList"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.AbstractCollection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.ArrayList"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.CharSequence"><rhs name\="java.lang.String"/></lhs><lhs name\="java.util.Map"><rhs name\="java.util.HashMap"/></lhs><lhs name\="java.util.AbstractMap"><rhs name\="java.util.HashMap"/></lhs><lhs name\="java.util.HashMap"><rhs name\="java.util.HashMap"/></lhs><lhs name\="kr.or.ddit.basic.exercise.HotelTest"><rhs name\="kr.or.ddit.basic.exercise.HotelTest"/></lhs><lhs name\="java.util.Iterator"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.io.Closeable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.lang.AutoCloseable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="kr.or.ddit.basic.args.ArgsTest"><rhs name\="kr.or.ddit.basic.args.ArgsTest"/></lhs><lhs name\="java.lang.Enum"><rhs name\="kr.or.ddit.basic.enumTest.EnumTest$Count"/><rhs name\="kr.or.ddit.basic.enumTest.EnumTest$Color"/></lhs><lhs name\="kr.or.ddit.basic.enumTest.EnumTest$Color"><rhs name\="kr.or.ddit.basic.enumTest.EnumTest$Color"/></lhs><lhs name\="kr.or.ddit.basic.enumTest.EnumTest$Count"><rhs name\="kr.or.ddit.basic.enumTest.EnumTest$Count"/></lhs><lhs name\="java.lang.Runnable"><rhs name\="java.lang.Thread"/></lhs><lhs name\="java.lang.Thread"><rhs name\="java.lang.Thread"/></lhs></history>
+content_assist_number_of_computers=17
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+java_comment_task_tag=126,138,188
+java_keyword=225,58,121
+java_multi_line_comment=85,129,32
+java_single_line_comment=85,129,32
+java_string=0,138,244
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=22
+semanticHighlighting.field.color=10,80,184
+semanticHighlighting.localVariable.color=236,119,0
+semanticHighlighting.restrictedKeywords.color=249,81,161
+semanticHighlighting.staticField.color=10,80,184
+semanticHighlighting.staticFinalField.color=10,80,184
+semanticHighlighting.typeArgument.color=60,96,209
+semanticHighlighting.typeArgument.enabled=true
+sourceHoverBackgroundColor=236,235,236
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

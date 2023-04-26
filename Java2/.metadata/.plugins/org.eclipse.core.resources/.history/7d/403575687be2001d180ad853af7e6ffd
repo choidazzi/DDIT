@@ -1,0 +1,57 @@
+package kr.or.ddit.basic.exercise;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class HotelTest {
+	Scanner scan = new Scanner(System.in);
+	HashMap<Integer, Room> hotelMap = new HashMap<>();
+
+	public static void main(String[] args) {
+
+	}
+
+	
+	public void menu() {
+		System.out.println("*********************************************");
+		System.out.println("       호텔문을 열었습니다. 어서오십시요.");
+		System.out.println("*********************************************");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("어떤 업무를 하시겠습니까?");
+		System.out.println("1. 체크인    2. 체크아웃    3. 객실상태    4. 업무종료");
+		System.out.println("-----------------------------------------------------------");
+	}
+}
+
+class Room{
+	int num;
+	String type;
+	String name;
+	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "Room [num=" + num + ", type=" + type + ", name=" + name + "]";
+	}
+	
+}

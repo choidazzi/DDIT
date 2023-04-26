@@ -1,0 +1,37 @@
+package kr.or.ddit.basic;
+
+import java.util.HashSet;
+
+public class SetTest {
+	public static void main(String[] args) {
+		/*
+		 * List 와 Set 의 차이점 
+		 * 1. List 
+		 * 		- 데이터의 순서 (index)가 있다.
+		 * 		- 중복되는 데이터를 저장할 수 있다. 
+		 * 
+		 * 2. Set 
+		 * 		- 데이터의 순서 (index)가 없다. 
+		 * 		- 중복되는 데이터를 저장할 수 없다.  
+		 */
+		
+		HashSet hs1 = new HashSet();
+	
+		//Set 에 데이터를 추가할 때도 add() 메서드를 사용한다. 
+		hs1.add("DD");
+		hs1.add("AA");
+		hs1.add(2);
+		hs1.add("CC");
+		hs1.add("BB");
+		hs1.add(1);
+		hs1.add(3);
+		
+		System.out.println("Set의 개수: " + hs1.size());
+		System.out.println("Set데이터 => " + hs1 );
+		
+		// Set에 중복되는 데이터를 추가하면 false 를 반환하고 데이터는 추가하지 않는다.
+		boolean isAdd=hs1.add("FF");
+		System.out.println("중복되지 않을 때: " + isAdd);
+		System.out.println("Set데이터 => " + hs1 );
+	}
+}

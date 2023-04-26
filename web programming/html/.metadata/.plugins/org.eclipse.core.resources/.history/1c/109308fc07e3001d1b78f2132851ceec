@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fieldset</title>
+<style>
+div{
+	width: 50%;
+	height: 50px;
+	border: 1px solid orange;
+}
+label{
+	display: inline-block;
+	width: 80px;
+	height: 25px;
+}
+
+form{
+	width: 50%;
+	border: 1px solid tomato;
+	padding: 20px;
+}
+
+fieldset {
+	width: 80%;
+	margin: 5px auto;
+}
+
+form {
+	background-color: Aliceblue;
+}
+</style>
+<script>
+function changeColor() {
+	//id = col 인 요소로 접근해서 선택값을 가져온다. 
+	colvalue = document.getElementById('col').value;
+	colvalue = document.querySelector('#col').value;
+	//colvalue = document.querySelector('input');
+	console.log(colvalue);
+	
+	//선택한 값으로 form 태그에 출력 - form 의 background 색상을 변경 - style 변경 
+	//form 요소를 검색 
+	//vform = document.getElementsByTagName('form');
+	//vform[0].style.backgroundColor = colvalue;
+	
+	vform = document.querySelector('form');
+	vform.style.backgroundColor = colvalue;
+}
+</script>
+</head>
+<body>
+	<div>
+		<input type="color"  id="col" onchange="changeColor()"> <!-- 함수 호출 --> 
+		<span id="scolor"></span>
+	</div>
+	<br>
+	<form>
+		<fieldset> <!-- grouping -->
+			<legend>기본 사항</legend>
+				<label for="id">아이디</label>
+				<input type="text" name="id" id="id"> 
+				<br>
+				
+				<label for="pass">비밀번호</label>
+				<input type="password" name="pass" id="pass"> 
+				<br>
+				
+				<label for="bir">생일</label>
+				<input type="date" name="bir" id="bir">
+				 <br>
+		</fieldset>
+	
+		<fieldset>
+			<legend>경력사항</legend>
+			<label>1차</label>
+			<input type="text">
+			<textarea rows="3" cols="30"></textarea>
+		</fieldset>	
+	</form>
+</body>
+</html>

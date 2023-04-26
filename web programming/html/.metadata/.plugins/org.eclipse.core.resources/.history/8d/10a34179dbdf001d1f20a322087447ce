@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>iframeTest</title>
+<style>
+iframe {
+	width: 60%;
+	height: 500px;
+	border: 5px solid Lightsteelblue;
+}
+</style>
+</head>
+<body>
+	block 요소 : div, p, h1~h6, table, ul, ol, li inline 요소 :a -->
+	<h1>iframe 사용하기</h1>
+	<a href="http://www.naver.com" target="ifr">NAVER</a>
+	<!-- _blank 새로운 창에서 열림-->
+	<a href="../0420/table 연습.html" target="ifr">table 연습</a>
+	<a href="http://localhost:8089/webpro/0419/리스트4.html" target="ifr">리스트4</a>
+
+	<br>
+	<br>
+
+	<iframe src="../0419/test5.html" name="ifr"></iframe>
+</body>
+</html>

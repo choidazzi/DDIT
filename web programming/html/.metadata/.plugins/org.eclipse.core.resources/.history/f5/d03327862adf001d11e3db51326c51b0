@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>table 연습 </title>
+</head>
+<body>
+<h1>나의 홈페이지</h1>
+<img alt="../images/우주3.jpg" src="우주.jpg">
+<h3>컴퓨터 프로그래머를 꿈꾸며 열심히 대덕인재개발원에서 공부하고 있습니다</h3>	
+<p>현재 학습하고 있는 과목</p>
+<ul>
+	<li>HTML5 & Script <a href="https://www.w3.org">W3C 사이트</a></li>
+	<li>JAVA</li>
+	<li>CSS</li>
+	<li>JAVASCRIPT</li>
+</ul>
+</body>
+</html>

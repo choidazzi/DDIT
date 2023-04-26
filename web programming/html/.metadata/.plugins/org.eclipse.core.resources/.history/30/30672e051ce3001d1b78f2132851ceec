@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form 연습</title>
+<style>
+h3{
+	text-align: center;
+	margin: auto ;
+	width: 50%;
+	background: Palegreen;
+}
+form {
+
+	width: 40%; 
+	margin: auto;
+	margin-top: 30px;
+	border: 2px solid midnightblue;
+	border-radius: 10px;
+	padding: 25px ;
+}
+label {
+	display: inline-block;
+	width: 60px;
+	height: 25px;
+}
+
+textarea{
+	width: 90%;
+}
+#name, #add, #mail{
+	width: 40%;
+}
+</style>
+</head>
+<body>
+	<h3>회원가입 화면</h3>
+	<form>
+		<label for="name">이름</label> 
+		<input type="text" name="name" id="name">
+	    <br> 
+		
+		<label for="add">주소</label>
+		<input type="text" name="add" id="add"> 
+		<br> 
+		
+		<label for="mail">이메일</label> 
+		<input type="text" pattern="[a-zA-Z]+[0-9]*@[a-zA-Z]+[0-9]*(\.[a-zA-Z]+){1,2}" name="mail" id="mail"> 
+		<br> 
+		
+		<label for="gender">성별</label> 
+		<input type="radio" value="Female" name="gender" id="gender"> Female 
+		<input type="radio" value="Male" name="gender" id="gender"> Male <br> 
+		
+		<label for="area">내용</label>
+		<br> 
+		<textarea rows="5" cols="50" name="area" id="area"></textarea>
+		<br> 
+		
+		<input type="submit"> <input type="reset">
+	</form>
+</body>
+</html>

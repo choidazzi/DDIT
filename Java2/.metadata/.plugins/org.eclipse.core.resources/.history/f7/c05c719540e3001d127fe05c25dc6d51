@@ -1,0 +1,28 @@
+package kr.or.ddit.basic.generic;
+
+//제네릭을 적용하지 않은 class 작성 
+
+class NonGeneric{
+	private Object value;
+	public Object getValue() {
+		return value;
+	}
+	
+	public void setValue(Object value) {
+		this.value = value;
+	}
+}
+public class genericTest {
+	public static void main(String[] args) {
+		NonGeneric ng1 = new NonGeneric();
+		ng1.setValue("가나다라");
+		
+		NonGeneric ng2 = new NonGeneric();
+		ng2.setValue(123);
+		
+		String temp1 = (String) ng1.getValue(); //형변환이 필수적 
+		System.out.println("temp1 = " + temp1);
+		int intTemp1 = (int) ng2.getValue(); //형변환이 필수적 
+		System.out.println("intTemp1 = " + intTemp1);
+	}
+}

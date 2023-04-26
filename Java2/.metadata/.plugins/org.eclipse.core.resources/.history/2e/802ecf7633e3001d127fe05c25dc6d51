@@ -1,0 +1,13 @@
+package kr.or.ddit.basic.args;
+
+public class ArgsTest {
+	public static void main(String[] args) {
+		ArgsTest at = new ArgsTest();
+		at.test01(0, "홍길동");
+	}
+	
+	public void test01(int a, String str) {
+		System.out.println("a= " + a);
+		System.out.println("str= " + str);
+	}
+}

@@ -1,0 +1,19 @@
+package kr.or.ddit.basic.generic;
+
+//제네릭을 적용하지 않은 class 작성 
+
+class NonGeneric{
+	private Object value;
+	public Object getValue() {
+		return value;
+	}
+	
+	public void setValue(Object value) {
+		this.value = value;
+	}
+}
+public class genericTest {
+	public static void main(String[] args) {
+		
+	}
+}
