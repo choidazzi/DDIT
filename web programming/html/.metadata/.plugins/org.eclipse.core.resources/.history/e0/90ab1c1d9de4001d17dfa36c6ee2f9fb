@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+		box-sizing: border-box;
+		/* box 크기를 지정 시 padding , border-width 가 포함 */
+		border: 10px solid aquamarine;
+		/* margin: 10px; */
+		padding: 30px;
+		background-image: url(../images/뚱이.jpg) ;
+		background-size: 100px;
+		width: 50%;
+		float: left;
+}
+
+p {
+	font-size: 1.5rem;
+	background: aquamarine;
+}
+</style>
+</head>
+<body>
+	<div>
+		<p>
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+		</p>
+	</div>
+
+	<div>
+		<p>
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+		</p>
+	</div>
+</body>
+</html>

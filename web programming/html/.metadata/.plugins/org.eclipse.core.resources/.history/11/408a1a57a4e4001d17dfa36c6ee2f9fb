@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>box flex</title>
+<style>
+#d1, #d2, #d3 {
+	border: 2px solid steelblue;
+	width: 200px;
+	height: 100px;
+	margin: 5px;
+}
+
+#d1 {
+	border-radius: 50px 100px;
+}
+
+#d2 {
+	border-radius: 30px 100px 50px;
+}
+#box {
+	width: 300px;
+	height: 200px;
+	background: Springgreen;
+	margin: 50px;
+	box-shadow: 20px 20px 5px Mediumaquamarine;
+	border: solid;
+	border-color: gold tomato;
+	border-width: 5px 10px medium;
+	border-radius: 20px
+}
+
+div#parent{
+	display: flex;
+}
+
+div.child {
+		box-sizing: border-box;
+		/* box 크기를 지정 시 padding , border-width 가 포함 */
+		border: 10px solid aquamarine;
+		border-radius: 20px;
+		margin: 5px; 
+		padding: 30px;
+		background-image: url(../images/Squidward.png) ;
+		background-size: 70px;
+}
+
+p {
+	font-size: 1.5rem;
+	background: aquamarine;
+}
+</style>
+</head>
+
+<body>
+	<div id="d1"></div>
+	<div id="d2"></div>
+	<div id="d3"></div>
+
+	<div id="box"></div>
+	<div id="parent">
+		<div class="child">
+			<p>
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			</p>
+		</div>
+		
+		<div class="child">
+			<p>
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+				무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			</p>
+		</div>
+	</div>
+	
+</body>
+</html>

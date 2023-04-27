@@ -1,2 +1,11 @@
+commentBorder=\#3f7f5f | null | false | false | false | false
+commentText=\#3f7f5f | null | false | false | false | false
+declBoder=\#1250c8 | null | false | false | false | false
+doctypeExternalPubref=\#1250c8 | null | false | false | false | false
+doctypeExtrenalSysref=\#1250c8 | null | false | false | false | false
+doctypeName=\#1250c8 | null | false | false | false | false
 eclipse.preferences.version=1
 newFileTemplateName=New HTML File (5)
+tagAttributeValue=\#f6672e | null | false | false | false | false
+tagBorder=\#1250c8 | null | false | false | false | false
+tagName=\#1250c8 | null | false | false | false | false

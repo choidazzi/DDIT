@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<style>
+
+p{
+	font-size: 2.0rem;
+}
+
+.p1{
+	font-family: serif;
+}
+
+.p2{
+	font-family: sans-serif;
+
+}
+.p3{
+	font-family: monospace;
+
+}
+.p4{
+	font-family: cursive;
+
+}
+.p5{
+	font-family: fantasy;
+
+}
+.p6{
+font-family: 'Black Han Sans', sans-serif;
+
+}
+</style>
+</head>
+
+<body>
+	<p class="p1">무궁화 꽃이 피었습니다 Hello</p>
+	<p class="p2">무궁화 꽃이 피었습니다 Hello</p>
+	<p class="p3">무궁화 꽃이 피었습니다 Hello</p>
+	<p class="p4">무궁화 꽃이 피었습니다 Hello</p>
+	<p class="p5">무궁화 꽃이 피었습니다 Hello</p>
+	<p class="p6">무궁화 꽃이 피었습니다 Hello</p>
+	
+</body>
+</html>

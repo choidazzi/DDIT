@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table {
+		border-collapse: collapse;
+	}
+	
+	th, td {
+		text-align: center;
+		width: 150px;
+		height: 80px;
+	}
+</style>
+</head>
+<body>
+	<table border="1">
+		<caption>가상 클래스 이용하기</caption>
+			<tr>
+				<th>알라딘</th>
+				<th>임꺽정</th>
+				<th>개나리</th>
+				<th>홍길동</th>
+			</tr>
+			<tr>
+				<td>패밀리</td>
+				<td>스타일</td>
+				<td>텍스트</td>
+				<td>볼드체</td>
+			</tr>
+			<tr>
+				<td>선택자</td>
+				<td>인라인</td>
+				<td>패밀리</td>
+				<td>요소들</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+	</table>
+</body>
+</html>

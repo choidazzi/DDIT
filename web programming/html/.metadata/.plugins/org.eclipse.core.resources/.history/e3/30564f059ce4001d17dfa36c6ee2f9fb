@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+		border: 10px solid gold;
+		margin: 10px;
+		padding: 30px;
+		background-image: url(../images/spongebob.png) ;
+		background-size: 100px;
+		
+}
+
+p {
+	font-size: 1.5rem;
+	background: aquamarine;
+}
+</style>
+</head>
+<body>
+	<div>
+		<p>
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+			무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+		</p>
+	</div>
+</body>
+</html>
