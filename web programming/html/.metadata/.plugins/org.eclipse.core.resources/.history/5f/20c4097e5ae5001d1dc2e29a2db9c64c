@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ul list</title>
+<style>
+ul {
+	list-style-type: none;
+	border: 3px solid midnightblue;
+	border-left: none;
+	border-right: none;
+	padding: 20px;
+}
+
+ul li {
+	display: inline;
+	border: 1px solid red;
+	margin: 20px;
+}
+ul li a {
+	text-decoration: none;
+	font-size: 2.0rem;
+	letter-spacing: 10px;
+}
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="http://www.naver.com">HOME</a></li>
+		<li><a href="#">PROJECT</a></li> <!-- 페이지 이동 안 함 -->
+		<li><a href="#">NOTICE</a></li>
+		<li><a href="#">QnA</a></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>z-index</title>
+<style>
+div {
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	margin: 20px;
+	text-align: center;
+	position: absolute;
+}
+
+.cd1 {
+	background: tomato;
+}
+.cd2 {
+	background: Khaki;
+}
+.cd3 {
+	background: Mediumaquamarine;
+}
+.cd4 {
+	background: Royalblue;
+}
+
+#d1 {	
+	top: 100px;
+	left: 150px;
+}
+#d2 {	
+	top: 120px;
+	left: 170px;
+	z-index: 10;
+}
+#d3 {	
+	top: 140px;
+	left: 190px;
+	z-index: 20;
+}
+#d4 {	
+	top: 160px;
+	left: 210px;
+}
+
+hr {
+	position: relative;
+	top: 260px;
+}
+
+</style>
+</head>
+
+<body>
+	<div id="d1" class="cd1">d1</div>
+	<div id="d2" class="cd2">d2</div>
+	<div id="d3" class="cd3">d3</div>
+	<div id="d4" class="cd4">d4</div>	
+	
+	<hr color="steelblue">
+</body>
+</html>
