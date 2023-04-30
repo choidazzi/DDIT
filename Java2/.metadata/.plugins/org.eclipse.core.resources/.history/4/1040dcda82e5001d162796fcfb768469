@@ -1,0 +1,34 @@
+package kr.or.ddit.basic;
+
+// yield() 메서드 예제 
+public class ThreadTest10 {
+	public static void main(String[] args) {
+		YieldThread th1 = new YieldThread("1번 쓰레드"); 
+		YieldThread th2 = new YieldThread("2번 쓰레드");
+		
+		th1.start();
+		th2.start();
+	}
+}
+
+// yield() 메서드 연습용 쓰레드 
+class YieldThread extends Thread {
+	private boolean stop = false;
+	private boolean work = true;
+
+	public YieldThread(String name) {
+		super(name); // 쓰레드의 이름 설정
+	}
+
+	@Override
+	public void run() {
+		while (!stop) { // !stop = true 
+			if (work) {
+				System.out.println(getName() + "쓰레드 작업 중...");
+			} else {
+				System.out.println(getName() + "쓰레드 양보...");
+				Thread.yield();
+			}
+		}
+	}
+}
