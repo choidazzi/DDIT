@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Script Test</title>
+<style>
+#res {
+	border: 1px solid black;
+	padding: 20px;
+}
+</style>
+</head>
+<body>
+	<div id="res"></div>
+<script>
+	let today = new Date();
+
+	let day1 = today.toLocaleString();
+	
+	document.write("Hello World ^ __ ^")
+
+</script>
+</body>
+</html>

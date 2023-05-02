@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>script3</title>
+<script>
+	function proc1() {
+		let today = new Date();
+		
+		let day1 = today.toLocaleString();
+		let day2 = today.toLocaleString();
+		let day3 = today.toLocaleTimeString();
+		//출력내용
+		let str = "오늘은 " + today + "<br>";
+		  	 str += "우리는 " + day1 + "<br>";
+		  	 str += "우리의 날짜 " + day2 + "<br>";
+		  	 
+		//id 가 res 인 요소를 검색 출력
+		//document.querySelector('#res').innerText = str;
+		document.querySelector('#res').innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="확인" onclick="proc1()">
+	<div id="res"></div>
+</body>
+</html>

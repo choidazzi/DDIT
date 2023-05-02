@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Web Shopping</title>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<img alt="" src="">
+			<h1><a href="./main.html">Web Shop</a></h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">About Us</a></li>
+				<li><a href="">News</a></li>
+				<li><a href="">My Account</a></li>
+				<li><a href="">Contacts</a></li>				
+			</ul>
+		</nav>
+		<div id="content">
+			<aside>
+				<h3>Category</h3>
+				<ul>
+					<li><a href="">도서</a></li>
+					<li><a href="">음악</a></li>
+					<li><a href="">영화</a></li>
+					<li><a href="">전자기기</a></li>
+					<li><a href="">가구/인테리어</a></li>
+					<li><a href="">문구</a></li>
+					<li><a href="">티켓</a></li>
+				</ul>
+			</aside>
+			<section>
+				<article></article>
+			</section>
+			<aside></aside>
+		</div>
+		<footer></footer>
+	</div>
+</body>
+</html>

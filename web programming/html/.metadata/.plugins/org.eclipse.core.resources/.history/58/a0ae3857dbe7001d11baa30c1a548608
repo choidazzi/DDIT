@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Web Shopping</title>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<img alt="" src="">
+			<h1><a href="./main.html"></a></h1>
+		</header>
+		<nav></nav>
+		<div id="content">
+			<aside></aside>
+			<section>
+				<article></article>
+			</section>
+			<aside></aside>
+		</div>
+		<footer></footer>
+	</div>
+</body>
+</html>

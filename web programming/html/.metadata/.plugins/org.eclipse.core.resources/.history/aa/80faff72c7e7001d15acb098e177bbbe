@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>script 2</title>
+</head>
+<body>
+	<input type="button"" value="확인" onclick="proc()">
+</body>
+</html>

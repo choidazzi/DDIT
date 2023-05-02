@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="kr.or.ddit.basic.totalDesc"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.basic.StudentTest"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.basic.LottoStore"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.basic.Person"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
-    <fullyQualifiedTypeName name="java.util.Objects"/>
-    <fullyQualifiedTypeName name="java.util.Map"/>
-    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.basic.Phone"/>
-    <fullyQualifiedTypeName name="java.text.Format"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.PhoneBookTest"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.exercise.HotelTest"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.args.ArgsTest"/>
     <fullyQualifiedTypeName name="java.lang.NoClassDefFoundError"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.generic.NonGeneric"/>
@@ -44,10 +31,8 @@
     <fullyQualifiedTypeName name="java.lang.Thread.State"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.ThreadTest10"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.ThreadStopTest1"/>
-    <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.TargetThread"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.ThreadTest12"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.DisplayCharacter"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.CalcThread"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.CalcPIThread"/>
@@ -57,7 +42,22 @@
     <fullyQualifiedTypeName name="javax.management.openmbean.OpenMBeanAttributeInfo"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.ShareData"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.ShareObject"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.basic.TestThread"/>
     <fullyQualifiedTypeName name="kr.or.ddit.basic.ThreadTest16"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.basic.TestThread"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.basic.Horse"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.basic.GameStatePrint"/>
+    <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.basic.WorkObject"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.basic.DataBox"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.basic.DataInThread"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>

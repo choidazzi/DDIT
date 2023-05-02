@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Script Test</title>
+<style>
+div {
+	border : 1px solid black;
+	padding: 10px;
+}
+</style>
+</head>
+<body>
+	<div></div>
+</body>
+<script>
+	// 내부 스크립트 
+	// var는 같은 이름의 변수 사용 가능 => 방지 위해 let을 사용 (var 보다 좁은 범위)
+	/*
+	에러 안 남 
+	var today = new Date();
+	var today = 10;
+	
+	에러 남
+	let day = new Date();
+	let day = 10;
+	 */
+	 
+	 let today = new Date();
+	 
+	 //window.alert(today);
+	 //document.write(today);
+	 console.log(today);
+	 
+	 //div 요소를 검색 후 출력  
+	 document.getElementsByTagName('div')[0].innerText = today;
+	 document.querySelector('div').innerText = today;
+</script>
+</html>

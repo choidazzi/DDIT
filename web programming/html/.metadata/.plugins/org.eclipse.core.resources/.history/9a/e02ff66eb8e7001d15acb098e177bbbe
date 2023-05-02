@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#container{
+	display:flex;
+	flex-direction: column;
+}
+#content{
+	display:flex;
+	flex-direction: row;
+}
+header, aside, article, section, footer, #content {
+	box-sizing:border-box;
+	border-radius: 10px;
+	margin: 3px;
+}
+
+header, footer {
+	background: lightyellow;
+}
+
+header{
+	text-align: center;
+	height: 130px;
+}
+
+aside {
+	flex: 30%;
+	height: 500px;
+	background: Lightcyan;
+	padding: 15px;
+}
+
+aside figure img {
+	margin-top: 40px;
+	width: 70%;
+}
+
+aside ul li:first-child a {
+	color: salmon;
+}
+aside ul li a {
+	font-size: 20px;
+	font-weight: bold;
+	color: Lightslategray;
+	text-decoration: none;
+}
+
+section {
+	background: #DEFEDF;
+	flex: 70%;
+	height: 500px;
+}
+
+section article {
+	padding: 30px;
+	background: lightyellow;
+	width: 85%;
+	height: 40%;
+	margin: 20px auto;
+}
+
+footer {
+	background: steelblue;
+	font-weight: bold;
+	color: white;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h1>My Blog Page</h1>
+			<p>시멘틱 태그로 만들어진 페이지입니다.</p>
+		</header>
+		<div id="content">
+			<aside>
+				<h2>Links</h2>
+				<ul>
+					<li><a href="http://www.w3schools.com">w3schools</a></li>
+					<li><a href="http://www.naver.com">Naver</a></li>
+					<li><a href="https://www.daum.net/">Daum</a></li>
+				</ul>
+				<figure>
+					<img alt="spongebob" src="../images/spongebob.png">
+					<figcaption>스폰지밥</figcaption>
+				</figure>
+			</aside>
+			<section>
+				<article>
+					<h3>Semantic Tags</h3>
+					<p>시멘틱 요소(Semantic Elements)들은 브라우저에게 요소의 의미나 목적을 명확하게 알려주는 요소이다. 레이아웃을 만들 때 쓰는 것, 의미가 있는 요소라면 div보다는 시멘틱 태그를 사용해준다.</p>
+				</article>
+				<article>
+					<h3>div와 span</h3>
+					<p>div는 "divide"의 약자로서 페이지를 논리적인 섹션으로부터 분리하는데 사용되는 태그이다. span요소는 인라인 요소로서 텍스트를 위한 컨테이너로 사용할 수 있다.</p>
+				</article>
+			</section>
+		</div>
+		<footer>
+			<p>Copyright (c)2019 Hong</p>
+		</footer>
+	</div>
+</body>
+</html>
