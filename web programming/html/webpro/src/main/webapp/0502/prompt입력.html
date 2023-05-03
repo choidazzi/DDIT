@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prompt 입력</title>
+<style>
+div {
+	border: 1px solid steelblue;
+	padding: 20px;
+}
+</style>
+
+<script>
+	window.onload = function() {
+
+		su1 = parseInt(prompt("정수 입력", " 1~100 사이"));
+		su2 = parseInt(prompt("정수 입력", " 1~100 사이"));
+
+		sum = su1 + su2;
+
+		//출력내용 
+		//str = su1 + "+" + su2 + "=" + sum;
+		
+		//백틱(`)을 이용한 템플릿 리터럴 작성 
+		//변수에는 ${변수}
+		str = `${su1} + ${su2} = ${sum} <br>`
+
+		// id 가 res 인 요소에 출력 
+		document.querySelector('#res').innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	<div id="res"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	값1 <input type="text" id="su1">
+	<br>
+	값2 <input type="text" id="su2">
+	<br>
+	<br>
+	<br>
+	
+	<h1>결과</h1>
+	<div id="res"></div>
+	<input type="text" id="calcRes">
+</body>
+</html>

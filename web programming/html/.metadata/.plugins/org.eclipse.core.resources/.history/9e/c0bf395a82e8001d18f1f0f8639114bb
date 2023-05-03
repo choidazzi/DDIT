@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	값1<input type="text" id="v1"> 
+	값2<input type="text" id="v2">
+	<br>
+	<br>
+	<input type="button" value="확인" onclick="proc1()">
+	<br>
+	<br>
+	<div id="res"></div>
+</body>
+</html>

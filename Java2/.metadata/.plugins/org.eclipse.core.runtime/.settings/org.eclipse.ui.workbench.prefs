@@ -1,14 +1,14 @@
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
 //org.eclipse.ui.commands/state/org.eclipse.wst.xml.views.XPathView.processor.xpathprocessor/org.eclipse.ui.commands.radioState=xpath10
 ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc\tTorg.eclipse.debug.ui.presentation\tTorg.eclipse.egit.ui.GitTheme\tTorg.eclipse.jdt.ui.presentation\tTorg.eclipse.emf.codegen.ui.jet\tTorg.eclipse.wst.sse.ui\tTorg.eclipse.pde.genericeditor.target.extension.presentation\tTterminal.views.theme.category\tTorg.eclipse.compare.contentmergeviewer.TextMergeViewer\tTorg.eclipse.ui.presentation.default\tTorg.eclipse.mylyn.wikitext.ui.presentation
-ColorsAndFontsPreferencePage.selectedElement=Corg.eclipse.pde.genericeditor.extension.editor.color.attribute
+ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.debug.ui.consoleFont
 PLUGINS_NOT_ACTIVATED_ON_STARTUP=org.eclipse.m2e.discovery;
 com.genuitec.codetogether.ui.client.tests.failurePaneFont=1|.SF NS|13.0|0|COCOA|1|.SFNS-Regular;
 eclipse.preferences.version=1
 org.eclipse.compare.contentmergeviewer.TextMergeViewer=1|Menlo|18.0|0|COCOA|1|;
 org.eclipse.debug.ui.DetailPaneFont=1|Menlo|18.0|0|COCOA|1|;
 org.eclipse.debug.ui.MemoryViewTableFont=1|Menlo|18.0|0|COCOA|1|;
-org.eclipse.debug.ui.consoleFont=1|Menlo|18.0|0|COCOA|1|;
+org.eclipse.debug.ui.consoleFont=1|Verdana|18.0|0|COCOA|1|Verdana;
 org.eclipse.egit.ui.CommitMessageEditorFont=1|Menlo|18.0|0|COCOA|1|;
 org.eclipse.egit.ui.CommitMessageFont=1|Menlo|18.0|0|COCOA|1|;
 org.eclipse.egit.ui.DiffHeadlineFont=1|Menlo|18.0|0|COCOA|1|;

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Music</title>
+</head>
+<body>
+	<div id="music">
+		<div class="item">
+			<img alt="music1" src="images/music/music1.jpg">
+		</div>
+	</div>
+</body>
+</html>

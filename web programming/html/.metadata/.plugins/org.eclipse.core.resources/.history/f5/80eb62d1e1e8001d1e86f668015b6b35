@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+html {
+	background: tomato;
+}
+</style>
+</head>
+<body>
+	<div>1</div>
+	<div>1</div>
+	<div>1</div>
+</body>
+</html>

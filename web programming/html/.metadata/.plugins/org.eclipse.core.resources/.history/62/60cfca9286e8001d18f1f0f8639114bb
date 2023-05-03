@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		var su1 = 25;
+		var su2 = 34;
+		
+		add(su1, su2);
+		
+		// id 가 res인 요소를 검색해서 결과를 출력 
+		vres = document.querySelector('#res');
+		vres.innerHTML = sum;
+	}
+	
+	function add() {
+		var sum = a + b;
+	}
+</script>
+</head>
+<body>
+	<div id="res"></div>
+</body>
+</html>

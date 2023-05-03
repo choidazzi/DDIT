@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if 문제</title>
+<link rel="stylesheet" href="../css/my.css">
+<script>
+	function proc1() {
+		// prompt 를 이용하여 두 개의 수와 연산자를 입력
+		su1 = prompt("첫번째 정수 입력");
+		su2 = prompt("두번째 정수 입력");
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>prompt 를 이용하여 두 개의 수와 연산자를 입력한다.</h3>
+		<h3>연산자를 비교하여 계산 후 결과를 출력한다.</h3>
+		
+		<input type="button" value="확인" onclick="proc1()">
+		<br>
+		<br>
+		
+		<div id="result1" class="result"></div>
+	</div>
+</body>
+</html>

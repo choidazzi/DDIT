@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수테스트</title>
+<script>
+	//입력을 위한 함수
+	function proc1() {
+		// id 가 v1, v2 인 요소에 접근(검색) 하여 입력한 값을 가져온다.
+		value1 = document.getElementById('v1').value;
+		value2 = document.getElementById('v2').value;
+		
+		printProc();
+	}
+
+	//출력을 위한 함수 
+	function printProc() {
+		//id 가 res인 요소를 검색 
+		vres = document.getElementById('res');
+		
+		// 계산 (자료형 사용 안하기 떄문에 Integer 뺌)
+		sum = ParseInt(value1 + value2);
+		
+		//출력 내용 예 ) 23 + 45 = 68
+		str =  value1 + "+" + value2 + "=" + sum;
+		vres.innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	값1
+	<input type="text" id="v1"> 값2
+	<input type="text" id="v2">
+	<br>
+	<br>
+	<input type="button" value="확인" onclick="proc1()">
+	<br>
+	<br>
+	<div id="res"></div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prompt 입력</title>
+<style>
+div {
+	border:  1px solid steelblue;
+	padding: 20px
+}
+</style>l
+</head>
+<body>
+	<div id="res"></div>
+</body>
+</html>

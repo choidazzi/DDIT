@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Music</title>
+</head>
+<body>
+	<div id="music">
+		<div class="item">
+			<img alt="music1" src="images/music/music1.jpg">
+			<p>Champagne Supernova</p>
+			<p>oasis</p>
+			<audio id="aa" src="../multi/old_pop.mp3" controls autoplay>
+			</audio>
+		</div>
+		<div class="item">
+			<img alt="music2" src="images/music/music2.jpg">
+			<p>Summer</p>
+			<p>The Valunteers</p>
+			<audio id="aa" src="../multi/old_pop.mp3" controls autoplay>
+			</audio>
+		</div>
+		<div class="item">
+			<img alt="music3" src="images/music/music3.png">
+			<p>My Favorite Part</p>
+			<p>Mac Miller</p>
+			<audio id="aa" src="../multi/old_pop.mp3" controls autoplay>
+			</audio>
+		</div>
+	</div>
+</body>
+</html>
