@@ -42,19 +42,16 @@
 		
 		//비교
 		if (user1 ==  user2) {	// 비기는 경우 
-			res = "비김";	
+			
 		} else if (user1 == "가위" && user2 == "보"|| 
 					   user1 == "바위" && user2 == "가위"||
 					   user1 == "보"&& user2 == "바위") {	// user1 이 이기는 경우
-			res = "user1 이김";
-		} else {	//user2가 이기는 경우 
-			res = "user2 이김";	
+			
+		} else {
+			
 		}
+		//출력
 		
-		//출력내용
-		str = "첫 번째 사람 : " + user1 +"<br>"
-		str += "두 번째 사람 : " + user2 +"<br>"
-		str += "결과 : " + res 
 	}
 </script>
 </head>
