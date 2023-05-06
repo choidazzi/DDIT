@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/my.css">
+<script>
+function proc1() {
+	
+	sum = 0;
+	inputStr ="";
+	str ="";
+	while(true) {
+		// 입력 
+		su1 = parseInt(prompt("첫 번째 수를 입력하세요."));
+		su2 = parseInt(prompt("첫 번째 수를 입력하세요."));
+		
+		// 입력한 값을 누적 
+		sum = su1 + su2;
+		inputStr += "[ " +su1 + " ]" + "[ " +su2 + " ]" + "<br>";
+		// 계속할래? - true(yes)  /  false(no) - false 만 비교 
+		//cont 에는 true 나 false 가 저장 
+		cont = confirm("계속할래?? ^__^");
+		
+		if (!cont) break;	//cont == false
+		
+		str += `입력한 값 : ${inputStr} , 결과 값 : ${sum} <br>`;
+	}
+	
+	//출력
+	document.getElementById('result1').innerHTML = str;
+}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>사용자가 입력한 값을 계속 더하고, 누적된 값을 출력</h3>
+		<h3>입력 여부를 물어본다(confirm)</h3>
+		<input type="button" value="확인" onclick="proc1()"> 
+		<br> <br>
+		<div id="result1" class="result"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>book</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="box">
+		<div class="item">
+			<img alt="book1" src="images/book/book1.png">
+			<p class="title">한 달 후, 일 년 후</p>
+			<p class="person">프랑수아즈 사강 지음</p>
+						<input type="button" value="쇼핑카트에 추가하기">
+		</div>
+		<div class="item">
+			<img alt="book2" src="images/book/book2.jpeg">
+			<p class="title">인생의 역사</p>
+			<p class="person">신형철</p>
+						<input type="button" value="쇼핑카트에 추가하기">
+		</div>
+		<div class="item">
+			<img alt="book3" src="images/book/book3.jpeg">
+			<p class="title">디디의 우산</p>
+			<p class="person">황정은</p>
+						<input type="button" value="쇼핑카트에 추가하기">
+		</div>
+	</div>
+</body>
+</html>

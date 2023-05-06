@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	calc = a => { /* parameter 가 하나면 괄호 없어도 됨 */
+		// 입력한 값 가져오기  
+		su1 = parseInt(document.getElementById('x').value);
+		su2 = parseInt(document.getElementById('y').value);
+		
+		res = 0;
+		// a값 비교 
+		switch (a) {
+		case "+": res = add(su1,su2);			break;
+		case "-":  res = subtract(su1,su2);		break;
+		case "*": res = multiple(su1,su2);		break;
+		case "/":  res = divide(su1,su2);			break;
+		}
+		
+		document.getElementById('sum').innerHTML = res;
+	}
+	
+	function add(a,b) {
+		return a+b;
+	}
+	function subtract(a,b) {
+		return a-b;
+	}
+	function multiple(a,b) {
+		return a*b;
+	}
+	function divide(a,b) {
+		return a/b;
+	}
+</script>
+</head>
+<body>
+	<body>
+   <form>
+      첫번째 :<input id="x"><br>
+      두번째 :<input id="y"><br>
+      결과 :<input id="sum"><br>
+      <input type="button"  onclick="calc('+')" value="+">
+      <input type="button"  onclick="calc('-')" value="-">
+      <input type="button"  onclick="calc('*')" value="*">
+      <input type="button"  onclick="calc('/')" value="/"><br>
+      <p>첫번째 값 :<span id="sp1"></span> </p>
+      <p>두번째 값 :<span id="sp2"></span> </p>
+      <p>결과 :<span id="sp3"></span> </p>	  
+    </form>
+</body>
+</body>
+</html>

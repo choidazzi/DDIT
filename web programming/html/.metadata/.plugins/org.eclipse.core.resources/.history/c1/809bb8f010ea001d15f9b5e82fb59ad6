@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열출력함수</title>
+<link rel="stylesheet" href="../css/my.css">
+<script>
+	proc1 = () => {
+		arr = ["사과","복숭아","자두","참외"];	
+	}
+	
+	proc2 = () => {
+		arr = ["농구","야구","축구","배구"];			
+	}
+	
+	function arrPrint(result) {
+		
+	}
+	arrPrint = () => {
+		
+	}
+</script>
+</head>
+<body>
+<div class="box">
+		<h3>Array 배열 객체</h3>
+		<h4>const fruits = [];</h4>
+		<h4>const fruits = new Array(); (or new Array(3);)<br> fruits[0] = "apple"; fruits[1] = "banana"; fruits[2] = "peach";</h4>
+		<h4>const fruits = ["apple", "banana", "peach"];</h4>
+		<input type="button" value="확인" onclick="proc1()"> <br> <br>
+		<div id="result1" class="result"></div>
+	</div>
+	<div class="box">
+		<h3>Array 배열 객체</h3>
+		<h4>const fruits = [];</h4>
+		<h4>const fruits = new Array(); (or new Array(3);)<br> fruits[0] = "apple"; fruits[1] = "banana"; fruits[2] = "peach";</h4>
+		<h4>const fruits = ["apple", "banana", "peach"];</h4>
+		<input type="button" value="확인" onclick="proc2()"> <br> <br>
+		<div id="result2" class="result"></div>
+	</div>
+</body>
+</html>

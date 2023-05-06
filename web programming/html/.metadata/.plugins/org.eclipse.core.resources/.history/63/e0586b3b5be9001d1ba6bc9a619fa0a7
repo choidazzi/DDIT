@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for반복문 연습2</title>
+<link rel="stylesheet" href="../css/my.css">
+<script>
+//누적된 값 더하기 
+proc1 = () => {
+	sum = 0;
+	sustr = "";
+	while (true) {
+		//입력 vinput
+		vinput = parseInt(prompt("더하려는 숫자를 입력하세요."))
+		//입력값이 0 이면 break
+		if (vinput == 0) break;
+
+		//아니면 입력값을 더한다. (초기값에 따라 결과가 달라짐)
+		sum += vinput;
+		sustr += vinput + ",";
+	}
+	//출력내용
+	str = "입력된 값들 : " + sustr + " <br>"
+	str += "입력된 값을 숫자(덧셈)로 출력: " + sum;
+	//출력
+	document.getElementById('result1').innerHTML = str;
+}
+
+// 3의 배수일 때만 더하기 
+
+proc2 = () => {
+	iksu = "";
+	for (var i = 0; i <= 10; i++) {
+		for (var k = 0; k <= 10; k++) {
+			if ((i+k) % 3 == 0) iksu += i + ", " + k + "<br>";
+		}
+		
+	}
+}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>사용자가 입력한 값을 계속 더하고,</h3>
+		<h3>사용자가 0을 입력하면 그 때까지 누적된 값을 출력하라</h3>
+		<input type="button" value="확인" onclick="proc1()"> 
+		<br> <br>
+		<div id="result1" class="result"></div>
+	</div>
+	
+	<div class="box">
+		<h3>다중 for 을 이용 i, k 를 더한다.</h3>
+		<h3>조건 : 1 ~ 10 까지 더한 값이 3의 배수일 때만 ! && continue를 이용하기!!</h3>
+		<input type="button" value="확인" onclick="proc2()"> 
+		<br> <br>
+		<div id="result2" class="result"></div>
+	</div>
+</body>
+</html>

@@ -5,6 +5,7 @@
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="종료"/>
 			<item value="co"/>
 		</list>
 		<list key="replacehistory">

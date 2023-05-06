@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/my.css">
+<script>
+	// 함수를 만드는 방법 
+	// 방법1 
+	//function proc1() {		}
+	
+	// 방법2 
+	//var proc1 = function() {	}
+	
+	// 람다함수 - 화살표를 이용한 함수
+	proc1 = () => {
+		vtable = "<table border = '1'>"
+		for (let i = 1; i <10; i++) {
+			vtable += "<tr>";
+			for (let k = 1; k <10 ; k++) {
+				vtable += "<td>" + i * k + "</td>";
+			}
+			vtable +="</tr>";
+		}
+		
+		vtable += "</table>";
+		
+		//result1에 vtable을 출력 
+		document.getElementById('result1').innerHTML = vtable;
+	}
+	
+	proc2 = () => {
+		//객체 선언 - { }
+		myCar = {make: "BMW", model: "x5", year : "2021"};
+		
+		console.log(myCar.make, myCar.model, myCar.year);
+/* 		
+		str = "자동차 회사 : " + myCar.make + "<br>";
+		str += "자동차 모델 : " + myCar.model + "<br>";
+		str += "자동차 연식 : " + myCar.year + "<br>";
+		
+ */		
+		
+		
+		vresult = document.getElementById('result2');
+		//vresult.innerHTML = str;
+		
+		str2 = "";
+		for(let x in myCar) {
+			/*
+			str = "자동차 회사 : " + myCar[make] + "<br>";
+			str += "자동차 모델 : " + myCar[model] + "<br>";
+			str += "자동차 연식 : " + myCar[year] + "<br>";
+			*/
+			
+			str2 += myCar[x]
+		}
+		vresult.innerHTML = str2;
+		 
+		
+	}
+</script>
+<style>
+table {
+	border : 1px solid black;
+	border-collapse: collapse;
+	background: lightyellow;
+}
+td{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h3>다중 for문 이용</h3>
+		<h3>구구단 테이블 출력</h3>
+
+		<input type="button" value="확인" onclick="proc1()"> <br> <br>
+
+		<div id="result1" class="result"></div>
+	</div>
+	
+	<div class="box">
+		<h3>for ~in 이용</h3>
+		<h3>객체의 열거할 수 있는 속성 이름을 지정 변수에 대입 </h3>
+
+		<input type="button" value="확인" onclick="proc2()"> <br> <br>
+
+		<div id="result2" class="result"></div>
+	</div>
+</body>
+</html>

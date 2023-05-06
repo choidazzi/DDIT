@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Web Shopping</title>
+<link rel="stylesheet" href="css/mystyle.css">
+</head>
+<body>
+	<div id="container">
+		<header>
+			<img alt="logo" src="images/logo.png">
+			<h1><a href="main.html">WEB SHOP</a></h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">My Account</a></li>
+				<li><a href="#">Contacts</a></li>				
+			</ul>
+		</nav>
+		<div id="content">
+			<aside id="left">
+				<h3>Category</h3>
+				<ul>
+					<li><a href="book.html" target="ifr">도서</a></li>
+					<li><a href="sing.html" target="ifr">음악</a></li>
+					<li><a href="movie.html" target="ifr">영화</a></li>
+					<li><a href="digital.html" target="ifr">전자기기</a></li>
+					<li><a href="furniture.html" target="ifr">가구/인테리어</a></li>
+					<li><a href="stationary.html" target="ifr">문구</a></li>
+					<li><a href="ticket.html" target="ifr">티켓</a></li>
+				</ul>
+			</aside>
+			<section id="main">
+				<article id="article1">
+					<iframe src ="sing.html" name="ifr"></iframe>
+				</article>
+			</section>
+			<aside id="right">
+				<div id="shopcart">
+					<h4>Shopping Cart</h4>
+					<br>
+					<p>현재 쇼핑카트에 물품이 없습니다.</p>
+					<a href="shopcart.html">쇼핑카트 보기</a>
+				</div>
+				<div id="login">
+					<h4>Log In</h4>
+					<form action="#">
+					<label for="id">아이디</label> 
+					<br>
+					<input type="text" id="id" placeholder="아이디">
+					<br>
+					<label for="pass">비밀번호</label> 
+					<br>
+					<input type="text" id="pass" placeholder="비밀번호">
+					<br>
+					<input type="submit" value="로그인">
+					<input type="reset">
+					<br>
+					<a href="register.html">회원가입</a>
+					<a href="#">비밀번호 분실</a>
+					</form>	
+				</div>
+			</aside>
+		</div>
+		<footer>
+			<p>Copyright (c) 2023 Web Shop</p>
+		</footer>
+	</div>
+</body>
+</html>

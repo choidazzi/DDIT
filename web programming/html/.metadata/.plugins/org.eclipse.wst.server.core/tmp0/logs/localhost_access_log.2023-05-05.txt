@@ -1,0 +1,3 @@
+0:0:0:0:0:0:0:1 - - [05/May/2023:16:25:16 +0900] "GET /webpro/webproject/media/Champagne%20Supernova.mp3 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [05/May/2023:16:25:16 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [05/May/2023:16:25:16 +0900] "GET /webpro/webproject/media/Champagne%20Supernova.mp3 HTTP/1.1" 206 4044978

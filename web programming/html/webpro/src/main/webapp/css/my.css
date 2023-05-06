@@ -11,6 +11,7 @@ pre {
 }
 
 .box {
+	width: 50%;
 	border: 3px double #000;
 	margin: 10px;
 	padding: 20px;

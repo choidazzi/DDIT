@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/my.css">
+<script>
+proc1 = () => {
+	
+}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>리터럴 배열</h3>
+		<h3>const fruits = ["apple", "banana", "peach"]</h3>
+		<input type="button" value="확인" onclick="proc1()"> <br> <br>
+		<div id="result1" class="result"></div>
+	</div>
+</body>
+</html>

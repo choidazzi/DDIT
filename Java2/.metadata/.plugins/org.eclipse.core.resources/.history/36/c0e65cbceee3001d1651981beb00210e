@@ -1,7 +1,0 @@
-package kr.or.ddit.basic.enumTest;
-
-public class EnumTest {
-	public static void main(String[] args) {
-		System.out.println("RED" + ConstTest.RED);
-	}
-}

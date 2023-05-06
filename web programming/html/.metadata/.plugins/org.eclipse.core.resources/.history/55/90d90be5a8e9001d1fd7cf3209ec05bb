@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="box">
+		<div class="item">
+			<img alt="digital1" src="images/ticket/ticket1.jpeg">
+			<p class="title">'Beautiful Noise' 1st Concert</p>
+			<p class="person">2023.05.20 - 05.21</p>
+			<p class="person">₩ 88,000</p>
+			<input type="button" value="쇼핑카트에 추가하기">
+		</div>
+		<div class="item">
+			<img alt="digital2" src="images/ticket/ticket2.jpeg">
+			<p class="title">드림아트센터 :: 누수공사</p>
+			<p class="person">2023.04.30 - 05.14</p>
+			<p class="person">₩ 44,000</p>
+			<input type="button" value="쇼핑카트에 추가하기">
+		</div>
+		<div class="item">
+			<img alt="digital3" src="images/ticket/ticket3.jpeg">
+			<p class="title">BLÅVINGAD 블로빙아드</p>
+			<p class="person">의자</p>
+			<p class="person">₩ 227,560</p>
+			<input type="button" value="쇼핑카트에 추가하기">
+		</div>
+	</div>
+</body>
+</html>

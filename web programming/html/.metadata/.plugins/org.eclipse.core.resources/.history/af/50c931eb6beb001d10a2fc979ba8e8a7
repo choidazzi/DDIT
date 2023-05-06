@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>장바구니</title>
+<style>
+@import
+url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css')
+;
+#container{
+    width: 800px;
+	box-shadow: 1px 1px 13px #c6c9cb;
+    border-radius: 10px;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #e4e6e6;
+}
+table{
+    font-family: 'NanumSquareRound', sans-serif;
+    height: 500px;
+    border-collapse: collapse;
+    font-weight: 100;
+    border-radius: 5px;
+    border: none;
+}
+h3 {
+    margin: 80px auto ;
+    width: 190px;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: 100;
+}
+table input{
+    width:95%;
+    height: 95%;
+    font-size: 20px;
+    border: none;
+}
+th,td {
+    color: #333;
+    border: 1px solid #e4e6e6;
+    padding: 5px 5px 5px 20px;
+    width: 200px;
+    font-weight: 100;
+}
+
+#btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+#btn input{
+    width: 80px;
+    height: 25px;;
+    margin-right: 15px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+#btn input:hover{
+    color: #fff;
+    background-color: #000;
+    transition: .5s;
+}
+
+</style>
+
+</head>
+<body>
+    <form>
+        <h3>Shopping Cart</h3>
+        <div id="container">
+        <table border="1">
+            <tr>
+                <th style="border-top: none; border-left: none;">품목</th>
+                <th style="border-top: none;">가격</th>
+                <th style="border-top: none;">수량</th>
+                <th style="border-top: none; border-right: none;">합계</th>
+            </tr>
+            <tr>
+                <td style="border-left: none;">디디의 우산</td>
+                <td >₩ 13,000</td>
+                <td><input type="text" id="su0"></td>
+                <td style="border-right: none;><input type="text" id="price0"></td>
+            </tr>
+            <tr>
+                <td style="border-left: none;">BLÅSVERK 블로스베르크</td>
+                <td>₩ 49,800</td>
+                <td><input type="text" id="su1"></td>
+                <td style="border-right: none;><input type="text" id="price1"></td>
+            </tr>
+            <tr>
+                <td style="border-left: none;">iPad Pro 12</td>
+                <td>₩ 1,249,000</td>
+                <td><input type="text" id="su2"></td>
+                <td style="border-right: none;><input type="text" id="price2" ></td>
+            </tr>
+            <tr>
+                <td style="border-left: none;">헤어질 결심</td>
+                <td>₩ 15,000</td>
+                <td><input type="text" id="su3"></td>
+                <td style="border-right: none;><input type="text" id="price3"></td>
+            </tr>
+            <tr>
+                <td style="border-left: none;">[Peanuts] 스터디 플래너 가로형 (6종)</td>
+                <td>₩ 9,000</td>
+                <td><input type="text" id="su4"></td>
+                <td style="border-right: none;><input type="text" id="price4"></td>
+            </tr>
+            <tr>
+                <td style="border-left: none;">Summer - The Volunteers</td>
+                <td>₩ 27,000</td>
+                <td><input type="text" id="su5"></td>
+                <td style="border-right: none;"><input type="text" id="price5"></td>
+            </tr>
+            <tr>
+                <td style="border-bottom: none; border-left: none;">드림아트센터 :: 누수공사</td>
+                <td style="border-bottom: none;">₩ 44,000</td>
+                <td style="border-bottom: none;"><input type="text" id="su6"></td>
+                <td style="border-bottom: none; border-right: none;"><input type="text" id="price6"></td>
+            </tr>
+        </table>
+    </div>
+        <div id="btn">
+            <input type="button" value="계산" onclick="calc()">
+            <input type="button" value="구매">
+            <input type="reset">
+        </div>
+    </form>
+    <script>
+        function calc() {
+            for( i=0; i<=6; i++) {
+                cost = [13000, 49800, 1249000,15000,9000,27000,44000];
+                total = document.getElementById('price' + i);
+                su = document.getElementById('su' + i).value;
+
+                totalCost = su * cost[i];
+
+                total.value = totalCost;
+            }
+    
+        }
+      
+    
+    
+    </script>
+</body>
+</html>
