@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author ChoiSeoYeon
- *
- */
-module JavaNetworkTest {
-}

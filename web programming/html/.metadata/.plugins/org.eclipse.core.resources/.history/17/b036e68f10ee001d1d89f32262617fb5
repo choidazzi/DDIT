@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href="../css/my.css">
+</head>
+<body>
+<div class="box">
+<h3>prompt()를 이용하여 이름을 계속 입력 받아 배열에 저장하고 출력하는 프로그램을 작성하시오.</h3>
+<h3>- 입력의 마지막은 공백 문자를 입력하거나 “취소” 버튼을 눌렀을 때(null)로 한다.</h3>
+
+<input type="button" onclick="proc1()" value ="확인">
+<div id="result1" class="result"></div>
+</div>
+
+</body>
+</html>

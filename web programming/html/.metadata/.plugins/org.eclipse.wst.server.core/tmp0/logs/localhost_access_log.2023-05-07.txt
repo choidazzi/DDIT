@@ -1,0 +1,17 @@
+127.0.0.1 - - [07/May/2023:00:21:47 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/main.html HTTP/1.1" 200 2005
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/css/mystyle.css HTTP/1.1" 200 3929
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/sing.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/css/style.css HTTP/1.1" 200 1113
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/images/music/music1.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/images/music/music3.png HTTP/1.1" 200 968264
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/images/music/music2.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/media/Champagne%20Supernova.mp3 HTTP/1.1" 206 7190706
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/media/summer.mp3 HTTP/1.1" 206 4095510
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:49 +0900] "GET /webpro/webproject/media/My%20Favorite%20Part.mp3 HTTP/1.1" 206 4399366
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:50 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:54 +0900] "GET /webpro/webproject/register.html HTTP/1.1" 200 1701
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:54 +0900] "GET /webpro/webproject/css/registerstyle.css HTTP/1.1" 200 1304
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:55 +0900] "POST /webpro/webproject/js/join.jsp HTTP/1.1" 200 865
+0:0:0:0:0:0:0:1 - - [07/May/2023:00:21:58 +0900] "GET /webpro/webproject/shopcart.html HTTP/1.1" 200 4369

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script>
+	proc1 = () => {
+		//배열선언 
+		//arr = new Array();
+		let arr = [];
+		
+		while(true) {
+			//입력
+			value = prompt("이름을 입력하세요.");
+			if(value != null) leng = value.trim().length;
+			
+			//비교(if) - break; 공백이거나 null 이거나 
+			if (leng < 1 || value == null) break;
+			//if (value == " " || value == null) break;
+			//배열에 저장 - push (입력)
+			arr.push(value);
+		}
+		
+		// 배열 출력 - arr 
+		document.getElementById('result1').innerHTML = arr;
+	}
+	
+	proc2 = () => {
+		//배열선언 
+		arr = [];
+		invalue = "";
+		while(true) {
+			//입력
+			input = prompt("정수를 입력하세요.")
+			//비교 - 입력값의 위치를 배열에서 검사 - arr.indexOf(입력)
+			//-1 이면 배열에 저장 - push();
+			if (arr.indexOf(input) == -1) arr.push(input);
+			//배열의 개수가 5개인지 비교 - break
+			if (arr.length == 5) break;
+		}
+		//출력 
+		document.getElementById('result2').innerHTML = arr;
+	}
+</script>
+</head>
+<body>
+<div class="box">
+<h3>prompt()를 이용하여 이름을 계속 입력 받아 배열에 저장하고 출력하는 프로그램을 작성하시오.</h3>
+<h3>- 입력의 마지막은 공백 문자를 입력하거나 “취소” 버튼을 눌렀을 때(null)로 한다.</h3>
+
+<input type="button" onclick="proc1()" value ="확인">
+<div id="result1" class="result"></div>
+</div>
+
+<div class="box">
+<h3>서로 중복되지 않은 정수 5개를 입력 받아 출력하는 프로그램을 작성하시오</h3>
+
+<input type="button" onclick="proc2()" value ="확인">
+<div id="result2" class="result"></div>
+</div>
+
+</body>
+</html>

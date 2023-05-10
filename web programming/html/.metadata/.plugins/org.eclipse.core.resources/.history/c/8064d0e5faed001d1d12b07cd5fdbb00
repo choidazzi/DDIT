@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+const myCar = {
+   color : 'red',
+   name  : 'bmw',
+   speed : 100,
+   
+   brake : function(){
+      this.speed -= 10;
+   },
+   accel : function(){
+      this.speed += 10;
+   }
+}
+function proc1(){
+   printObj('result1')
+}
+function printObj(result){
+   
+   //출력내용
+   str = `이름 : ${myCar.name} <br>`;
+   str += `색상 : ${myCar.color} <br>`;
+   str += `속도 : ${myCar.speed} <br>`;
+   
+   document.getElementById(result).innerHTML = str;
+}
+
+function proc2(){
+   
+   //입력 - name과 color
+   myCar.name = prompt("이름입력");
+   myCar.color = prompt("색깔입력")
+   
+   //스피드를 10증가 - 메소드호출
+   myCar.accel();
+   
+   //출력
+   printObj('result2');
+}
+</script>
+</head>
+<body>
+<div class="box">
+  <h3>객체의 기본속성값을 출력</h3>
+  <input type="button" onclick="proc1()" value="확인">
+  <div id="result1" class="result"></div>
+</div>
+
+<div class="box">
+  <h3>이름과 색상을 입력, 속도를 10 증가시켜 출력</h3>
+  <input type="button" onclick="proc2()" value="확인">
+  <div id="result2" class="result"></div>
+</div>
+
+<div class="box">
+  <h3>객체의 속성과 메소드를 동적으로 추가</h3>
+  <input type="button" onclick="proc3()" value="확인">
+  <div id="result3" class="result"></div>
+</div>
+</body>
+</html>
