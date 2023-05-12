@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script>
+	proc1 = () => {
+		vprotocol =location.protocol;
+		vhostname = location.hostname;
+		vport = location.port;
+		vhost = location.host;
+		vpathname = location.pathname;
+		vhref = location.href;
+		
+		str = `protocol : ${vprotocol} <br>`;
+		str += `hostname : ${vhostname} <br>`;
+		str += `port : ${vport} <br>`;
+		str += `host : ${vhost} <br>`;
+		str += `pathname : ${vpathname} <br>`;
+		str += `href : ${vhref} <br>`;
+		
+		document.getElementById('result1').innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>location 객체</h3>
+		<h3>url의 정보를 가져오거나 설정</h3>
+
+		<input type="button" onclick="proc1()" value ="확인">
+		<div id="result1" class="result"></div>
+	</div>
+
+</body>
+</html>

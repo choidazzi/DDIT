@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script>
+	proc1 = () => {
+		setTimeout(function() {
+			// id ="result1" 으로 접근 - 검색
+			vres = document.querySelector('#result1');
+			
+			// 배경색을 변경 
+			vres.style.backgroundColor = "lightyellow";
+		}, 500);
+	}
+</script>
+
+<style>
+	#result1 {
+		background-color : steelblue;
+	}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h3>setTimeout(function(){},milliseconds)</h3>
+		<h3>지정된 milliseconds시간이 경과 할 때 마다 function을 수행 후 종료한다. </h3>
+		<h3>종료하기 위해서 clearInterval(id변수) 를 호출한다.</h3>
+		<input type="button" onclick="proc1()" value ="확인">
+		<div id="result1" class="result"></div>
+	</div>
+
+</body>
+</html>

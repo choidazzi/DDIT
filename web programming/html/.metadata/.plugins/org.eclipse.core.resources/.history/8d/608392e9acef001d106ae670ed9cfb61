@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script>
+	proc1 = () => {
+		vres = document.querySelector('#result1');
+		
+		setTimeout(function() {
+			vres.style.backgroundColor = "steelblue";
+		}, 500);
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>setTimeout함수를 호출하여 result1인 요소의 배경 요소를 변경 </h3>
+
+		<input type="button" onclick="proc1()" value ="확인">
+		<div id="result1" class="result"></div>
+	</div>
+
+</body>
+</html>

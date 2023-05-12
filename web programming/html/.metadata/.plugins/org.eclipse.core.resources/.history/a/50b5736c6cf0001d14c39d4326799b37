@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/my.css">
+<script>
+	proc1 = () => {
+		// ul 검색 
+		//검색
+   		vul = document.getElementsByTagName('ul')[0];
+   		vlist = vul.getElementsByTagName('li');
+   
+   		res = "";
+   
+   		for(i=0; i<vlist.length; i++) {
+     	 res += vlist[i].firstChild.data + "<br>"
+   }
+   
+   document.getElementById('result1').innerHTML = res;
+	}
+	
+	proc2 = () => {
+		// p 태그를 생성한다. 
+		ptag = document.createElement('p');
+		// 문자열 객체를 생성한다.
+		vtext = document.createTextNode("Hello!");
+		// p 태그에 문자열을 추가한다.
+		ptag.appendChild(vtext);
+		// p 태그를 resul2 에 추가한다. 
+		document.getElementById('result2').appendChild(ptag);
+		// str = "<p>Hello</p>";
+		// document.getElementById('result2').innerHTML = str;
+	}
+	
+	proc3 = () => {
+		// ul 검색 
+		uls = document.getElementsByTagName('ul')[2];
+		// li 검색 - 리턴 
+   		lists = uls.getElementsByTagName('li');
+		for(i=0; i<lists.length; i++) {
+		// li 문자열 가져오기
+		res = lists[i].firstChild.data;
+		// 변수 = 이미지 태그 생성 img
+		itag = document.createElement('img');
+		// 변수.src = ""
+		itag.src = 	`../images/${res}.jpg`;
+		// 변수.alt = ""
+		itag.alt = res;
+		// li에 이미지 태그를 추가한다. - appendChild 
+		
+		document.getElementById('result3').appendChild(itag);
+		}
+	}
+</script>
+<style>
+img {
+	width: 50px;
+	height: 50px;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h3></h3>
+		<ul>
+			<li>list item1</li>
+			<li>list item2</li>
+			<li>list item3</li>
+			<li>list item4</li>
+			<li>list item5</li>
+		</ul>
+		<input type="button" value="확인" onclick="proc1()">
+		<div id="result1" class="result"></div>
+	</div>
+
+	<div class="box">
+		<h3>새로운 노드 추가</h3>
+		CreateElement("태그이름")	<br>
+		CreateTextNode("문자열")	<br>
+		태그이름.appendChild(문자열변수)	<br>
+		<ul>
+			<li>list item1</li>
+			<li>list item2</li>
+			<li>list item3</li>
+			<li>list item4</li>
+			<li>list item5</li>
+		</ul>
+		<input type="button" value="확인" onclick="proc2()">
+		<div id="result2" class="result"></div>
+	</div>
+	
+	<div class="box">
+		<h3>새로운 노드 추가</h3>
+		이미지 태그 변수 = createElement("태그이름")	<br>
+		li.appendChild(이미지태그 변수)
+		<ul>
+			<li>Koala</li>
+			<li>펭귄</li>
+			<li>squarepants</li>
+			<li>딸기스무디</li>
+			<li>square</li>
+		</ul>
+		<input type="button" value="확인" onclick="proc3()">
+		<div id="result3" class="result"></div>
+	</div>
+
+</body>
+</html>

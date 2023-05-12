@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/my.css">
+<script>
+	today = new Date();
+	function proc1() {
+		 // 방법 1) myDay = new Date("1996.08.13");
+		 // 방법 2)월은 0부터 시작해서! -1 해주기 
+		myDay = new Date(1996,08-1,13);
+		 
+		 //getTime() 을 이용해서 millisec 값 구하기 
+		 toTime = today.getTime();
+		 myTime = myDay.getTime();
+		 
+		 console.log(toTime, myTime);
+		 
+		 times = toTime - myTime;
+		 
+		 years = times / 1000 / 60 / 60 / 24 / 365;
+		 years = parseInt(years);
+		 
+		 str = `오늘 : ${today.toLocaleString()} <br>`;
+		 str += `나의 생일 ${myDay.toLocaleString()} <br>`;
+		 str += `지금까지 ${years} 년 째 살고 있습니다. <br>`;
+		 
+		 document.getElementById('result1').innerHTML = str;
+	}
+	
+	proc2 = () => {
+		//현재 날짜의 millisec 값 구하기 
+		toTime = today.getTime();
+		
+		//500일에 대한 millosec 값 구하기.
+		after500 = 500 * 1000 * 60 * 60 * 24;
+		console.log(toTime, after500);
+		
+		times = toTime + after500;
+		day500 = new Date(times);
+		
+		str = `오늘 : ${today.toLocaleString()} <br>`;
+		str += `500일 후: ${day500.toLocaleString()} <br>`;
+		
+		document.getElementById('result2').innerHTML = str;
+	}
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h3>태어난 날로부터 현재까지의 날 수 구하기</h3>
+
+		<input type="button" onclick="proc1()" value="확인">
+		<div id="result1" class="result"></div>
+	</div>
+
+	<div class="box">
+		<h3>현재로부터 500일 후의 날짜 구하기</h3>
+
+		<input type="button" onclick="proc2()" value="확인">
+		<div id="result2" class="result"></div>
+	</div>
+
+	<div class="box">
+		<h3>구입날짜를 선택하여 7일이 경과했는지 비교</h3>
+		<h3> 7일을 기준으로 교환 / 환불 가능 / 불가능</h3>
+		
+		구입 날짜 선택 : <input type="date" id="sell">
+		<input type="button" onclick="proc3()" value="확인">
+		<div id="result3" class="result"></div>
+	</div>
+
+</body>
+</html>

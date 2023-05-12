@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String 객체</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script>
+		vstr = "대한민국 우리나라 좋은나라 대한민국";
+	// substring
+	proc1 = () => {
+		// 한민국(공백)
+		sub = vstr.substring(1,5);
+		res = "vstr.substring(1,5)";
+		printStr('result1');
+	}
+	// slice
+	proc2 = () => {
+		sub = vstr.slice(5,9);
+		res = "vstr.slice(5,9)";
+		
+		printStr('result1');
+	}
+	// substr
+	proc3 = () => {
+		sub = vstr.substr(5,4);
+		res = "vstr.substr(5,4)";
+		
+		printStr('result1');
+	}
+	
+	//split
+	proc4 = () => {
+		sub = vstr.split(" ");
+		res = "vstr.split(\" \")";
+		
+		printStr('result4');
+	}
+	//지역변수일 때
+	//function printStr(sub,res,result) {...}
+	function printStr(result) {
+		str = `문자열 : ${vstr} <br>`;
+		str += `${res} : ${sub} <br>`;
+
+		document.getElementById(result).innerHTML = str;
+	}
+	
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>문자열 추출 및 자르기</h3>
+
+		<input type="button" value="substring" onclick="proc1()" >
+		<input type="button" value="slice" onclick="proc2()">
+		<input type="button" value="substr" onclick="proc3()">
+
+		<div id="result1" class="result"></div>
+	</div>
+
+	<div class="box">
+		<h3>문자열 분리 후 배열로 전환</h3>
+
+		<input type="button" value="split" onclick="proc4()">
+
+
+		<div id="result4" class="result"></div>
+	</div>
+
+</body>
+</html>

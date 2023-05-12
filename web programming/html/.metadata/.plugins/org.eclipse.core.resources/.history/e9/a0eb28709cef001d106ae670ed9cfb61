@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Window 객체</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script>
+	proc1 = () => {
+		window.open("랜덤객체.html");
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>새 창 열기 : window.open(url, name 또는 target, spec)</h3>
+
+		<input type="button" onclick="proc1()" value ="확인">
+		<div id="result1" class="result"></div>
+	</div>
+
+</body>
+</html>

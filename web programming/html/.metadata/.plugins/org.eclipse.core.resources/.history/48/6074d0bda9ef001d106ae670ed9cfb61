@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+
+<script>
+proc1 = () => {
+   
+   setTimeout( () => { 
+      //result1으로 접근검색
+      vres = document.querySelector('#result1');
+      
+      //배경색을 변경
+      vres.style.backgroundColor = "pink";
+      
+   }, 500);
+}
+
+proc2 = () => {
+   
+   
+   
+   vid = setInterval(() => {
+      vres = document.querySelector('#result2');
+      
+      cr = parseInt(Math.random() * 256);
+      cg = parseInt(Math.random() * 256);
+      cb = parseInt(Math.random() * 256);
+      
+      vres.style.backgroundColor = `rgb(${cr},${cg},${cb})`;
+      
+      console.log(vid);
+      
+   }, 500);
+}
+
+stop = () => {
+   // 종료 버튼 클릭 시 싱행되는 함수 
+   // 확인 버튼을 다시 나타나도록 설정 
+   clearInterval(vid);
+}
+
+</script>
+
+<style>
+#result1{
+  background-color : yellow;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h3>setTimeout(function(){ }, milliesec)</h3>
+  <h3>지정된 milliesec시간이 경과후에 function을 수행후 종료한다</h3>
+  
+  <input type="button" value="확인" onclick="proc1()">
+  <div id="result1" class="result"></div>
+  
+<div class="box">
+  <h3>setInterval(function(){ }, milliesec)</h3>
+  <h3>지정된 milliesec시간이 경과할때마다 반복적으로 function을 수행한다</h3>
+  <h3>종료하기 위해서 clearInterval(id변수) 를 호출한다 </h3>
+  <input type="button" id="start" value="확인" onclick="proc2()">
+  <input type="button" id="stop" value="종료" onclick="stop()">
+  <div id="result2" class="result"></div>
+  
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/my.css">
+<style type="text/css">
+#result1 {
+	background-color: steelblue;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h2>
+			setTimeout(function(){}, millisec)<br>지정된 밀리초 경과 후 function()을
+			실행한다
+		</h2>
+		<input type="button" onclick="proc1()" value="확인">
+		<div id="result1" class="result"></div>
+	</div>
+	<div class="box">
+		<h2>
+			setInterval(function(){}, millisec)<br>지정된 밀리초 경과할 때마다
+			function()을 실행한다<br>function()을 종료하려면 clearInterval(id변수)를 호출한다
+		</h2>
+		<input type="button" onclick="proc2()" value="확인">
+		<div id="result2" class="result"></div>
+		<input type="button" value="종료" onclick="stop()">
+	</div>
+
+	<script type="text/javascript">
+		proc1 = () => {
+			setTimeout(() => {
+				// result1로 접근검색
+				vres = document.querySelector("#result1");
+				vres.style.backgroundColor = "lightyellow";
+			}, 500);
+		}
+		
+		proc2 = () => {
+			vid = setInterval(() => {
+				vres = document.querySelector('#result2');
+				
+				cr = parseInt(Math.random()*256);
+				cg = parseInt(Math.random()*256);
+				cb = parseInt(Math.random()*256);
+				
+				vres.style.backgroundColor = `rgb(${cr},${cg},${cb})`;
+				
+				console.log(vid);
+				
+			}, 500);	
+		}
+		
+		stop = () => {
+			clearInterval(vid);
+		}
+	</script>
+</body>
+</html>

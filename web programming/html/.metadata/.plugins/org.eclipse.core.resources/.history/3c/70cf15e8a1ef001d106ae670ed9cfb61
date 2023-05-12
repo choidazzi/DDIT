@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script>
+
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>setTimeout(function(){},millisec)</h3>
+		<h3>지정된 millisec시간이 경과 할 때 마 function을 수행 후 종료한다. </h3>
+		<input type="button" onclick="proc1()" value ="확인">
+		<div id="result1" class="result"></div>
+	</div>
+
+</body>
+</html>

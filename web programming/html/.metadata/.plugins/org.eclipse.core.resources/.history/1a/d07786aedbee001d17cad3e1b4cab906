@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String 객체</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script>
+		vstr = "대한민국 우리나라 좋은나라 대한민국";
+	// substring
+	proc1 = () => {
+		// 한민국(공백)
+		sub = vstr.substring(1,5);
+		res = "vstr.substring(1,5)";
+		printStr('result1');
+	}
+	// slice
+	proc2 = () => {
+		sub = vstr.slice(5,9);
+		res = "vstr.slice(5,9)";
+		
+		printStr('result1');
+	}
+	// substr
+	proc3 = () => {
+		sub = vstr.substr(5,4);	//"우리나라" 문자열 
+		res = "vstr.substr(5,4)";
+		
+		printStr('result1');
+	}
+	
+	//split
+	proc4 = () => {
+		sub = vstr.split(" ");
+		res = "vstr.split(\" \")";
+		
+		printStr('result4');
+	}
+	
+	//replace 
+	proc5 = () => {
+		/* 
+		// 공백 => 공백 없이 
+		sub = vstr.replaceAll(" ", "");
+		res = 'vstr.replaceAll(" ", "")';
+		 */
+		 
+		// textarea에 입력한 값을 가져온다. - id="area"인 요소에 접근, 검색 - 값을 얻는다.
+		tValue = document.getElementById('area').value;
+		// 엔터기호를 br태그로 변경 
+		tValue.replacaAll(/\r\n/g,"<br>")
+		// id="result5" 에 출력 
+		document.getElementById('result5').innerHTML = tValu3;
+	}
+	//지역변수일 때
+	//function printStr(sub,res,result) {...}
+	function printStr(result) {
+		str = `문자열 : ${vstr} <br>`;
+		str += `${res} : ${sub} <br>`;
+
+		document.getElementById(result).innerHTML = str;
+	}
+	
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>문자열 추출 및 자르기</h3>
+
+		<input type="button" value="substring" onclick="proc1()" >
+		<input type="button" value="slice" onclick="proc2()">
+		<input type="button" value="substr" onclick="proc3()">
+
+		<div id="result1" class="result"></div>
+	</div>
+
+	<div class="box">
+		<h3>문자열 분리 후 배열로 전환</h3>
+
+		<input type="button" value="split" onclick="proc4()">
+		<div id="result4" class="result"></div>
+	</div>
+
+	<div class="box">
+		<h3>문자열 변경 - textarea 에 입력한 엔터기호를 &lt;br>로 바꿔 div로 출력</h3>
+		<textarea rows="" cols="" id="area"></textarea>
+		<br>
+		<input type="button" value="replace" onclick="proc5()">
+		<div id="result5" class="result"></div>
+	</div>
+
+</body>
+</html>
