@@ -1,6 +1,7 @@
 package kr.or.ddit.mvc.service;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.or.ddit.mvc.vo.MemberVO;
 
@@ -38,6 +39,7 @@ public interface IMemberService {
 	 * @return 작업 성공: 1 / 작업 실패: 0
 	 */
 	public int updateMember(MemberVO memVO);
+	public int updateMember2(Map<String, String> paramMap);
 	
 	/**
 	 * DB의 전체 회원 정보를 가져와서 List에 담아 반환하는 메서드 

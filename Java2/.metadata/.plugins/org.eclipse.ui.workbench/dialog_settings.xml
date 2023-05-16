@@ -7,6 +7,7 @@
 			<item value="org.eclipse.jdt.ui.java"/>
 			<item value="org.eclipse.oomph"/>
 			<item value="org.eclipse.pde.PDE"/>
+			<item value="org.eclipse.wst.web.ui"/>
 			<item value="org.eclipse.jst.ws.ui.new"/>
 		</list>
 	</section>
