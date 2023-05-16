@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<h3>내용 가져오기</h3>
+		<h3>$('body').html()</h3>
+		<h3>$('body').text()</h3>
+
+		<input type="button" value ="html( )" id="btn1">
+		<input type="button" value ="text( )" id="btn2">
+		<div id="result1" class="result">result1</div>
+	</div>
+
+	<div class="box">
+		<h3>내용 가져오기</h3>
+		<h3>$('p').html()</h3>
+		<h3>$('p').text()</h3>
+
+		<input type="button" value ="html( )" id="btn3">
+		<input type="button" value ="text( )" id="btn4">
+		<div id="result2" class="result">result2</div>
+		<p><span>무궁화1</span></p>
+		<p><span>무궁화2</span></p>
+	</div>
+
+<script>
+	$('#btn1').on('click',function() {
+		// body 태그의 모든 html 태그를 포함한 문장
+		alert($('body').html());
+	})
+
+	$('#btn2').on('click',function() {
+		// body 태그의 모든 문자 
+		alert($('body').text());
+	})
+	
+	$('#btn3').on('click',function() {
+		// body 태그의 모든 문자 
+		//alert($('p').html());
+		str =""
+		$('p').each(function(i){ // i 사용 안하면 안써도 된다.
+						// function(i, k) {str += $(k).html + "\n"}
+						// k : p의 i 번 째 
+			str += i + " : " + $(this).html() + "\n"; 
+		})
+		alert(str);
+	})
+	
+	$('#btn4').on('click',function() {
+		// body 태그의 모든 문자 
+		alert($('p').text());
+	})
+</script>
+</body>
+</html>

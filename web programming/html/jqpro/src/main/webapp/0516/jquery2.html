@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery2</title>
+<link rel ="stylesheet" href="../css/my.css">
+<!-- CDN 방식 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<!-- 
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script>
+	// head안에 쓰려면 window.onload = function(){...}
+	// window.onload와 같다
+	$(document).ready(function() {
+		//document.getElementById('result1').style.background = 'pink'
+		$('#result1').css('background','steelblue');
+		$('#btn1').on('click',function() {
+			$('#result2').css('background','Aquamarine');
+		})
+	})
+</script>
+-->
+</head>
+<body>
+	<div class="box">
+		<h3>버튼 없이 실행 즉시 실행 
+		<br>- window.onload=function(){}
+		<br>- $(document).ready(function(){}) 
+		<br>- body 태그 아래 </h3>
+		<div id="result1" class="result"></div>
+	</div>
+
+	<div class="box">
+		<h3>onclick이벤트를 JQuery에서 실행한다.</h3>
+		
+		<input type="button" id="btn1" value="확인">
+		<div id="result2" class="result"></div>
+	</div>
+	<div class="box">
+		<h3>onclick이벤트를 JQuery에서 실행한다.</h3>
+		
+		<input type="button" id="btn3" value="확인">
+		<div id="result3" class="result">
+			<h3>무궁화 꽃이 피었습니다</h3>
+			<h3>능소화 꽃이 피었습니다</h3>
+			<h3>장미 꽃이 피었습니다</h3>
+			<h3>라일락 꽃이 피었습니다</h3>
+			<h3>개나리 꽃이 피었습니다</h3>
+		</div>
+	</div>
+<script>
+	$('#result1').css('background','green');
+	$('#btn1').on('click',function() {
+		$('#result2').css('background','Aquamarine');
+	})
+	$('#btn3').on('click',function() {
+		/* 
+		// result3 안의 h3 검색 
+		vres3 = document.getElementById('result3');
+		vh3 = vres3.getElementsByTagName('h3');
+		for(i=0; i<vh3.length; i++){
+			vh3[i].style.color = "green"
+		}
+		
+		vh[2].style.color = "tomato";
+		 */
+		$('#result3 h3').css('color','green');
+		 // eq() : element queue
+		$('#result3 h3').eq(2).css('color','tomato');
+	})
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

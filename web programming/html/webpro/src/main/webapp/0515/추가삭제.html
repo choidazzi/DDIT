@@ -3,28 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel ="stylesheet" href="../css/my.css">
+<link rel="stylesheet" href="../css/my.css">
 <script>
-	arr = ["Hello!", "Happy!", "즐거운 주말!", "맛있는 점심!", "Java Script"];
+	arr = ["hello","Happy","즐거운 주말","맛있는 점심", "javascript"]
 	
 	proc1 = () => {
-		
+	   // 랜덤발생
+	   ran = parseInt(Math.random() * arr.length);
+	   // arr[랜덤]문자열로 text객체 생성 - createTextNode()
+	   text = document.createTextNode(arr[ran]);
+	   // p태그 객체 생성 - document.createElement('p')
+	   ptag = document.createElement('p');
+	   // p객체에 text객체를 추가 - appendChild()를 이용
+	   ptag.appendChild(text);
+	   // result1에 p객체를 추가
+	   //document.getElementById('result1').appendChild(ptag);
+	   vres = document.getElementById('result1');
+	   vres.appendChild(ptag);
+	}
+	
+	proc2 = () => {
+
+	   vchild = vres.lastChild;
+	   vres.removeChild(vchild);
+		}
+	
+	proc3 = () => {
+	   ran = parseInt(Math.random() * arr.length);
+	   text = document.createTextNode(arr[ran]);
+	   ptag = document.createElement('p');
+	   ptag.appendChild(text);
+	   
+	   // button 객체를 생성
+	   vbtn = document.createElement('input');
+	   vbtn.type = "button";
+	   // vbtn.innerHTML = "삭제" 	<-- <button> 태그로 했을 때
+	   vbtn.value = "삭제";   //      	<-- <input> 태그로 했을 때
+	   vbtn.onclick = function(){     	 
+		// this 쓸 때는 function(일반 함수)로 함수 호출. 람다 형식 안 됨.
+	    // 람다에서의 this는 함수 자체를 의미하기 때문
+	  	 this.parentNode.remove();
+		}
+	   // p객체에 button객체를 추가
+	   ptag.appendChild(vbtn);
+	   // p객체를 result3에 추가
+	   vres = document.querySelector('#result3');
+	   vres.appendChild(ptag);
+	} 
+	
+	vimg = null;
+	proc4 = (target) => {
+	   // target --> proc4(this) 호출시 this파라미터를 받은 지역변수, 클릭한 버튼
+	   target.style.display = "none";
+	   
+	   // target변수를 전역변수에 다시 대입
+	   gtarget = target;
+	   
+	   vres4 = document.getElementById('result4');
+	   if (vimg != null) {
+		vimg[rnd].style.border = "none";
+	}
+	   // 1초마다 한번씩
+	   aid = setInterval(function(){
+	      // 첫번째 이미지를 선택
+	      fimg = vres4.firstChild
+	      // result4 맨 마지막으로 이동
+	      vres4.appendChild(fimg);
+	   }, 500);
+	}
+	
+	/*
+	proc4Id = () => {
+	   // id를 이용해서 버튼에 접근 검색
+	}
+	*/
+	
+	proc5 = () => {
+	   // 종료 버튼 클릭
+	   // 시작버튼을 다시 나타나게 설정 - 전역변수를 이용하여
+	   gtarget.style.display = "inline"
+	   
+	   clearInterval(aid);
+	   
+	   //당첨항목을 설정
+	   vimg = vres4.querySelectorAll('img')
+	   rnd = parseInt(Math.random()*vimg.length);
+	   vimg[rnd].style.border = "5px double gold";
 	}
 
-	proc2 = () => {
-		
-	}
 </script>
+<style>
+img {
+	height: 100px;
+	width: 100px;
+}
+</style>
 </head>
 <body>
 	<div class="box">
-		<h3>추가 버튼 클릭 시 랜덤으로 문자열 추가</h3>
-		<h3>삭제 버튼 클릭 시 차례로(위 / 아래) 문자열 삭제</h3>
+		<h3>추가버튼 클릭시 랜덤으로 문자열추가</h3>
+		<h3>삭제버튼 클릭시 아래에서부터(위에서부터) 차례대로 삭제</h3>
 
-		<input type="button" value ="추가" onclick="proc1()">
-		<input type="button" value ="삭제" onclick="proc2()">
+		<input type="button" value="추가" onclick="proc1()"> <input
+			type="button" value="삭제" onclick="proc2()">
 		<div id="result1" class="result"></div>
 	</div>
 
+	<div class="box">
+		<h3>추가버튼 클릭시 랜덤으로 문자열추가, 삭제버튼 추가</h3>
+		<h3>삭제버튼 클릭시 해당 p태그를 삭제</h3>
+
+		<input type="button" value="추가" onclick="proc3()">
+		<div id="result3" class="result"></div>
+	</div>
+
+	<div class="box">
+		<h3>시작버튼 클릭하면 첫 번째 이미지를 result4의 맨뒤로 추가한다</h3>
+		<h3>첫번째 이미지가 뒤로 추가될 때 첫번째 이미지는 삭제된다 - 이동의 의미</h3>
+		<h3>1초마다 반복적으로 실행한다</h3>
+		<h3>시작버튼은 클릭하면 감췄다가 종료 버튼 클릭 시 다시 표시된다</h3>
+
+		<input type="button" value="시작" onclick="proc4(this)">
+		<!--    <input type="button" value="시작" id="start" onclick="proc4Id()">    -->
+		<input type="button" value="종료" onclick="proc5(this)">
+		<div id="result4" class="result">
+			<img src="../images/가구2.jpg" alt="가구2.jpg"> <img
+				src="../images/국화.jpg" alt="국화.jpg"> <img
+				src="../images/딸기스무디.jpg" alt="딸기스무디.jpg"> <img
+				src="../images/Koala.jpg" alt="Koala.jpg"> <img
+				src="../images/spongebob.png" alt="spongebob.png">
+		</div>
+	</div>
 </body>
 </html>

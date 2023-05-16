@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>click hide</title>
+<link rel ="stylesheet" href="../css/my.css">
+<style>
+.box .result {
+	font-size : 0.8rem;
+}
+</style>
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<h3>h1의 클릭 이벤트</h3>
+		&lt;h1>클릭하면 사라집니다1&lt;`/h1>
+		<div id="result1" class="result">
+			<h1 onclick="proc1(this)">클릭하면 사라집니다1</h1>
+			<h1 onclick="proc1(this)">클릭하면 사라집니다2</h1>
+			<h1 onclick="proc1(this)">클릭하면 사라집니다3</h1>
+			<h1 onclick="proc1(this)">클릭하면 사라집니다4</h1>
+			<h1 onclick="proc1(this)">클릭하면 사라집니다5</h1>
+			<h1 onclick="proc1(this)">클릭하면 사라집니다6</h1>
+			<h1 onclick="proc1(this)">클릭하면 사라집니다7</h1>
+			<h1 onclick="proc1(this)">클릭하면 사라집니다8</h1>
+			<h1 onclick="proc1(this)">클릭하면 사라집니다9</h1>
+			<h1 onclick="proc1(this)">클릭하면 사라집니다10</h1>
+		</div>
+	</div>
+
+	<div class="box">
+		<h3>h1의 클릭 이벤트 <br>
+		script에서 일괄 이벤트 등록</h3>
+		.addEventListener('click', 함수이름)
+		
+		<div id="result2" class="result">
+			<h1>클릭하면 사라집니다1</h1>
+			<h1>클릭하면 사라집니다2</h1>
+			<h1>클릭하면 사라집니다3</h1>
+			<h1>클릭하면 사라집니다4</h1>
+			<h1>클릭하면 사라집니다5</h1>
+			<h1>클릭하면 사라집니다6</h1>
+			<h1>클릭하면 사라집니다7</h1>
+			<h1>클릭하면 사라집니다8</h1>
+			<h1>클릭하면 사라집니다9</h1>
+			<h1>클릭하면 사라집니다10</h1>
+		</div>
+	</div>
+
+	<div class="box">
+		<h3>h1의 클릭 이벤트 <br>
+		script에서 jQuery방식으로 이벤트 설정</h3>
+		$('h1').on('click',function(){})
+		
+		<div id="result3" class="result">
+			<h1>클릭하면 사라집니다1</h1>
+			<h1>클릭하면 사라집니다2</h1>
+			<h1>클릭하면 사라집니다3</h1>
+			<h1>클릭하면 사라집니다4</h1>
+			<h1>클릭하면 사라집니다5</h1>
+			<h1>클릭하면 사라집니다6</h1>
+			<h1>클릭하면 사라집니다7</h1>
+			<h1>클릭하면 사라집니다8</h1>
+			<h1>클릭하면 사라집니다9</h1>
+			<h1>클릭하면 사라집니다10</h1>
+		</div>
+	</div>
+
+<script>
+	// result1
+	
+	proc1 = (target) => {
+		// target : 클릭한 h1객체 this를 parameter로 받은 지역변수 
+		target.style.display = 'none';
+	}
+	
+	// result2
+	
+	// vh1 =document.getElementById('result2').getElementsByTagName('h1');
+	vres2 = document.getElementById('result2');
+	vh1 = vres2.getElementsByTagName('h1');		// 배열 
+	for(i = 0; i <vh1.length; i++) {
+		vh1[i].addEventListener('click',proc2);
+	}
+	// 람다 X (this 써야 해서 )
+	function proc2() {
+		this.style.display = 'none';
+	}
+	
+	//result3의 h1을 클릭하면 - jQuery
+	
+	$('#result3 h1').on('click', function() {
+		// this.style.display = 'none'; - this: (DOM 객체 변수) script 방식 (jQuery에서 사용 불가)
+		// this	=>	$(this)
+		//$(this).css('display','none');
+		$(this).hide();
+	})
+</script>
+</body>
+</html>

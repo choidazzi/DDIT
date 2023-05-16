@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>새로운 요소 생성</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+img {
+	width: 100px;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h3>
+		새로운 요소를 생성 <br>
+		ptag = $('&lt;p id = "p1" onclick="proc1()"> Hello jQuery'&lt;/p>'); <br>
+		$('#result1').append(ptag);
+		</h3>
+
+		<input type="button" value ="확인" id="btn1">
+		<div id="result1" class="result">
+		
+		</div>
+	
+	</div>
+	
+	<div class="box">
+		<h3>
+		새로운 요소를 생성 <br>
+		ptag = $('&lt;p &lt;/p>' , {속성들 또는 이벤트}); <br>
+		$('#result2').append(ptag);
+		</h3>
+
+		<input type="button" value ="확인" id="btn2">
+		<div id="result2" class="result">
+		
+		</div>
+	</div>
+	<div class="box">
+		<h3>
+		새로운 요소를 생성 <br>
+		ptag = $('&lt;p &lt;/p>' , {속성들 또는 이벤트}); <br>
+		$('#result2').append(ptag);
+		</h3>
+
+		<input type="button" value ="확인" id="btn3">
+		<div id="result3" class="result">
+		
+		</div>
+	</div>
+<script>
+	$('#btn1').on('click', function() {
+	/* 
+		ptag = document.createElement('p');
+		text = document.createTextNode('Hello jQuery');
+		
+		ptag.appendChild(text);
+		ptag.id = "p1";
+		ptag.onclick = function() {
+			alert("환영합니다! ^__^");
+		}
+		
+		document.getElementById('result1').appendChild(ptag);
+	 */
+		ptag = $('<p id = "p1" onclick="proc1()"> Hello jQuery</p>');
+		//ptag.appendTo($('#result1'));
+		$('#result1').append(ptag);
+	})
+	
+	$('#btn2').on('click', function() {
+		ptag = $('<p></p>', {
+				'id' : 'p1',
+				'text' : 'Hello jQuery',
+				// 'click' : 'proc1'
+				// 'onclick' : 'proc1()'
+				'click' : function() {
+					alert("환영합니다! ^__^");
+				}
+		})
+	ptag.appendTo($('#result2'));
+	//$('#result2').append(ptag);
+	})
+	
+	$('#btn3').on('click', function() {
+		arr = ["heart1.png","heart2.png","spongebob.png","square.jpg",
+					"squarepants.jpg","Squidward.png"];
+		rnd = parseInt(Math.random() * arr.length);
+		
+		// 새로운 이미지 태그를 생성
+		vimg = $('<img src="" alt="" onclick="">');
+		vimg = $('<img>',{
+			'src' : '../images/' + arr[rnd],
+			'alt' : arr[rnd],
+			'click' : function() {
+				$(this).css('border','3px double tomato');
+			}			
+		});
+		
+		$('#result3').append(vimg);
+	})
+
+	function proc1() {
+		alert("환영합니다! ^__^");
+	}
+</script>
+</body>
+</html>

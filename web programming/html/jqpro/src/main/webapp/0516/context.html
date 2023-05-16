@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script>
+	$(function(){
+		// id="btn1"인 요소를 검색 - 이벤트 
+		$('#btn1').on('click', () => {
+			// p태그를 선택 
+			$('p').css('color', 'green');
+		})
+		
+		// class가 result인 요소를 선택 - 클릭이벤트 
+		// this를 쓸 때에는 람다 함수 사용 불가 
+		$('.result').on('click',function(){
+			// 클릭한 result 요소 내부에 있는 p태그를 선택
+			// this는 클릭한 '.result' 요소 div는 p태그의 부모 요소 
+			cr = parseInt(Math.random()*256);
+			cg = parseInt(Math.random()*256);
+			cb = parseInt(Math.random()*256);
+			
+			$('p', this).css('color',`rgb(${cr},${cg},${cb})`);
+		})
+		
+		$('p', document.forms[0]).css('font-size','2.0em')
+	})
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3></h3>
+		<p>무궁화 꽃이 피었습니다</p>
+		<input type="button" value ="확인" id="btn1">
+		
+		<div id="result1" class="result">
+			<p>무궁화 꽃이 피었습니다</p>
+		</div>
+		
+		<div id="result2" class="result">
+			<p>무궁화 꽃이 피었습니다</p>
+		</div>
+		<!-- forms[0] -->
+		<form>
+			<p>무궁화 꽃이 피었습니다</p>
+		</form>
+	
+		<!-- forms[1] -->
+		<form>
+			<p>무궁화 꽃이 피었습니다</p>
+		</form>
+	</div>
+
+</body>
+</html>

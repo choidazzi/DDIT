@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 import kr.or.ddit.util.DBUtil;
+import kr.or.ddit.util.DBUtil2;
+import kr.or.ddit.util.DBUtil3;
 
 /*
  * 회원을 관리하는 프로그램을 작성하시오 (MYMEMBER 테이블 이용)
@@ -59,13 +61,106 @@ public class JDBCTest06 {
 			case 2: delete(); break;
 			case 3: update(); break;
 			case 4: select(); break;
+			case 5: updateMember(); break;
 			case 0: System.out.println("프로그램 종료"); return;
 			default: System.out.println("번호를 다시 입력하세요."); break;
 			}
 		}
 	}
 	
-	
+	// 선생님이랑 함
+	private void updateMember() {
+		System.out.println();
+		System.out.println("수정할 회원 정보를 입력하세요...");
+		System.out.print("회원 ID >>");
+		String memId = scan.next();
+		
+		int count = getMemberCount(memId);
+		
+		if (count == 0) {// 회원이 없을 때...
+			System.out.println(memId + "은(는) 존재하지 않는 회원 ID 입니다.");
+			System.out.println("수정 작업을 종료합니다.");
+			return;
+		}
+		int num;								//수정을 원하는 항목의 선택 번호가 저장될 변
+		String updateField = null;		// 수정할 컬럼명이 저장될 변수  
+		String updateTitle = null;		// 입력할 때 보여줄 제목 
+		
+		do {
+			System.out.println();
+			System.out.println("수정할 항목을 선택하세요.");
+			System.out.println("1. 비밀번호 		2. 회원이름 		3. 전화번호 		4. 회원주소 ");
+			System.out.println("========================================");
+			System.out.print("수정 항목 선택 >>");
+			num = scan.nextInt();
+			
+			switch (num) {
+			case 1: updateField = "mem_pass"; updateTitle = "비밀번호"; break;
+			case 2: updateField = "mem_name"; updateTitle = "회원이름"; break;
+			case 3: updateField = "mem_tel"; updateTitle = "전화번호"; break;
+			case 4: updateField = "mem_addr"; updateTitle = "회원주소"; break;
+			default: System.out.println("수정할 항목을 잘못 선택했습니다. 다시 선택하세요...");
+				
+			}
+		} while (num < 1 || num > 4);
+		scan.nextLine(); // 입력 버퍼 비우기 
+		System.out.println();
+		System.out.println("수정할" + updateTitle + ">>");
+		String updateData = scan.nextLine();	// 수정할 데이터 입력 
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBUtil.getConnection();
+			
+			String sql = "update mymember set "+ updateField +" =? where mem_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, updateData);
+			pstmt.setString(2, memId);
+			int cnt = pstmt.executeUpdate();
+			
+			if (cnt > 0) {
+				System.out.println(memId + "의 정보 수정이 완료되었습니다.");
+			} else {
+				System.out.println(memId + "의 정보 수정을 실패했습니다.");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (pstmt != null) try {pstmt.close();} catch (SQLException e) {}
+			if (conn != null) try {conn.close();} catch (SQLException e) {}
+		}
+	}
+	// 회원 ID를 매개변수로 받아서 해당 회원의 개수를 반환하는 메서드 
+		private int getMemberCount(String memId) {
+			// 반환값이 저장될 변수 
+			int count = 0;
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			
+			try {
+				conn = DBUtil.getConnection();
+				
+				String sql = "select count(*) cnt from mymember where mem_id = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, memId);		// 위의 매개변수 
+				
+				rs = pstmt.executeQuery();
+				
+				if (rs.next()) {
+					count = rs.getInt("cnt");
+				}
+				
+			} catch (SQLException e) {
+				e.getStackTrace();
+			} finally {
+				if (rs != null) try {rs.close();} catch (SQLException e) {}
+				if (conn != null) try {conn.close();} catch (SQLException e) {}
+				if (pstmt != null) try {pstmt.close();} catch (SQLException e) {}
+			}
+			return count;
+		}
 	private void insert() {
 		conn = DBUtil.getConnection();
 
@@ -234,7 +329,7 @@ public class JDBCTest06 {
 
 	// 전체 정보 출력 
 	private void select() {
-		conn = DBUtil.getConnection();
+		conn = DBUtil3.getConnection();
 		
 		try {
 			String sql = "select * from mymember";
@@ -268,6 +363,7 @@ public class JDBCTest06 {
 		System.out.println("2. 자료 삭제");
 		System.out.println("3. 자료 수정");
 		System.out.println("4. 전체 자료 출력");
+		System.out.println("5. 자료 수정2");
 		System.out.println("0. 작업 끝");
 		System.out.println("------------------------------");
 		

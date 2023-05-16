@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<h3>선택자 연습</h3>
+
+		<input type="button" value ="확인" id="btn1">
+		<div id="result1" class="result">
+			<h1> 제목입니다 </h1>
+			<h2 id="para"> 작은 제목입니다 </h2>
+			<h2 class="sample"> 샘플입니다 </h2>
+		</div>
+	</div>
+
+<script>
+	$('#btn1').on('click', function() {
+		$('#result1').css('background','lightyellow')
+		$('#result1 h1').css('color','tomato');
+		$('#para').css('color','green');
+		$('.sample').css('color','steelblue');
+	})
+</script>
+</body>
+</html>
