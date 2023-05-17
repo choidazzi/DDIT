@@ -1,8 +1,7 @@
 package kr.or.ddit.board.controller;
 
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 import kr.or.ddit.board.service.BoardService;
@@ -26,8 +25,7 @@ public class BoardController {
 	public int displayMenu() {
 		System.out.println();
 		System.out.println("----------------------------------------------------------");
-		System.out.printf("  "
-				+ "%-5s%-20s%-20s%-10s","No","Title","Writer","Hits");
+		System.out.printf("  %-5s%-20s%-20s%-10s","No","Title","Writer","Hits");
 		System.out.println();
 		System.out.println("----------------------------------------------------------");
 		List<BoardVO> boardList = service.getAllBoard();
@@ -193,12 +191,11 @@ public class BoardController {
 		System.out.println("    Search Start! ^___^");
 		System.out.println("----------------------------------------------------------");
 		System.out.print("Search Title>>");
-		scan.nextLine();//버퍼 비우기 
+		scan.nextLine();//버퍼 비우기 ::
 		String title = scan.nextLine();
 		
 		System.out.println("----------------------------------------------------------");
-		System.out.printf("  "
-				+ "%-5s%-20s%-20s%-10s","No","Title","Writer","Hits");
+		System.out.printf("%-5s%-20s%-20s%-10s","No","Title","Writer","Hits");
 		System.out.println();
 		System.out.println("----------------------------------------------------------");
 		

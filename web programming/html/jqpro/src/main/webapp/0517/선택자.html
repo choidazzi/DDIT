@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+.box .result {
+	font-size: 0.8rem;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h3>예제 선택자 - 후손, 자식</h3>
+		<p>후손 : h2 a</p>
+		<p>자식 : h2 > a</p>
+
+		<input type="button" value ="확인" id="btn1">
+		<div id="result1" class="result">
+			<h2> 
+				문단 안에 <a>링크</a> 태그가 있다
+				두번째 <span><a>링크</a></span> 은 손자이다 
+			</h2>
+		</div>
+	</div>
+
+	<div class="box">
+		<h3>예제 선택자 - 형제</h3>
+		<p>h3 + p : h3의 형제 중 다음에 나오는 첫번째 p</p>
+		<p>h3 ~ p : h3의 형제 중 다음의 모든 형제</p>
+		
+		<input type="button" value ="확인" id="btn2">
+		<div id="result2" class="result">
+			<p>형제 선택자 에 대하여</p>
+			<h3> 꼬마버스 타요 가족을 소개 합니다</h3> 
+			<p> 타요</p>
+			<p> 로기</p>
+			<p> 라니 </p>
+			<p> 가니 </p>
+		</div>
+	</div>
+
+<script>
+	$('#btn1').on('click', function() {
+		//h2의 자식 a 태그의 스타일 에 테두리 설정 - solid
+		$('h2 > a').css('border','2px solid tomato');
+		//h2의 후손 a태그의 스타일 배경색 을 노란색으로 변경
+		$('h2 a').css('background','lightyellow');
+	});
+	
+	$('#btn2').on('click', function() {
+		//h3 다음의 모든 형제의 배경색을 변경, 길이지정, 가운데정렬 
+		/* 
+		$('h3 ~ p','#result2').css('background','lightyellow')
+								.css('width','100px')
+								.css('text-align','center');
+		 */
+		 $('h3 ~ p','#result2').css({'background':'lightyellow',
+			 						'width':'100px',
+			 						'text-align':'center'});
+		 
+		//h3 다음의 첫번째 형제의 글자를 굵게, 크게 : font-weight
+		$('h3 + p','#result2').css({'font-weight':'bold'
+									,'font-size':'1.2em'});
+	});
+</script>
+</body>
+</html>

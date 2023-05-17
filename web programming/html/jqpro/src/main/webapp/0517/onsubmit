@@ -1,0 +1,19 @@
+전송 
+	<form action = "aa.jsp" methods="post">
+	=> input[type="submit"] / button[type="submit"]할 때 전송 됨 
+
+전송 안 됨 
+	<form action = "aa.jsp" methods="post" onsubmit="return false">
+	=> input[type="submit"] / button[type="submit"] 할 때 전송 안 됨 
+
+전송 전 script실행
+	<form action = "aa.jsp" methods="post" onsubmit="return false">
+	=> 1) input[type="submit"] / button[type="submit"] - type = submit :: onclick이벤트 X 
+		  :: form을 이용 !!!
+	=> 2) input[type="button"] / button[type="button"] - type = button :: onclick이벤트 O
+	
+	script 에서... 
+	1 ex) type = submit
+		  $('form').on('submit',function(){...}); 
+	2 ex) type = button
+		  $('input[type="button"]').on('click',function(){...});

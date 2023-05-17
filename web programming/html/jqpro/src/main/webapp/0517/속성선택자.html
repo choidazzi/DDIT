@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성선택자</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+
+</head>
+<body>
+	<div class="box">
+		<h3>속성선택자</h3>
+
+		<input type="button" value ="확인" onclick="proc1()">
+		<div id="result1" class="result">
+			<p> 일반 문단입니다 </p>
+			<p class="aa-123"> 일반 문단입니다 </p>
+			<p class="aa"> 일반 문단입니다 </p>
+			<p title="korea abcd"> 일반 문단입니다 </p>
+			<p title="koreaabcd"> 일반 문단입니다 </p>
+			<p title="툴팁으로 보입니다"> 타이틀을 가지고 있는 문단입니다 </p>
+			회원번호 <input type="text" value="1234">	<br> 
+			비밀번호 <input type="password" value="abcd"> <br> 
+			<input type="button" value=“전송”>
+			<input type="reset" value=“취소”>
+			
+		</div>
+	</div>
+<script>
+	function proc1() {
+		//title 속성을 가진 p요소의 배경색 변경
+		$('p[title]').css('background','lightyellow');
+		//type 속성이 password 인 요소의 테두리 변경
+		$('input[type=password]').css('border','3px double tomato');
+		$('input[value!="확인"]').css('background','lightsalmon');
+		$('input[value^=1]').css('border', '5px solid steelblue');
+		$('input[value$=d]').css('border', ' 5px solid red');
+		
+		// title속성에 korea 단어가 포함된 요소를 선택 
+		$('p[title ~= korea]').css('border','2px dotted green');
+		$('p[title *= korea]').css('background','skyblue');
+		// class가 aa이거나 aa-로 시작하는 요소  
+		$('p[class|= aa]').css('background', 'hotpink');
+		
+	}
+</script>
+</body>
+</html>

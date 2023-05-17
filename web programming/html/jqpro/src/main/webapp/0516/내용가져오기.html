@@ -43,12 +43,21 @@
 	$('#btn3').on('click',function() {
 		// body 태그의 모든 문자 
 		//alert($('p').html());
-		str =""
+		str ="";
+		/* 
 		$('p').each(function(i){ // i 사용 안하면 안써도 된다.
 						// function(i, k) {str += $(k).html + "\n"}
 						// k : p의 i 번 째 
+			//str += i + " : " + $('p').eq(i).html() + "\n";
 			str += i + " : " + $(this).html() + "\n"; 
 		})
+		 */
+		 $('p').each(function(i,v) {
+			 str += i + " : " + $(v).html() + "\n"; 
+		})
+		 $('p').each(function() {
+			 str += $(this).html() + "\n"; 
+		});
 		alert(str);
 	})
 	
