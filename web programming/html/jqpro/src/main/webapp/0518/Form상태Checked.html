@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form 상태 Checked</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<h3>선택한 항목을 처리 후 서버(jsp)로 보내기</h3>
+
+		<div id="result1" class="result">
+			<form id="f1" action="checked.jsp" method="post"> 
+				이름: <input type="text" name="user"> <br>
+				취미:
+				<input type="checkbox" name="hobby" value="여행" checked >여행 
+				<input type="checkbox" name="hobby" value="장기">장기
+				<input type="checkbox" name="hobby" value="바둑">바둑
+				<input type="checkbox" name="hobby" value="독서" >독서
+				<input type="checkbox" name="hobby" value="낚시">낚시<br><br> 
+				
+				<input type="submit" value="전송">
+			</form>
+		</div>
+	</div>
+
+<script>
+/* 
+	$('form#f1').on('submit', function(){
+		//console.log($('input[type=checkbox]:checked').val()); //하나의 값만 가져온다.
+		str = "";
+		$('input[type=checkbox]:checked').each(function(i,v) {
+			// = 'input = checkbox'
+			str += $(v).val() + " ";
+			//str += $(this).val() + " ";
+			//$('input[type=checkbox]:checked')[i].val() 
+			// 사용 불가 ([i] : script타입의 돔 타입으로 변경됨)
+			// 가능 -> $('input[type=checkbox]:checked')[i].value
+			// 가능 -> $($('input[type=checkbox]:checked')[i]).val()
+		})
+		alert(str);
+	})
+ */
+</script>
+</body>
+</html>

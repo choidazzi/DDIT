@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form 상태 Selected</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<h3></h3>
+
+		<div id="result1" class="result">
+			<form >
+				봄소식 : 
+				<select name="spring" id="spring" multiple size="6">
+					<option>개나리</option> 
+					<option selected>진달래</option> 
+					<option>민들레</option>
+					<option selected>벚꽃</option> 
+					<option>목련</option> 
+					<option>철쭉</option>
+				</select> 
+			</form>
+		</div>
+	</div>
+
+<script>
+/* 
+	$('select#spring').on('change', function() {
+		str = ""
+		$('option:selected').each(function() {
+			str += $(this).val() + " ";
+		})
+		alert(str);
+	})
+*/
+	$('#spring').on('change',myChange);
+	
+	function myChange() {
+		str = ""
+		$('option:selected').each(function() {
+			str += $(this).val() + " ";
+		})
+		alert(str);
+	}
+</script>
+</body>
+</html>

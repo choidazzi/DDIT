@@ -16,6 +16,11 @@ td{
 	width: 200px;
 	height: 50px;
 }
+
+#result3 div {
+	padding: 20px;
+	margin: 10px;
+}
 </style>
 </head>
 <body>
@@ -123,15 +128,17 @@ td{
 	
 	$('#btn3').on('click',()=> {
 		//jQuery가 포함된 span태그 의 테두리 파랑 : 
-		$('#result3 span:contains(jQuery)')
+		$('#result3 span:contains(jQuery)').css('border','1px solid blue');
 		//jQuery가 포함되지 않은 span 태그 의 테두리 빨강 : 
-		$('#result3 span:not(:contains(jQuery))')
+		$('#result3 span:not(:contains(jQuery))').css('border','1px solid tomato');
 		//span을 갖는 div요소 태그 의 테두리 그린 
-		$('#result3 div:has(span)')
+		$('#result3 div:has(span)').css('border','1px solid green');
 		//아무것도 없는 빈 div 태그 의 테두리
-		$('#result3 div:empty')
+		$('#result3 div:empty').css('border','1px solid midnightblue');
 		//div 후손 span 태그 의 글자색 빨강, 크기,굵게
-		$('#result3 div span')
+		$('#result3 div span').css({'color':'tomato'
+							,'font-size':'40px'
+							,'font-weight':'bold'});
 	})
 </script>
 </body>

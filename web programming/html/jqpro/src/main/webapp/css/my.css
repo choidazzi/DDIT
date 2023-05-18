@@ -17,7 +17,10 @@ pre {
 	background-image: radial-gradient(#FFCAF1,#C5FFCE);
 }
 
-.box input[type=button], button[type="button"], input[type=reset]  {
+.box input[type=button], 
+button[type="button"], 
+input[type=reset],
+input[type=submit]  {
 		background: #fe4072;
 		color: #fff;
 		width: 100px;
