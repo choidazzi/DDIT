@@ -16,6 +16,7 @@
 		 그것을 짧은 이름으로 사용할 별칭(alias)을 설정한다.-->
    <typeAliases>
       <typeAlias alias="lprodvo" type="kr.or.ddit.vo.LprodVO"/>
+      <typeAlias alias="membervo" type="kr.or.ddit.mvc.vo.MemberVO"/>
    </typeAliases>
 	
 	<!-- DB 연결작업 => 내용을 위에서 가져온 properties파일의 내용을 이용하여 설정한다. -->
@@ -34,5 +35,6 @@
 	<mappers>
 		<mapper resource="kr/or/ddit/mybatis/mappers/lprod-mapper.xml"/>
 		<mapper resource="kr/or/ddit/mybatis/mappers/jdbc-mapper.xml"/>
+		<mapper resource="kr/or/ddit/mybatis/mappers/member-mapper.xml"/>
 	</mappers>
 </configuration>

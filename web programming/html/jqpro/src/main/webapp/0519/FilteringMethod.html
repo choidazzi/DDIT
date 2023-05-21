@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Filtering Method</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<p>무궁화 꽃이 피었습니다</p>
+		<p>장미 꽃이 피었습니다</p>
+		<input type="button" value ="확인" id="btn1">
+		<div id="result1" class="result">
+			<p>사랑은 늘 도망가</p>
+			<p>사랑해 진짜</p>
+			<p>별빛 같은 나의 사랑아</p>
+			<p>우리들의 블루스</p>
+			<p>폴라로이드</p>
+		</div>
+	</div>
+
+<script>
+	$('#btn1').click(function(){
+		/* 
+		$('p:even').css('background','pink');
+		$('p:first').css('background','yellow');
+		$('p:last').css('background','green');
+		$('p:eq(1)').css('background','tomato');
+		 */
+		 /* 
+		$('p').even().css('background','pink');
+		$('p').first().css('background','yellow');
+		$('p').last().css('background','green');
+		$('p').eq().css('background','tomato');
+		 */
+		 $('p').filter(':even').css('background','pink');
+		 $('p').filter(':odd').css('background','yellow');
+		 $('p').filter(':first').css('background','green');
+	})
+	/* 
+	//===================script방식=======================
+	vp = document.querySelectorAll('p');
+	for(i=0;i<vp.length;i++){
+		vp[i].addEventListener('click',proc);
+	}
+	
+	function proc() {
+		this
+	}
+	 */
+	$('p').click(function() {
+		//if(){
+//		$(this).부모.is(class result) 
+			
+		//}
+	})
+</script>
+</body>
+</html>

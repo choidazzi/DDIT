@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>삭제 Method</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+#result1 {
+	background: lightgoldenrodyellow;
+}
+#result2 {
+	background: cornflowerblue;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<input type="button" value ="remove" id="btn1">
+		<input type="button" value ="empty" id="btn2">
+		<div id="result1" class="result">
+			<p>무궁화 꽃이 피었습니다</p>
+			<p class="p1">사랑은 늘 도망가</p>
+		</div>
+		<div id="result2" class="result">
+			<p>무궁화 꽃이 피었습니다</p>
+			<p class="p1">별빛같은 나의 사랑</p>
+		</div>
+	</div>
+
+<script>
+	$('#btn1').on('click', function(){
+		$('#result1').remove();
+	})
+
+	$('#btn2').on('click', function(){
+		$('#result2').empty();
+	})
+	
+	$('.result').on('click', function(){
+		$('p',this).remove('.p1');
+	})
+</script>
+</body>
+</html>

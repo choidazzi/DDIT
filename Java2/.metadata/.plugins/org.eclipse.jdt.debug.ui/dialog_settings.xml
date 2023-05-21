@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="OpenFromClipboardAction_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="686"/>
+		<item key="DIALOG_Y_ORIGIN" value="258"/>
+		<item key="DIALOG_WIDTH" value="420"/>
+		<item key="DIALOG_HEIGHT" value="434"/>
+		<item key="DIALOG_FONT_NAME" value="1|Fira Code Light|11.0|0|COCOA|1|FiraCode-Regular"/>
+	</section>
 </section>

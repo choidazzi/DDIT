@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>추가 Methods</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+img {
+	width: 100px;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h3>append: 해당선택 요소의 맨 뒤 새로운 요소를 추가</h3>
+		<h3>prepend: 해당선택 요소의 맨 앞 새로운 요소를 추가</h3>
+		<input type="button" value ="append" id="btn1">
+		<input type="button" value ="prepend" id="btn2">
+		<div id="result1" class="result"></div>
+		<div id="result2" class="result"></div>
+	</div>
+	
+	<div class="box">
+		<h3>after: 해당선택 요소의 맨 뒤 새로운 요소를 추가</h3>
+		<h3>before: 해당선택 요소의 맨 앞 새로운 요소를 추가</h3>
+		<h3>선택 요소의 테두리 밖에 추가 </h3>
+		<input type="button" value ="after" id="btn3">
+		<input type="button" value ="before" id="btn4">
+		<div id="result3" class="result"></div>
+		<div id="result4" class="result"></div>
+	</div>
+
+<script>
+	$("#btn1").on("click", () => {
+		pTag = $("<p class='pp'>Hello</p>");
+		$("#result1").append(pTag);
+	})
+	
+	$("#btn2").on("click", () => {
+		pTag = $("<p class='pp'>Hi</p>");
+		//$("#result2").prepend(pTag);
+		pTag.prependTo($('#result2'));
+	})
+	
+	imgArr = ["heart1.png","spongebob.png","square.jpg"
+				,"heart2.png","squarepants.jpg","Squidward.png",
+				"Koala.jpg","보노보노.jpeg","우주1.jpeg","우주3.jpg"];
+	$("#btn3").on("click", () => {
+		rnd = parseInt(Math.random() * imgArr.length);
+		//vImg = $("<img src='"+ imgArr[rnd] +"' alt= '"+ imgArr[rnd] +"'>");
+		//vImg = `<img src="../images/${imaArr[rnd]} alt=${imgArr[rnd]}>`;
+		vImg = $("<img>",{
+			'src':'../images/'+imgArr[rnd],
+			'alt': imgArr[rnd]
+		})
+		
+		$('#result3').after(vImg);
+	})
+	
+	$('#btn4').on('click', () => {
+		rnd = parseInt(Math.random() * imgArr.length);
+		vImg = $("<img>",{
+			'src':'../images/'+imgArr[rnd],
+			'alt': imgArr[rnd]
+		})
+		$('#result3').before(vImg);
+	})
+</script>
+</body>
+</html>

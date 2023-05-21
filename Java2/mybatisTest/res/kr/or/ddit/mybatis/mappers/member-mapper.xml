@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 mybatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+							"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	<insert id="insertMember" parameterType="membervo">
+		insert into mymember values(#{mem_id},#{mem_pass},#{mem_name},#{mem_tel},#{mem_addr})
+	</insert>
+	
+	<delete id="deleteMember" parameterType="String">
+		delete from mymember where mem_id = #{mem_id}
+	</delete>
+	
+	<update id="updateMember" parameterType="membervo">
+		update mymember set 
+			mem_pass = #{mem_pass},
+			mem_name = #{mem_name},
+			mem_tel = #{mem_tel},
+			mem_addr = #{mem_addr}
+		where mem_id = #{mem_id}
+	</update>
+	<!--
+		Map을 parameter로 받아서 처리할 때는 변수명 역할은 Map의 Key값으로 한다. 
+		
+		parameter로 가져온 값을 컬럼명 등의 자리에서 사용할 경우에는 달러($)기호를 사용해서 나타낸다.
+		예) ${변수명} , ${key값} 
+	 -->
+	<!-- key값 정보 => 회원 아이디(MEM_ID), 수정할 컬럼명(field), 수정할 데이터(data)   -->
+	<update id="updateMember2" parameterType="map">
+		update mymember set ${field} = #{data} where mem_id = #{memid}
+	</update>
+	
+	<select id="getAllMember" resultType="membervo">
+		select * from mymember
+	</select>
+	
+	<select id="getMemberCount" parameterType="String" resultType="int">
+		select count(*) from mymember where mem_id = #{mem_id}
+	</select>
+</mapper>

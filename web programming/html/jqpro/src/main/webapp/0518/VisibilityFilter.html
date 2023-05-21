@@ -21,6 +21,9 @@
 	
 	<div class="box">
 		<h3>라디오 버튼이 체크되었는지 검사 - if문 이용 </h3>
+		<h3>속성 상태 설정: prop(속성,true/false)</h3>
+		<h3>속성 상태 얻기: prop(속성)</h3>
+		checked,selected,disable,readonly,multiple
 		<form id="testForm">
 			<input type="hidden" name="userAge" value="33">
 			<input type="hidden" name="userCity" value="대전">
@@ -80,10 +83,12 @@
 			if(this.tagName == "INPUT") {
 				vtype = $(this).attr('type');
 				if( vtype == 'radio'){	// input type = 'radio'
-					//check 되어 있는 항목의 값을 가져오기 
-					str += this.tagName 
-						+ " [" + $(this).attr('name') + " : " 
-						+ $(':radio:checked').val() + "]<br>";
+					if($(this).prop('checked')){
+						//check 되어 있는 항목의 값을 가져오기 
+						str += this.tagName 
+							+ " [" + $(this).attr('name') + " : " 
+							+ $(this).val() + "]<br>";
+					}
 				} else {		//hidden , text (input type != 'radio')
 					str += this.tagName 
 					+ " [" + $(this).attr('name') + " : " 

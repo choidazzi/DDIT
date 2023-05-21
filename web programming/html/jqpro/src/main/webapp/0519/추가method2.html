@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>추가 Methods2</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+img {
+	width: 50px;
+}
+
+p {
+	padding: 10px;
+	margin: 5px;
+	border: 1px double midnightblue;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<p class="result1" title="스포츠.jpg">스포츠.jpg</p>
+		<p class="result1" title="스포츠1.jpg">스포츠1.jpg</p>
+		<p class="result1" title="스포츠2.jpg">스포츠2.jpg</p>
+		<p class="result1" title="스포츠3.jpg">스포츠3.jpg</p>
+	</div>
+<script>
+	$('p').on('click', function() {
+		vText = $(this).text();
+		
+		vImg = $('<img>',{
+			'src' : '../images/' + vText,
+			'alt' : vText
+		});
+		
+		//$(this).append(vImg);
+		//vImg.appendTo($(this));
+		//$(this).prepend(vImg);
+		//vImg.prependTo($(this));
+		//$(this).after(vImg);
+		//vImg.insertAftser($(this));
+		//$(this).before(vImg);
+		vImg.insertBefore($(this));
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form정보얻기</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<form>
+			<label for="user">이름</label>
+			<input type="text" id="user" value="korea"><br> 
+			
+			<label for="gender">성별</label>
+			<input type="radio" class="gender" name="gender" value="남자" checked >남자 
+			<input type="radio" class="gender" name="gender" value="여자" >여자
+			<br> 
+			
+			<label for="intro">소개</label>
+			<textarea id="intro" cols="40" rows="4"></textarea> 
+			<br> 
+			
+			<label for="work">직업</label>
+			<select id="work">
+				<option value="programmer">프로그래머</option> 
+				<option value="progammer">프로게이머</option> 
+				<option value="whitehand">백수</option>
+			</select><br>
+			<!-- 타입이 생략되면 자동으로 submit -->
+			<button type="button" id="btnview">조사하기</button> 
+			<button id="btnchange">이름변경</button> 
+			<a href="http://www.naver.com" onclick="changePage()">NAVER</a>
+		</form>
+		<div id="result1" class="result"></div>
+	</div>
+
+<script>
+	$('#btnview').on('click',() => {
+		// '입력'한 정보 내용을 가져온다 - val()
+		vUser = "이름 : " + $('#user').val() + "<br>";
+		let vGender = "성별 : " + $('.gender:checked').val() + "<br>";
+		let vIntro = "소개 : " + $('#intro').val() + "<br>";
+		let vWork = "직업 : " + $('#work option:selected').val() + "<br>";
+		
+		// vIntro 줄바꿈 => <br>  (/ / 안의 r과 n을 <br>로 )
+		vIntro = vIntro.replace(/\r/g,"").replace(/\n/g,"<br>");
+		
+		// result1 에 출력 
+		str = vUser + vGender + vIntro + vWork;
+		$('#result1').html(str);
+	})
+	
+	$('#btnchange').on('click',() => {
+		//parameter에 값이 지정되면 event => '값' 으로 변경 가능 
+		event.preventDefault();		// button의 고유 기능을 제거 
+		
+		// 이름을 입력 - prompt() 
+		let vUser = prompt("이름을 입력하세요");
+		// id = "user" 인 text에 출력 => text의 내용을 변경 - val()
+		$('#user').val(vUser);
+	})
+	changePage = () => {
+		// 나이를 입력 
+		age = prompt("나이를 입력하세요.")
+		// 15살 이상이면 네이버로 이동 / 아니면 이동 불가 
+		if(age < 15){
+			event.preventDefault();			
+			alert("15세 미만은 접근할 수 없습니다.");
+		}
+	}
+
+</script>
+</body>
+</html>

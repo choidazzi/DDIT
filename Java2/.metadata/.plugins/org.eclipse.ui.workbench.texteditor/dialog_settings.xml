@@ -6,6 +6,8 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value="this"/>
 		<list key="findhistory">
+			<item value="sear"/>
+			<item value="count"/>
 			<item value="this"/>
 			<item value="finally"/>
 			<item value="new scanner"/>

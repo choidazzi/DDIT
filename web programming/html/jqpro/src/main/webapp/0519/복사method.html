@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복사method</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<p class="pp" id="p1">별빛같은 우리 사랑아</p>
+		<p class="pp" id="p2">우리들의 블루스</p>
+
+		<input type="button" value ="clone" id="btn1">
+		<input type="button" value ="clonetrue" id="btn2">
+		<div id="result1" class="result"></div>
+		<div id="result2" class="result"></div>
+	</div>
+
+<script>
+	$('.pp').on('click', function(){
+	    $(this).css('font-size', '+=3px');
+	 })
+	 
+	 $('#btn1').click(function(){
+		// vp1 = $('#p1').clone();
+		// $('#result1').append(vp1);
+		$('#result1').append($('#p1').clone());
+	 })
+	 
+	 $('#btn2').click(function(){
+		vp2 = $('#p2').clone(true);
+		$('#result2').append(vp2);
+	
+	 })
+</script>
+</body>
+</html>

@@ -1,7 +1,6 @@
 package kr.or.ddit.basic;
 
 import java.io.InputStream;
-import java.util.List;
 import java.util.Scanner;
 
 import org.apache.ibatis.io.Resources;
