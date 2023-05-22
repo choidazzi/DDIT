@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+img {
+	width: 100px;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h3></h3>
+
+		<input type="button" value ="확인" onclick="proc1()">
+		<div id="result1" class="result">
+			<img alt="heart1.png" src="../images/heart1.png">
+			<img alt="spongebob.png" src="../images/spongebob.png">
+			<img alt="spongebob.png" src="../images/squarepants.jpg">
+			<img alt="spongebob.png" src="../images/Squidward.png">
+			<img alt="heart1.png" src="../images/heart2.png">
+		</div>
+	</div>
+
+<script>
+	proc1 = () => {
+		//$('img').attr('title','그림');
+		$('img').attr('title',function() {
+			// src 속성값을 가져온다 
+			vSrc = $(this).attr('src');
+			
+			// vSrc 에서 이미지의 이름을 추출한다 - substring(start,end), slice(start,end)
+			start = vSrc.lastIndexOf('/');
+			end = vSrc.lastIndexOf('.');
+			
+			vTitle = vSrc.substring(start,end);
+			// 추출한 값을 return 
+			return vTitle;
+		})
+	}
+</script>
+</body>
+</html>

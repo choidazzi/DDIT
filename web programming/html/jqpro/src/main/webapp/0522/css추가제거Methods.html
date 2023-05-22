@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css추가제거Methods</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+.pp1 {
+	color: forestgreen;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h3>css 추가제거 Methods</h3>
+
+		<div id="result1" class="result">
+			<p class="pp1">무궁화 꽃이 피었습니다.</p>
+			<p>장미 꽃이 피었습니다.</p>
+			<p>라일락 꽃이 피었습니다.</p>
+			<p>사랑은 늘 도망가.</p>
+		</div>
+	</div>
+
+	<div class="box">
+		<h3>css 추가제거 Methods</h3>
+
+		<div id="result2" class="result">
+			<p class="pp1">무궁화 꽃이 피었습니다.</p>
+			<p>장미 꽃이 피었습니다.</p>
+			<p>라일락 꽃이 피었습니다.</p>
+			<p>사랑은 늘 도망가.</p>
+		</div>
+	</div>
+
+	<div class="box">
+		<h3>css 추가제거 Methods</h3>
+
+		<div id="result3" class="result">
+			<p class="pp1">무궁화 꽃이 피었습니다.</p>
+			<p>장미 꽃이 피었습니다.</p>
+			<p>라일락 꽃이 피었습니다.</p>
+			<p>사랑은 늘 도망가.</p>
+		</div>
+	</div>
+
+<script>
+/* 
+	$('#result1 p').on('mouseover',function(){
+		$(this).addClass('pp1');
+	})
+
+	$('#result1 p').on('mouseout',function(){
+		$(this).removeClass('pp1');
+	})
+ */
+	$('#result2 p').on('click',function(){
+		$(this).toggleClass('pp1');
+	})
+	
+	$('#result3 p').on('click',function(){
+		if($(this).hasClass('pp1')) {
+			$(this).removeClass('pp1');
+		} else {
+			$(this).addClass('pp1');
+		}
+	})
+</script>
+</body>
+</html>

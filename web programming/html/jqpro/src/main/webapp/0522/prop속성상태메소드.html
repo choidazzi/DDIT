@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prop() 속성상태메소드</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<h3></h3>
+
+		<input type="button" value ="확인" id="btn1">
+		<div id="result1" class="result">
+			<form> 체크박스(라디오버튼) :
+			<input type="checkbox" id="checkTest" checked>
+			<br><br>
+			리스트박스(select객체) : 
+			<select id="selTest">
+				<option value="1">하나</option> 
+				<option value="2">둘</option>
+				<option value="3" selected >셋</option> 
+				<option value="4">넷</option>
+			</select>
+			<br><br>
+			text객체 (readonly) : 
+			<input type="text" value="가나다" id="txtTest">
+			<br><br>
+			button객체(disabled) :
+			<input type="button" value="실행" id="runBtn" onclick="alert('hello')">
+			</form>
+		</div>
+	</div>
+	
+	<div class="box">
+		<div id="result2" class="result">
+			체크박스(전체선택/해제): <br>
+			<input type="checkbox" id="selectAll"> 전체선택
+			<input type="checkbox" class="checkTest"> 1
+			<input type="checkbox" class="checkTest"> 2
+			<input type="checkbox" class="checkTest"> 3
+			<input type="checkbox" class="checkTest"> 4
+			<input type="checkbox" class="checkTest"> 5
+		</div>
+	</div>
+
+<script>
+	$('#btn1').on('click',function(){
+		// 현재 상태값을 가져오기 
+		vCheck = $('#checkTest').prop('checked');
+		vSelect = $('#selTest option').eq(2).prop('selected');
+		vRead = $('#txtTest').prop('readonly');
+		vRun = $('#runBtn').prop('disabled');
+		
+		console.log(vCheck,vSelect,vRead,vRun);
+		
+		// 상태값을 변경
+		
+		$('#checkTest').prop('checked',!vCheck);
+		//$('#checkTest').prop('checked',!$('#checkTest').prop('checked'));
+		$('#selTest option').eq(2).prop('selected',!vSelect);
+		$('#txtTest').prop('readonly',!vRead);
+		$('#runBtn').prop('disabled',!vRun);
+		/* 
+		if($('#checkTest').prop('checked')){
+			$('#checkTest').prop('checked',false);
+		} else {
+			$('#checkTest').prop('checked',true);
+		}
+		if($('#selTest option').eq(2).prop('selected')){
+			$('#selTest option').eq(2).prop('selected',false);
+		} else {
+			$('#selTest option').eq(2).prop('selected',true);
+		}
+		if($('#txtTest').prop('readonly')){
+			$('#txtTest').prop('readonly',false);
+		} else {
+			$('#txtTest').prop('readonly',true);			
+		}
+		if($('#runBtn').prop('disabled')){
+			$('#runBtn').prop('disabled',false);
+		} else {
+			$('#runBtn').prop('disabled',true);			
+		}
+	 */
+	})
+	
+	$('#selectAll').on('click', function(){
+		vCheck = $(this).prop('checked');
+		$('.checkTest').prop('checked', vCheck);
+	})
+</script>
+</body>
+</html>

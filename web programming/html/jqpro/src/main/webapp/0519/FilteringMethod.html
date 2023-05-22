@@ -28,7 +28,7 @@
 		$('p:last').css('background','green');
 		$('p:eq(1)').css('background','tomato');
 		 */
-		 /* 
+		 /* Filtering Method
 		$('p').even().css('background','pink');
 		$('p').first().css('background','yellow');
 		$('p').last().css('background','green');
@@ -50,10 +50,18 @@
 	}
 	 */
 	$('p').click(function() {
-		//if(){
-//		$(this).부모.is(class result) 
-			
-		//}
+		if($(this).parent().is('.result')){
+			// 클릭한 p태그를 복사해서 부모에 붙여넣기
+			// 글자색을 파란색으로 변경
+			$(this).clone(true).appendTo(
+					$(this).parent()).css('color','steelblue');
+			//pTag = $(this).clone();
+			//$(this).parent().append(pTag);
+			// 또는 
+			//pTag.appendTo($(this).parent());
+		} else {
+			alert("해당 작업 대상이 아닙니다.");
+		}
 	})
 </script>
 </body>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>찾기 Methods</title>
+<link rel="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+.siblings * {
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 5px;
+}
+
+.box .result {
+	font-size: 1.0rem;
+}
+
+.start {
+	border: 1px solid #000;
+	color: #000;
+}
+
+
+</style>
+</head>`
+<body>
+	<div class="box">
+		<input type="button" value="next" id="next"> 
+		<input type="button" value="nextAll" id="nextAll"> 
+		<input type="button" value="nextUntil" id="nextUntil">
+		<div id="result1" class="result">
+			<div style="width: 500px;" class="siblings">
+				<ul>
+					ul (parent)
+					<li>li (sibling)</li>
+					<li>li (sibling)</li>
+					<li class="start">li (sibling with class name "start")</li>
+					<li>li (the next sibling of li with class name "start")</li>
+					<li>li (sibling)</li>
+					<li>li (sibling)</li>
+					<li>li (sibling)</li>
+					<li>li (sibling)</li>
+					<li>li (sibling)</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="box">
+		<input type="button" value="prev" id="prev"> 
+		<input type="button" value="prevAll" id="prevAll"> 
+		<input type="button" value="prevUntil" id="prevUntil">
+		<div id="result2" class="result">
+			<div style="width: 500px;" class="siblings">
+				<ul>
+					ul (parent)
+					<li>li (sibling)</li>
+					<li>li (sibling)</li>
+					<li>li (sibling)</li>
+					<li>li (sibling)</li>
+					<li>li (sibling)</li>
+					<li>li (sibling)</li>
+					<li class="start">li (sibling with class name "start")</li>
+					<li>li (the next sibling of li with class name "start")</li>
+					<li>li (sibling)</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="box">
+		<input type="button" value="parent" id="parent"> 
+		<input type="button" value="parents" id="parents"> 
+		<input type="button" value="parents(selector)" id="parentsS"> 
+		<input type="button" value="parentsUntil" id="parentsUntil">
+		<div id="result3" class="result">
+			<div style="width: 500px;" class="siblings">
+				<ul>ul (grandparent)
+					<li>li (direct parent) 
+						<span>span</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="box">
+		<h3>find()</h3>
+		<div id="result4" class="result">
+			<div style="width: 500px;" class="siblings">
+				<ul>ul (grandparent)
+					<li>li (direct parent) 
+						<span>span</span>
+					</li>
+				</ul>
+				<input type="button" value="확인" class="btn">
+			</div>
+		</div>
+		
+		<div id="result5" class="result">
+			<div style="width: 500px;" class="siblings">
+				<ul>ul (grandparent)
+					<li>li (direct parent) 
+						<span>span</span>
+					</li>
+				</ul>
+				<input type="button" value="확인" class="btn">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// next
+		$('#next').on('click', function() {
+			$('#result1 .start').next().css({
+				'border' : '3px double tomato',
+				'color' : 'tomato'
+			});
+		})
+
+		$('#nextAll').on('click', function() {
+			$('#result1 .start').nextAll().css({
+				'border' : '3px double green',
+				'color' : 'green'
+			});
+		})
+
+		$('#nextUntil').on('click', function() {
+			$('#result1 .start').nextUntil('#result1 li:last').css({
+				'border' : '3px double palevioletred',
+				'color' : 'palevioletred'
+			});
+		})
+
+		// prev
+		$('#prev').on('click', function() {
+			$('#result2 .start').prev().css({
+				'border' : '3px double tomato',
+				'color' : 'tomato'
+			});
+		})
+
+		$('#prevAll').on('click', function() {
+			$('#result2 .start').prevAll().css({
+				'border' : '3px double green',
+				'color' : 'green'
+			});
+		})
+
+		$('#prevUntil').on('click', function() {
+			$('#result2 .start').prevUntil('#result2 li:first').css({
+				'border' : '3px double palevioletred',
+				'color' : 'palevioletred'
+			});
+		})
+		
+		// parent
+		$('#parent').on('click',function() {
+			$('#result3 span').parent().css({
+				'border' : '3px double tomato',
+				'color' : 'tomato'
+			});
+		})
+
+		$('#parents').on('click',function() {
+			$('#result3 span').parents().css({
+				'border' : '3px double green',
+				'color' : 'green'
+			});
+		})
+
+		$('#parentsS').on('click',function() {
+			$('#result3 span').parents('ul').css({
+				'border' : '3px double palevioletred',
+				'color' : 'palevioletred'
+			});
+		})
+		
+		$('#parentsUntil').on('click',function() {
+			$('#result3 span').parentsUntil('#result3').css({
+				'border' : '3px double orangered',
+				'color' : 'orangered'
+			});
+		})
+		
+		$('.btn').on('click',function() {
+			$(this).prev().find('span').css({
+				'border' : '3px double orangered',
+				'color' : 'orangered'
+			});
+			/*  
+			$(this).parent().find('span').css({					// 직속 부모 class="siblings"
+				'border' : '3px double green',
+				'color' : 'green'
+			});
+			 */
+			/*  
+			$(this).parents('.result').find('span').css({			// 전체 조상들 중 특정요소 class="result"  
+				'border' : '3px double palevioletred',
+				'color' : 'palevioletred'
+			});
+			 */ 
+		})
+		
+	</script>
+</body>
+</html>

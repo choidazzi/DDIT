@@ -6,6 +6,7 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value="this"/>
 		<list key="findhistory">
+			<item value="update"/>
 			<item value="sear"/>
 			<item value="count"/>
 			<item value="this"/>
@@ -13,7 +14,6 @@
 			<item value="new scanner"/>
 			<item value="clientstart"/>
 			<item value="종료"/>
-			<item value="co"/>
 		</list>
 		<list key="replacehistory">
 		</list>
