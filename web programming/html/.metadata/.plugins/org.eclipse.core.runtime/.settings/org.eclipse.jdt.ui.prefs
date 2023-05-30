@@ -1,5 +1,4 @@
-MemberFilterActionGroup.org.eclipse.jdt.ui.JavaOutlinePage.2=true
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="kr.or.ddit.buyer.service.IBuyerService"><rhs name\="kr.or.ddit.buyer.service.BuyerServiceImpl"/></lhs><lhs name\="kr.or.ddit.prod.dao.IProdDao"><rhs name\="kr.or.ddit.prod.dao.ProdDaoImpl"/></lhs><lhs name\="kr.or.ddit.prod.dao.ProdDaoImpl"><rhs name\="kr.or.ddit.prod.dao.ProdDaoImpl"/></lhs><lhs name\="kr.or.ddit.lprod.dao.ILprodDao"><rhs name\="kr.or.ddit.lprod.dao.LprodDaoImpl"/></lhs><lhs name\="kr.or.ddit.lprod.service.ILprodService"><rhs name\="kr.or.ddit.lprod.service.LprodServiceImpl"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"/>
 content_assist_number_of_computers=17
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0

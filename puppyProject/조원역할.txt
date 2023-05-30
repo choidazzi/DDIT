@@ -1,5 +1,0 @@
-- PL(Project Leader)  --> 조장
-- AA(Application Architect)  --> 프로젝트 구조 (패키지구조, 인터페이스,VO등) --> 공통로직, 개발표준 등 공통업무 설계자
-- TA(Technical Architect)  --> 새로운 기술(API) 습득 --> 조원 전달 및 하드웨어와 네트워크 구축 담당자
-- DA(Data Architect)  	--> DB관련작업
-- UA(UserInterface Architect)  --> 화면 설계
