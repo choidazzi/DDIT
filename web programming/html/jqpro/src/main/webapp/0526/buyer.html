@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Buyer</title>
+<link rel="stylesheet" href="../css/my.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+table {
+	border-collapse: collapse;
+}
+
+td {
+	width: 200px;
+	height: auto;
+	padding: 5px;
+}
+
+#idName p:hover {
+	background: lightyellow;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<input type="button" value ="확인" id="btn1">
+		<div id="result1" class="result">
+			<table border="1">
+				<tr>
+					<td>거래처 이름</td>
+					<td>거래처 상세정보</td>
+				</tr>
+				<tr>
+					<td id="idName"></td>
+					<td id="detail"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+<script>
+	$(document).on('click','p',function(){
+		//alert($(this).attr('class'))
+		 
+		idValue = $(this).attr('class');
+		$.ajax({
+			url:'/jqpro/BuyerDetail.do',
+			type: 'get',
+			data: {"id" : idValue},
+			success: function(res){
+				code = "<table class='table table-hover'>";
+				code += "<tr>";
+				code += "<td>BUYER_ID</td>";
+				code += "<td>"+ res.id +"</td>";
+				code += "</tr>";
+
+				code += "<tr>";
+				code += "<td>BUYER_NAME</td>";
+				code += "<td>"+ res.name +"</td>";
+				code += "</tr>";
+				code += "<tr>";
+				
+				code += "<td>BUYER_LGU</td>";
+				code += "<td>"+ res.lgu +"</td>";
+				code += "</tr>";
+
+				code += "<td>BUYER_BANK</td>";
+				code += "<td>"+ res.bank +"</td>";
+				code += "</tr>";
+
+				code += "<td>BUYER_BANKNO</td>";
+				code += "<td>"+ res.bankno +"</td>";
+				code += "</tr>";
+
+				code += "<td>BUYER_BANKNAME</td>";
+				code += "<td>"+ res.bankname +"</td>";
+				code += "</tr>";
+
+				code += "<td>BUYER_ZIP</td>";
+				code += "<td>"+ res.zip +"</td>";
+				code += "</tr>";
+
+				code += "<td>BUYER_ADD1</td>";
+				code += "<td>"+ res.add1 +"</td>";
+				code += "</tr>";
+
+				code += "<td>BUYER_ADD2</td>";
+				code += "<td>"+ res.add2 +"</td>";
+				code += "</tr>";
+
+				code += "<td>BUYER_COMTEL</td>";
+				code += "<td>"+ res.comtel +"</td>";
+				code += "</tr>";
+
+				code += "<td>BUYER_MAIL</td>";
+				code += "<td>"+ res.mail +"</td>";
+				code += "</tr>";
+				code += "</table>";
+		         $('#detail').html(code);
+			},
+			error: function(xhr){
+				alert("상태: "+ xhr.status);
+			},
+			dataType:'json'
+		})//$.ajax
+		 
+	})
+	//$('#btn1').on('click',function() {
+		
+	//})
+	// 실행 중 동적으로 실행되는 경우 사용
+	$(document).on('click', '#btn1', function(){
+		$.ajax({
+			url: '/jqpro/BuyerIdName.do',
+			type: 'get',
+			success: function(res){
+				code = "";
+			     $.each(res, function(i, v){
+		               code += `<p class="${res[i].id}">${res[i].name}</p>`;
+		            })
+		            $('#idName').html(code);
+			},
+			error: function(xhr){
+				alert("상태: "+ xhr.status);
+			},
+			dataType:'json'
+		})//$.ajax
+	})
+</script>
+</body>
+</html>

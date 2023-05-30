@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>파일추가</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+p {
+	margin: 10px;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h3></h3>
+
+		<div id="result1" class="result">
+		<label>이름</label>
+		<input type="text" id="name" name="user">
+		<br>
+		<label>첨부파일</label>
+		<input type="file" id="file" name="file">
+
+		<input type="button" value ="추가" class="btnAdd">
+		<br>
+		</div>
+	</div>
+
+<script>
+	count = 0;
+	$('.btnAdd').on('click', function() {
+		pTag = $(`<p> 
+				<input type="file" id="file" name="file">
+				<input type="button" value ="삭제${++count}" class="btnDelete">
+				</p>`);
+		
+		$('#result1').append(pTag);
+	})
+	
+	$(document).on('click','.btnDelete',function(){
+		$(this).parent().remove();
+	})
+</script>
+</body>
+</html>

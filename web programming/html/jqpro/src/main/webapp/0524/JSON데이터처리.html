@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel ="stylesheet" href="../css/my.css">
+<style>
+#resultBox {
+	display: flex;
+}
+
+.result {
+	flex: 2.5;
+}
+
+</style>
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<input type="button" value ="text" id="text">
+		<input type="button" value ="json배열" id="arr">
+		<input type="button" value ="json객체" id="jsonObj">
+		<input type="button" value ="json객체배열" id="objArr">
+		<div id="resultBox">
+			<div id="result1" class="result"></div>
+			<div id="result2" class="result"></div>
+			<div id="result3" class="result"></div>
+			<div id="result4" class="result"></div>
+		</div>
+	</div>
+
+
+<script>
+	$('#text').on('click',function() {
+		// 단축 형식 
+		$.get(
+			"../0523/text.jsp",
+			function(res) {
+				//res = 홍길동/개나리/진달래/무궁화/삼천리/금수강산
+				names = res.split("/");
+				
+				code = "<ul>";
+				$.each(names, function(i){
+					code += `<li>${names[i]}</li>`;
+				})//each
+				code += "</ul>";
+				
+				$('#result1').html(code);
+			},
+			'text'
+		)
+		/*
+		$.ajax({
+			url: "../0523/text.jsp",
+			type: "get",
+			success: function(res) {
+				//res = 홍길동/개나리/진달래/무궁화/삼천리/금수강산
+				names = res.split("/");
+				
+				code = "<ul>";
+				$.each(names, function(i){
+					code += `<li>${names[i]}</li>`;
+				})//each
+				code += "</ul>";
+				
+				$('#result1').html(code);
+			},
+			error: function(xhr) {
+				alert("상태: " + xhr.status);
+			},
+			dataType: 'text'
+		})//ajax
+		 */
+		 
+	})//#text
+	
+	$('#arr').on('click',function() {
+		/*
+		$.get(
+			"../0523/arr.jsp",
+			function(res) {
+				//res = ["진달래","무궁화","수선화","라일락","들국화","백장미"]
+	
+				code = "<ol>";
+				$.each(res, function(i){
+					code += `<li>${res[i]}</li>`;
+				})//each
+				code += "</ol>";
+				
+				$('#result2').html(code);
+			},
+			'json'
+		)
+	*/
+		$.ajax({
+			url: "../0523/arr.jsp",
+			type: "get",
+			success: function(res) {
+				//res = ["진달래","무궁화","수선화","라일락","들국화","백장미"]
+				
+				code = "<ol>";
+				$.each(res, function(i){
+					code += `<li>${res[i]}</li>`;
+				})//each
+				code += "</ol>";
+				
+				$('#result2').html(code);
+			},
+			error: function(xhr) {
+				alert("상태: " + xhr.status);
+			},
+			dataType: 'json'
+		})//ajax
+	
+	})
+	
+	$('#jsonObj').on('click',function() {
+		$.ajax({
+			url: '../0523/jsonObj.jsp',
+			type: 'get',
+			dataType: 'json',
+			error: function(xhr) {
+				alert("상태: " + xhr.status);
+			},
+			success: function(res) {
+				//res = JSON.parse(this.responseText);
+				code = `
+						<p>아이디: ${res.id}</p>
+						<p>이름: ${res.name}</p>
+						<p>전화번호: ${res.tel}</p>
+						<p>주소: ${res.address}</p>
+				`;//code
+				$('#result3').html(code);
+			}
+		})
+	})//jsonObj
+	
+	$('#objArr').on('click',function() {
+		$.ajax({
+			url: '../0523/objArr.jsp',
+			type: 'get',
+			dataType: 'json',
+			success: function(res) {
+				code = "";
+				$.each(res, function(i){
+					code += `****${i+1}번째 회원 정보**** <br>
+						<p>아이디: ${res[i].id}</p><br>
+						<p>이름: ${res[i].name}</p><br>
+						<p>전화번호: ${res[i].tel}</p><br>
+						<p>주소: ${res[i].address}</p><br>
+					`;//code
+				})//$.each
+				$('#result4').html(code);
+			}//success
+		})//ajax
+	})//objArr
+</script>
+</body>
+</html>

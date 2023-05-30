@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=jqpro/src\/main\/java&lt;kr.or.ddit.prod.dao{IProdDao.java[IProdDao" modifiers="513" timestamp="1685409957000"/>
+    <typeInfo handle="=jqpro/src\/main\/java&lt;kr.or.ddit.prod.service{IProdService.java[IProdService" modifiers="513" timestamp="1685409839000"/>
+    <typeInfo handle="=jqpro/src\/main\/java&lt;kr.or.ddit.lprod.dao{ILprodDao.java[ILprodDao" modifiers="513" timestamp="1685409944000"/>
+    <typeInfo handle="=jqpro/src\/main\/java&lt;kr.or.ddit.lprod.service{ILprodService.java[ILprodService" modifiers="513" timestamp="1685409645000"/>
+</typeInfoHistroy>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <input type="text" name="" id="tsch" value="">
+    <input type="button" value="이미지 찾기" onclick="fsch()"> <br>
+    <div id="disp">
+        
+    </div>
+    <script>
+        var preURL = "https://www.flickr.com/services/feeds/photos_public.gne?tags=";
+        var postURL = "&format=json";
+        var vtsch = document.querySelector("#tsch");
+        var vdisp = document.querySelector('#disp');
+        
+        function fsch(){
+        //script태그를 만들어 줘야 함!
+         var myScript = document.createElement("script");
+         myScript.src = preURL + vtsch.value + postURL;   
+         document.head.appendChild(myScript);
+        }
+        // 함수를 미리 정의 해둠 
+        // 왜 ? 호출 당할 것을 알고 있으니까 미리 준비! 
+        // 이렇게 실행시키는 걸 JSONP(JSON PADDING)이라고 부르고 
+        // 서버쪽에서 이렇게 서비슬르 해줘야만 쓸 수 있음 
+        function jsonFlickrFeed(pData){
+            var cats = pData.items;
+            for(let i=0;i<cats.length;i++){
+                console.log("이미지 URL: " + cats[i].media.m);
+                var vImg = document.createElement("img");   // img 태그 생성 
+                vImg.src = cats[i].media.m;
+                vdisp.appendChild(vImg);
+                vdisp.removeChild()
+            }
+            //console.log(pData);
+        }
+
+        
+    </script>
+    <script src="https://www.flickr.com/services/feeds/photos_public.gne?tags=dog&format=json"></script>
+
+</body>
+</html>

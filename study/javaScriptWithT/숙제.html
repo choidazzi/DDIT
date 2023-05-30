@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="disp"></div>
+    <script>
+        const hdisp = document.querySelector('#disp');
+
+        let members = [
+            {name: "김수지", level: "pos1"},
+            {name: "임석일", level: "pos2"},
+            {name: "강서주", level: "pos3"},
+            {name: "이경민", level: "pos3"},
+            {name: "신진수", level: "pos2"},
+        ];
+
+        let levels = {
+            "pos1": "대표님",
+            "pos2": "전무님",
+            "pos3": "사원님"
+        }
+
+        let tblStr = "<table border=1>";
+            tblStr += "<tr><th>넘버</th><th>이름</th><th>직급</th></tr>";
+
+            for(let i=0; i<members.length; i++) {
+                tblStr += "<tr>";
+                tblStr += `<td>${i+1}</td>`;
+                tblStr += `<td>${members[i].name}</td>`;
+                tblStr += `<td>${levels[members[i].level]}</td>`;
+                tblStr += "</tr>";
+            }
+            tblStr += "</table>";
+            hdisp.innerHTML = tblStr;
+    </script>
+</body>
+</html>

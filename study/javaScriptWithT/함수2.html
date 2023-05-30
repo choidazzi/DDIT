@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열과 콜백함수를 매개변수로 받는 함수 
+        function fForEach(p_arr,p_callback) {
+            for(let i=0;i<p_arr.length;i++) {
+                p_callback(i,p_arr[i]);     // callback 호출 
+            }
+        }
+        // 배열과 콜백함수를 매ㅐ변수로 넘겨 줌 
+        fForEach([8,6,3,2], function(index,value) {
+            alert(index+" "+value);
+        })
+
+       // 함수의 매개변수로 어떤 데이터 타입이 와도 상관없다 ! 
+       /* 
+       function f_check(pArg1) {    // 여기서 pArg1은 callback(뒤에 불림)함수가 됨 
+        alert(typeof(pArg1)); 
+        pArg1();    // 함수를 실행시킴
+       }
+        */ /* 
+       f_check('merong');
+       f_check(272);
+       f_check([1,2,3,4,5,6,7,8]);
+        */
+       f_check(function(){
+        alert("난 넘어간 함수얌!");
+       });
+
+    </script>
+</html>
