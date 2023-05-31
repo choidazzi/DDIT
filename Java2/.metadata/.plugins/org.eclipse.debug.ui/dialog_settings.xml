@@ -13,4 +13,9 @@
 		<item key="DIALOG_HEIGHT" value="728"/>
 		<item key="DIALOG_FONT_NAME" value="1|Fira Code Light|11.0|0|COCOA|1|FiraCode-Regular"/>
 	</section>
+	<section name="org.eclipse.debug.ui.SELECT_LAUNCH_SHORTCUT_DIALOG">
+		<item key="DIALOG_WIDTH" value="275"/>
+		<item key="DIALOG_HEIGHT" value="444"/>
+		<item key="DIALOG_FONT_NAME" value="1|Fira Code Light|11.0|0|COCOA|1|FiraCode-Regular"/>
+	</section>
 </section>
