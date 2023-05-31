@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="kr.or.ddit.buyer.service.IBuyerService"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.buyer.service.BuyerServiceImpl"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.buyer.vo.BuyerVO"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.prod.dao.ProdDaoImpl"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.prod.dao.IProdDao"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.prod.service.ProdServiceImpl"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.prod.vo.ProdVO"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.mybatis.config.MyBatisSqlSessionFactory"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.lprod.dao.ILprodDao"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.lprod.service.ILprodService"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.lprod.dao.LprodDaoImpl"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.lprod.service.LprodServiceImpl"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.lprod.vo.LprodVO"/>
+</qualifiedTypeNameHistroy>

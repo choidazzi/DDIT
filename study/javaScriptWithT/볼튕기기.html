@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #ball {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%; /* 테두리를 동그랗게 */
+        background-color: cadetblue;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyM7ZmTtguWnVnDEUQetvJ0Sk2MWkBjHF15FiWiUhiIw&s");
+        background-size: 100% 100%;
+        /*transform: rotate(45deg);*/
+        /* transform: skewY(45deg); */
+        /* left: 10px; top: 50px; */
+    }
+</style>
+<body>
+    <button onclick="fMove()">oO(움쥑~이는)</button> 
+    <div id="ball"></div>
+     <!-- div가 빈 공백일 땐 값이 false -->
+
+    <script>
+    // console.log("보이는 화면넓이", window.innerWidth);
+    // console.log("보이는 화면높이", window.innerHeight);
+    const myBall = document.querySelector('#ball');
+    let mvWidth = 10; // 움직이는 폭
+    let mvHeight = 5; // 움직이는 폭
+    let rotGak = 0; // 회전각 
+    const fMove = () => {
+        if(!myBall.style.left) {    // 값이 설정되어 있지 않다면
+            myBall.style.left = "50px";
+            myBall.style["top"] = "50px";
+            // alert("ppp" + myBall.style.left + "ppp");
+            // alert("qqq" + myBall.style["top"] + "qqq");
+        }
+        rotGak = rotGak + 10;
+        myBall.style.left = parseInt(myBall.style.left) + mvWidth + "px";
+        myBall.style.top = parseInt(myBall.style.top) + mvHeight + "px";
+       // myBall.style.transform = `rotate(${rotGak}deg`;
+
+        var leftSu = parseInt(myBall.style.left);
+        var topSu = parseInt(myBall.style.top);
+
+        if((leftSu + 100) >= window.innerWidth || leftSu <= 0) {
+            mvWidth = -mvWidth; // -1 * mvWidth
+            myBall.style.transform = `rotate(${rotGak}deg) skewX(45deg)`; 
+        }
+        if((topSu + 100) >= window.innerHeight || topSu<=0) {
+            mvHeight = -mvHeight; // -1 * mvWidth
+            myBall.style.transform = `rotate(${rotGak}deg) skewY(45deg)`; 
+        }
+        setTimeout(fMove, 500); // 함수이름을 FP(Function Pointer)라 부름
+        // fMove(), 500 <-- 이런식으로 쓰는 건 불가능
+    }
+    </script>
+</body>
+</html>

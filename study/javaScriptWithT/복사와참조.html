@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <body>
+        <input type="text" id="dazzi" value="서연">
+    </body>
+    <script>
+        // 주의 :
+        // huk이 로제를 가리키다 제니를 가리키면서
+        // 로제를 찾을 바업방법이 없어짐(메모리 누수leak//////////////////////////////////////////
+        var huk = {name:"로제 만만세!"};
+        huk     = {name: "제니 어디가?"};
+ 
+        // head 1개, body 태그도 1개밖에 못 들어감! 
+        console.log(document.body.innerHTML);
+
+        document.body.innerHTML = "<h1>Dazzi 만만세~!</h1>"
+        // 자바스크립트를 잘 해야하는 1가지 이유:
+        // 현재 브라우저를 컨트롤할 수 있는 언어는 오직 1개 자바스크립트로 대체 언어 
+        // 복사(copy) 와 참조(reference)는 중요 ! 
+        // 원시타입(PrimitiveType)은 복사 객체(Object)는 참조 방식으로 동작 
+        /* 
+        var jungSuji = "정수지";
+        var kimSuji = "jungSuji";
+        kimSuji = "김수지";
+        alert(jungSuji);
+
+        var oJungSuji = {name: "정수지"};
+        var oKimSuji = oJungSuji;
+        oKimSuji.name = "김수지";
+
+        alert(oJungSuji.name);
+         */
+        /*
+         var merong = dazzi.value;  //복사? 참조? => 복사!
+         merong = "안서연"
+         */
+        // id를 직접 쓰는 것은 짧은 설명용 코드에만 사용하고 
+        // 실제 프로젝트에서는 사용하지 않음 (가독성 문제)
+        //var tDazzi = document.querySelector('#dazzi'); 처럼 사용
+         var merong = dazzi;        // 복사? 참조? => 참조! 왜? 텍스트박스는 속성을 가진 객체(Object)
+         merong.value = "안서연";  
+
+    </script>
+</html>

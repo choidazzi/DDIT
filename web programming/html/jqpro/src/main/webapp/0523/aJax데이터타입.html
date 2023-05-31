@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>aJax데이터타입</title>
+<link rel ="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+<style>
+#resultBox {
+	display: flex;
+}
+
+.result {
+	flex: 2.5;
+}
+
+</style>
+</head>
+<body>
+	<div class="box">
+		<input type="button" value ="text" id="text">
+		<input type="button" value ="json배열" id="arr">
+		<input type="button" value ="json객체" id="jsonObj">
+		<input type="button" value ="json객체배열" id="objArr">
+		<div id="resultBox">
+			<div id="result1" class="result"></div>
+			<div id="result2" class="result"></div>
+			<div id="result3" class="result"></div>
+			<div id="result4" class="result"></div>
+		</div>
+	</div>
+
+<script>
+	let xhr = new XMLHttpRequest();
+	
+	// text
+	//$('#text').on('click',function(){})
+	$(document).on('click','#text',function(){
+		// 전송
+		xhr.open('get', 'text.jsp',true);
+		xhr.send()
+		
+		// 응답 
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				res = this.responseText;
+				// res = 홍길동/개나리/진달래/무궁화/삼천리/금수강산 
+				
+				names = res.split('/'); // names 배열 생성 
+				
+				// $(name).each(functoin(){})
+				code = '<ul>'
+				$.each(names,function(i){
+					code += '<li>' + names[i] + '</li>';
+				})
+				code += '</ul>'
+				
+				$('#result1').html(code);
+			}
+		}
+	})//#text
+	
+	// json 배열
+	$('#arr').on('click',function() {
+		
+		// 전송 
+		xhr.open('get','arr.jsp',true);
+		xhr.send();
+		
+		// 응답 
+		// 응답 먼저 작성해도 된당!
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				res = JSON.parse(this.responseText);
+				// res = ["진달래","무궁화","수선화","라일락","들국화","백장미"]
+				
+				code = "<ol>";
+				$.each(res, function(i){
+					code += "<li>" + res[i] + "</li>";
+				})
+				code += "</ol>";
+				
+				$('#result2').html(code);
+			}//if 
+		}// onreadystatechange
+	}) //#arr 
+	
+	// JSON OBJECT
+	$('#jsonObj').on('click',function() {
+		// 전송 
+		xhr.open('get','jsonObj.jsp',true);
+		xhr.send();
+		
+		// 응답 
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				res = JSON.parse(this.responseText);
+				
+				code = `<p>아이디: ${res.id}</p>
+						<p>이름: ${res.name}</p>
+						<p>전화번호: ${res.tel}</p>
+						<p>주소: ${res.address}</p>`;
+				
+				$('#result3').html(code);
+			}//if
+		}//onreadystatechange
+	})//#jsonObj
+	
+	// JSON Object Array
+	$('#objArr').on('click',function() {
+		// 전송 
+		xhr.open('get','objArr.jsp',true);
+		xhr.send();
+		
+		// 응답 
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				res = JSON.parse(this.responseText);
+				code = "";
+				$.each(res,function(i,v) {	// v = res[i]
+						code += `****${i+1}번째 회원 정보****<br> 
+						<p>아이디: ${v.id}</p>
+						<p>이름: ${v.name}</p>
+						<p>전화번호: ${v.tel}</p>
+						<p>주소: ${v.address}</p>`;
+				})//each
+				$('#result4').html(code);
+			}//if
+		}//onreadystatechange
+	})//objARr
+		
+</script>
+</body>
+</html>
