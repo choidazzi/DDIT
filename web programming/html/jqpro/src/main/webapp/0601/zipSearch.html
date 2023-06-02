@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="../css/my.css">
+<script src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<input type="text" id="dong">
+		<input type="button" value ="확인">
+		<div id="result1" class="result"></div>
+	</div>
+
+<script>
+	// input 공백 주지 말기 (절대!)
+	$('input[value=확인]').on('click', function(){
+		// 입력한 동 이름을 가져온다.	
+		dongValue = $('#dong').val();
+		$.ajax({
+			url: '/jqpro/ZipSearch.do',
+			data: {"dong" : dongValue},
+			type: 'post',
+			success: function(res) {
+				
+			},
+			error: function(xhr){
+				alert("condition: " + xhr.status);
+			},
+			dataType: 'json'
+		})
+	})
+</script>
+</body>
+</html>

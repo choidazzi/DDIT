@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 mybatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+       "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fileinfo">
+   <!-- 파일정보 issert 가져오기  -->
+   <insert id="insertFileInfo" parameterType="filevo">
+   		insert into fileinfo 
+   			values(
+   					fileinfo_seq.nextval,
+   					#{file_writer},
+   					#{origin_file_name},
+   					#{save_file_name},
+   					#{file_size},
+   					#{file_date}
+   					)
+   </insert>
+   
+   <!-- 전체 목록 가져오기  -->
+   <select id="getAllFileInfo" resultType="filevo">
+   		select * from fileinfo
+   </select>
+   <!-- 파일 번호를 이용하여 검색하기 -->
+   <select id="getFileInfo" resultType="filevo">
+   		select * from fileinfo
+   			where file_no = #{file_no}
+   </select>
+</mapper>
+
+

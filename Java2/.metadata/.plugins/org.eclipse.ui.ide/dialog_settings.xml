@@ -25,6 +25,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/ChoiSeoYeon/Desktop/programming/Java2"/>
 			<item value="/Users/ChoiSeoYeon/Desktop/dditgit 2/Java2"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

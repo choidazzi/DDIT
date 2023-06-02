@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/my.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<select id="lprod"></select> 
+		<select id="prod"></select> 
+		<div id="result1" class="result"></div>
+
+	</div>
+	<!-------------------------------------------------------------------->
+	<script type="text/javascript">
+		$(function() {
+			$.ajax({
+				url : "/jqpro/lprodList.do",
+				type : 'get',
+				success : function(res) {
+					code = ``;
+					$.each(res, function(i) {
+						code += `<option value="${res[i].gu}">${res[i].nm}</option>`;
+					});
+					$("#lprod").html(code);
+					$("#lprod").trigger('change');
+				},
+				error : function(xhr) {
+					alert("상태: ", xhr.status);
+				},
+				dataType : 'json'
+			})
+			
+			$("#lprod").on('change', function() {
+				// this: select(부모), 값은 option(자식)에서 얻는다.
+				guValue = $('option:selected', this).val();
+				$.ajax({
+					url: '/jqpro/prodList.do',
+					type: 'post',
+					data: { 'gu' : guValue },
+					success: function(res) {
+						code = ``;
+						if(res.flag == "ok") {
+							$.each(res.datas, function(i, v) {
+								code += `<option value="${v.prod_id}">${v.prod_name}</option>`;
+							});
+							
+						} else {
+							code += `<option value="0">데이터 없음</option>`;
+							// detail이 없기 때문에 이미지를 출력한다
+							vimg = $("<img src='../images/spongebob.png' alt='spongebob.png' style='width:300px;'>");
+							$("#result1").html(vimg);
+						}
+						$("#prod").html(code);	
+						$("#prod").trigger('change');
+					},
+					error: function(xhr) {
+						alert("상태: " + xhr.status);
+					},
+					dataType: 'json'
+				})
+			})
+			
+			$("#prod").on('change', function() {
+				prodId = $('option:selected', this).val();
+				$.ajax({
+					url: '/jqpro/prodDetail.do',
+					type: 'post',
+					data: { "prod_id": prodId },
+					success: function(res) {
+						//alert(res);
+						code = "<table class='table table-hover'>";
+						code += "<tr>";
+						code += "<th>항목</th>";
+						code += "<th>내용</th>";
+						code += "</tr>";
+
+						code += "<tr>";
+						code += "<td>PROD_ID</td>";
+						code += "<td>"+ res.prod_id +"</td>";
+						code += "</tr>";
+						
+						code += "<tr>";
+						code += "<td>PROD_NAME</td>";
+						code += "<td>"+ res.prod_name +"</td>";
+						code += "</tr>";
+
+						code += "<tr>";
+						code += "<td>PROD_LGU</td>";
+						code += "<td>"+ res.prod_lgu +"</td>";
+						code += "</tr>";
+
+						code += "<tr>";
+						code += "<td>PROD_BUYER</td>";
+						code += "<td>"+ res.prod_buyer +"</td>";
+						code += "</tr>";
+
+						code += "<tr>";
+						code += "<td>PROD_COST</td>";
+						code += "<td>"+ res.prod_cost +"</td>";
+						code += "</tr>";
+
+						code += "<tr>";
+						code += "<td>PROD_PRICE</td>";
+						code += "<td>"+ res.prod_price +"</td>";
+						code += "</tr>";
+
+						code += "<tr>";
+						code += "<td>PROD_SALE</td>";
+						code += "<td>"+ res.prod_sale +"</td>";
+						code += "</tr>";
+
+						code += "<tr>";
+						code += "<td>PROD_OUTLINE</td>";
+						code += "<td>"+ res.prod_outline +"</td>";
+						code += "</tr>";
+
+						code += "<tr>";
+						code += "<td>PROD_DETAIL</td>";
+						code += "<td>"+ res.prod_detail +"</td>";
+						code += "</tr>";
+
+						code += "</table>";
+				         $('#result1').html(code);
+					},
+					error: function(xhr) {
+						alert("상태: " + xhr.status);
+					},
+					dataType: 'json'
+				})
+			})
+		})
+	</script>
+</body>
+</html>

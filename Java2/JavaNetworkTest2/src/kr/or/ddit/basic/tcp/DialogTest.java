@@ -75,4 +75,4 @@ public class DialogTest {
 			}
 
 			return selectedFile;
-		}
+		}}

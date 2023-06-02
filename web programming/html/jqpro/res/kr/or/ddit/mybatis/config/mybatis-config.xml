@@ -15,6 +15,7 @@
 	<!-- SQL문의 parameter나 결과를 저장할 객체를 지정할 때 패키지명까지 포함한 전체 이름을 지정해 주어야 하는데 
 		 그것을 짧은 이름으로 사용할 별칭(alias)을 설정한다.-->
    <typeAliases>
+      <typeAlias alias="zipvo"	 type="kr.or.ddit.member.vo.ZipVO"/>
       <typeAlias alias="memvo"	 type="kr.or.ddit.member.vo.MemberVO"/>
       <typeAlias alias="lprodvo" type="kr.or.ddit.lprod.vo.LprodVO"/>
       <typeAlias alias="prodvo"	 type="kr.or.ddit.prod.vo.ProdVO"/>
