@@ -16,11 +16,11 @@
 	<!-- 저장하기 -->
 	<insert id="insertMember" parameterType="memvo">
 		insert into member(mem_id,mem_pass,mem_name,mem_bir,mem_zip,mem_add1,mem_add2, mem_hp, mem_mail) 
-            values (#{mem_id},#{mem_pass},#{mem_name},#{mem_name},#{mem_zip},#{mem_add1},#{mem_add2},#{mem_hp},#{mem_mail})
+            values (#{mem_id},#{mem_pass},#{mem_name},#{mem_bir},#{mem_zip},#{mem_add1},#{mem_add2},#{mem_hp},#{mem_mail})
 	</insert>
 	
 	<!-- 우편번호 검색 -->
 	<select id="searchZip" resultType="zipvo" parameterType="String">
-		select * from ziptb where dong like ${data}||'%'
+		SELECT * FROM ZIPTB WHERE DONG LIKE #{data}||'%'
 	</select>
 </mapper>

@@ -15,11 +15,12 @@
     <fullyQualifiedTypeName name="kr.or.ddit.member.service.IMemberDao"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="kr.or.ddit.mybatis.config.MyBatisSqlSessionFactory"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.member.vo.MemberVO"/>
     <fullyQualifiedTypeName name="kr.or.ddit.member.dao.MemberDaoImpl"/>
     <fullyQualifiedTypeName name="kr.or.ddit.member.dao.IMemberDao"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.member.service.IMemberService"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.member.service.MemberServiceImpl"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="kr.or.ddit.member.vo.ZipVO"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.member.service.IMemberService"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.member.service.MemberServiceImpl"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.member.vo.MemberVO"/>
+    <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
 </qualifiedTypeNameHistroy>

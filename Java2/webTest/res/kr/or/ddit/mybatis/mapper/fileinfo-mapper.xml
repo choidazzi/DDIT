@@ -5,17 +5,12 @@
 
 <mapper namespace="fileinfo">
    <!-- 파일정보 issert 가져오기  -->
-   <insert id="insertFileInfo" parameterType="filevo">
-   		insert into fileinfo 
-   			values(
-   					fileinfo_seq.nextval,
-   					#{file_writer},
-   					#{origin_file_name},
-   					#{save_file_name},
-   					#{file_size},
-   					#{file_date}
-   					)
-   </insert>
+       <insert id="insertFileinfo" parameterType="filevo">
+            insert into fileinfo(file_no, file_writer, origin_file_name, 
+                      save_file_name, file_size, file_date)
+       values (fileinfo_seq.nextval, #{file_writer}, #{origin_file_name}, #{save_file_name},
+             #{file_size}, sysdate)
+    </insert>
    
    <!-- 전체 목록 가져오기  -->
    <select id="getAllFileInfo" resultType="filevo">

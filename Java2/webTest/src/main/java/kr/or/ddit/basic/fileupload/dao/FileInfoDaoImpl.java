@@ -69,7 +69,7 @@ public class FileInfoDaoImpl implements IFileInfoDao {
 		try {
 			session = MyBatisSqlSessionFactory.getSqlSession();
 			
-			fileVo = session.selectOne("fileinfo.getFileinfo", fileNo);
+			fileVo = session.selectOne("fileinfo.getFileInfo", fileNo);
 		} finally {
 			if (session!=null) {
 				session.close();

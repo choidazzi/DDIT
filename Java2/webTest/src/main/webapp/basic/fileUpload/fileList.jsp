@@ -41,7 +41,7 @@
 		<td><%=vo.getOrigin_file_name() %></td>
 		<td><%=vo.getFile_size() %></td>
 		<td><%=vo.getFile_date() %></td>
-		<td>-</td>
+		<td><a href="<%=request.getContextPath()%>/fileDownLoad.do?fileno=<%=vo.getFile_no()%>">DownLoad</a></td>
 	</tr>
 <%
 	}
