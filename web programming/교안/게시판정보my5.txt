@@ -1,0 +1,119 @@
+html(ajax)요청페이지- servlet(Controller)  ->  service -> dao ->  mybatis - db실행 
+
+db실행 -> dao -> service  -> servlet(Controller) ->->->forward->->->  view페이지(jsp, json ㅡ응답결과를 만들어) -> 
+         요청부분의 html(jsp)의  ajax출력
+
+
+사용자 생성
+SQL> conn /as sysdba
+SQL> create user project identified by project;
+SQL> grant connect, resource to project;
+
+create table boardtab (
+num			number	             not null	primary key,
+subject			varchar2(50)	not null,
+writer			varchar2(15)	not null,
+mail			varchar2(30),
+password		             varchar2(10)	not null,
+content			varchar2(2000),
+hit			number		not null,
+wip			char(15)		not null,
+wdate			date		not null
+);
+
+create table replytab(
+renum  number              not null primary key,
+bonum  number              not null,
+name   varchar2(15)        not null,
+cont   varchar2(1000)      not null,
+redate   date			  not null,
+CONSTRAINT REPLY_BONUM FOREIGN KEY(BONUM)
+REFERENCES BOARDTAB(NUM)
+ON DELETE CASCADE 
+);
+
+외래키 수정
+ALTER TABLE AREPLYTAB
+ADD CONSTRAINT REPLY_BONUM FOREIGN KEY(BONUM)
+REFERENCES BOARDTAB(NUM)
+ON DELETE CASCADE 
+
+
+시퀀스 생성
+create sequence boardtab_num_seq nocache;
+create sequence replytab_renum_seq nocache;
+
+페이지별 리스트 출력 
+-----------------------------------
+1. select * from boardtab order by num desc;
+--------------1.을 B 라는 테이블로 본다--------------------------------------
+rownum : sql이 제공하는 가상 column
+2. select rownum as rnum, B.*  from (
+         select * from boardtab order by num desc) B
+    where rownum <= 5;
+ -------------------2.을a라고 본다.----------------------------------   
+3. select A.* from (
+      select rownum as rnum, B.*  from (
+          select * from boardtab
+          order by num desc) B
+   <![CDATA[
+      where rownum <= 5) A 
+   where A.rnum >=1;
+  ]]>
+--------------------------------------------------------
+
+
+------------------------------------------------
+검색시------------------------------------------
+select A.* from 
+     (select rownum as rnum , B.* from
+        ( select * from boardtab
+             where writer like '%이름%'
+             order by  num desc ) B 
+            where rownum <= #end#) A
+       where A.rnum >= #start# 
+
+-------------검색을 위한 동적 조건부여------------------------------------
+<!-- 동적쿼리  -->
+<sql id="dynamicCondition">
+   <where>
+      <if test="!(stype == '' or sword == '')">
+           ${stype} like  '%'||#{sword}||'%'
+       </if>
+   </where>
+</sql>
+--------------------------------------
+ select A.* from 
+     (select rownum as rnum , B.* from
+        ( select * from boardtab
+          <include refid="dynamicCondition"/> 
+               order by  num desc ) B 
+    <![CDATA[
+          where rownum <= #end#) A
+       where A.rnum >= #start# 
+     ]]>            
+ </select>
+ -------------------------------------------------------
+ 
+insert 생성
+
+insert into boardtab values (boardtab_num_seq.nextval, '제목1', '이름1', 'test1@test.com', '1234', '내용1', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목2', '이름2', 'test2@test.com', '1234', '내용2', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목3', '이름3', 'test3@test.com', '1234', '내용3', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목4', '이름4', 'test4@test.com', '1234', '내용4', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목5', '이름5', 'test5@test.com', '1234', '내용5', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목6', '이름6', 'test6@test.com', '1234', '내용6', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목7', '이름7', 'test7@test.com', '1234', '내용7', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목8', '이름8', 'test8@test.com', '1234', '내용8', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목9', '이름9', 'test9@test.com', '1234', '내용9', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목10', '이름10', 'test10@test.com', '1234', '내용10', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목11', '이름11', 'test11@test.com', '1234', '내용11', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목12', '이름12', 'test12@test.com', '1234', '내용12', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목13', '이름13', 'test13@test.com', '1234', '내용13', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목14', '이름14', 'test14@test.com', '1234', '내용14', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목15', '이름15', 'test15@test.com', '1234', '내용15', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목16', '이름16', 'test16@test.com', '1234', '내용16', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목17', '이름17', 'test17@test.com', '1234', '내용17', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목18', '이름18', 'test18@test.com', '1234', '내용18', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목19', '이름19', 'test19@test.com', '1234', '내용19', 0, '000.000.000.000', sysdate);
+insert into boardtab values (boardtab_num_seq.nextval, '제목20', '이름20', 'test20@test.com', '1234', '내용20', 0, '000.000.000.000', sysdate);

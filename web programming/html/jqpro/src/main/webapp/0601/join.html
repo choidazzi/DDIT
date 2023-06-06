@@ -227,7 +227,8 @@ table {
 	 		data: fData2,
 	 		type:'post',
 	 		success: function(res) {
-	 			alert(res.flag)
+	 			//alert(res.flag);
+	 			$('#joinsp').html(res.flag);
 	 		}, 
 	 		error: function(xhr) {
 	 			alert("condition: "+xhr.status)

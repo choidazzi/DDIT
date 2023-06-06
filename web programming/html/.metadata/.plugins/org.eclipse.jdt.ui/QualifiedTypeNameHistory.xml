@@ -13,14 +13,24 @@
     <fullyQualifiedTypeName name="kr.or.ddit.prod.service.ProdServiceImpl"/>
     <fullyQualifiedTypeName name="kr.or.ddit.lprod.service.LprodServiceImpl"/>
     <fullyQualifiedTypeName name="kr.or.ddit.member.service.IMemberDao"/>
-    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.mybatis.config.MyBatisSqlSessionFactory"/>
     <fullyQualifiedTypeName name="kr.or.ddit.member.dao.MemberDaoImpl"/>
     <fullyQualifiedTypeName name="kr.or.ddit.member.dao.IMemberDao"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="kr.or.ddit.member.vo.ZipVO"/>
     <fullyQualifiedTypeName name="kr.or.ddit.member.service.IMemberService"/>
     <fullyQualifiedTypeName name="kr.or.ddit.member.service.MemberServiceImpl"/>
     <fullyQualifiedTypeName name="kr.or.ddit.member.vo.MemberVO"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.board.dao.IBoardDao"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.board.vo.BoardVO"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.mybatis.config.MyBatisSqlSessionFactory"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.board.dao.BoardDaoImpl"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.board.service.IBoardService"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.board.service.BoardServiceImpl"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.board.vo.PageVO"/>
 </qualifiedTypeNameHistroy>
