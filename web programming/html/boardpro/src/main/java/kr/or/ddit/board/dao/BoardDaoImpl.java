@@ -63,10 +63,4 @@ public class BoardDaoImpl implements IBoardDao{
 		return count;
 	}
 
-	@Override
-	public PageVO getInfo(int page, String stype, String sword) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

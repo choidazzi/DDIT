@@ -24,8 +24,8 @@
           <include refid="dynamicCondition"/> 
                order by  num desc ) B 
     <![CDATA[
-          where rownum <= #end#) A
-       where A.rnum >= #start# 
+          where rownum <= #{end}) A
+       where A.rnum >= #{start} 
      ]]> 
 </select>
 

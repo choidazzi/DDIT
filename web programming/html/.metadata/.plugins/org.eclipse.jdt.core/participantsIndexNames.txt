@@ -7,12 +7,16 @@ INDEX VERSION 1.131
 /jqpro/src/main/java
 /Users/ChoiSeoYeon/Desktop/dditgit/web programming/html/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2283074253.index
 /jqpro/src/main/java
+/Users/ChoiSeoYeon/Desktop/dditStudy/web programming/html/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/20308325.index
+/boardpro/src/main/java
 /Users/ChoiSeoYeon/Desktop/dditgit/web programming/html/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3399925826.index
 /webpro/src/main/java
 /Users/ChoiSeoYeon/Desktop/programming/web programming/html/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3356416665.index
 /jqpro/src/main/java
 /Users/ChoiSeoYeon/Desktop/programming/web programming/html/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3761111833.index
 /jqpro/src/main/java
+/Users/ChoiSeoYeon/Desktop/dditStudy/web programming/html/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/772447986.index
+/boardpro/src/main/java
 /Users/ChoiSeoYeon/Desktop/dditgit/web programming/html/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3737646692.index
 /webpro/src/main/java
 /Users/ChoiSeoYeon/Desktop/ddit/web programming/html/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2196430937.index

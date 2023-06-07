@@ -20,7 +20,6 @@ public interface IBoardDao {
 	// 글 수정하기 
 	
 	// 페이지 정보 얻기 - 시작번호, 끝번호, 시작페이지 번호, 끝페이지 번호, 총페이지 개수   
-	public PageVO getInfo(int page, String stype, String sword);
 	// 댓글 쓰기 - 저장 
 	
 	// 댓글 수정 

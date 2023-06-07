@@ -40,22 +40,38 @@ public class BoardServiceImpl implements IBoardService{
 		Map<String, Object> map = new HashMap<>();
 		map.put("stype", stype);
 		map.put("sword", sword);
-		map.put("page", page);
 		int count = this.totalCount(map);
-		int perPage = PageVO.getPerList();
 		
 		// 전체 페이지 수 구하기 
-		int totalPage = (int)Math.ceil((double) count / perPage);
+		int totalPage = (int)Math.ceil((double) count / PageVO.getPerList());
+		
 		// start, end 구하기 
-		int start = (page-1) * perPage + 1;
-		int end = start + perPage - 1;
+		int start = (page-1) * PageVO.getPerList() + 1;
+		int end = start + PageVO.getPerList() - 1;
 		
 		if(end > count) end = count;
 		
 		// startPage, endPage 
-		int statPage = ((page-1) / perPage * perPage) + 1;
+		int perPage = PageVO.getPerPage();
+		int startPage = ((page-1) / perPage * perPage) + 1;
+		int endPage = startPage + perPage - 1;
 		
-		return null;
+		if(endPage > totalPage) endPage = totalPage;
+		
+		System.out.println("start= " + start);
+		System.out.println("end= " + end);
+		System.out.println("startPage= " + startPage);
+		System.out.println("endPage= " + endPage);
+		System.out.println("totalPage= " + totalPage);
+		
+		PageVO pvo = new PageVO();
+		pvo.setStart(start);
+		pvo.setEnd(end);
+		pvo.setStartPage(startPage);
+		pvo.setEndPage(endPage);
+		pvo.setTotalPage(totalPage);
+		
+		return pvo;
 	}
 
 }
