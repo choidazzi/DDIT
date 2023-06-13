@@ -34,5 +34,6 @@
 	<!-- DB에 사용되는 SQL문이 작성된 mapper파일들을 등록한다. -->
 	<mappers>
 	    <mapper resource="kr/or/ddit/mybatis/mapper/board-mapper.xml"/>
+	    <mapper resource="kr/or/ddit/mybatis/mapper/reply-mapper.xml"/>
 	</mappers>
 </configuration>

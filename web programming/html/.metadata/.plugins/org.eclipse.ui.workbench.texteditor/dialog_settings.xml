@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="alert"/>
+		<item key="selection" value="vreply"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="alert"/>
-			<item value="/lprodList.do&quot;,"/>
-			<item value="font-famil"/>
-			<item value="padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;padding: 80px 0px;"/>
-			<item value="calc"/>
-			<item value="float"/>
+			<item value="등록"/>
+			<item value="name1"/>
+			<item value="listpageser"/>
+			<item value="&#x09;&#x09;&#x09;&#x09;replyListServer();"/>
+			<item value="댓글으"/>
+			<item value="&quot;wr&quot;"/>
+			<item value="action"/>
+			<item value="data"/>
 		</list>
 		<list key="replacehistory">
 		</list>

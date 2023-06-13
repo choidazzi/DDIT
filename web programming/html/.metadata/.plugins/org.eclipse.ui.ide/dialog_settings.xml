@@ -9,9 +9,9 @@
 	</section>
 	<section name="CleanDialogSettings">
 		<item key="TOGGLE_SELECTED" value="false"/>
-		<item key="DIALOG_WIDTH" value="540"/>
-		<item key="DIALOG_HEIGHT" value="360"/>
-		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		<item key="DIALOG_WIDTH" value="534"/>
+		<item key="DIALOG_HEIGHT" value="379"/>
+		<item key="DIALOG_FONT_NAME" value="1|Fira Code Light|11.0|0|COCOA|1|FiraCode-Regular"/>
 	</section>
 	<section name="BasicNewProjectResourceWizard">
 	</section>

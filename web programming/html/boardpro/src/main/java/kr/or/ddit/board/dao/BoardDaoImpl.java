@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import kr.or.ddit.board.vo.BoardVO;
 import kr.or.ddit.board.vo.PageVO;
+import kr.or.ddit.board.vo.ReplyVO;
 import kr.or.ddit.mybatis.config.MyBatisSqlSessionFactory;
 
 public class BoardDaoImpl implements IBoardDao{
@@ -61,6 +62,158 @@ public class BoardDaoImpl implements IBoardDao{
 		}
 		// 3. 결과 리턴  
 		return count;
+	}
+
+	@Override
+	public int insertBoard(BoardVO vo) {
+		int res = 0;
+		SqlSession session = MyBatisSqlSessionFactory.getSqlSession();
+		
+		try {
+			res = session.insert("board.insertBoard",vo);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			session.commit();
+			session.close();
+			
+		}
+		return res;
+	}
+	
+	   @Override
+	   public int updateBoard(BoardVO vo) {
+	      SqlSession session = MyBatisSqlSessionFactory.getSqlSession();
+
+	      int res = 0;
+	      
+	      try {
+	         res = session.update("board.updateBoard", vo);
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         session.commit();
+	         session.close();
+	      }
+	      
+	      
+	      return res; 
+	   }
+
+
+	   @Override
+	   public int deleteBoard(int num) {
+	      SqlSession session = MyBatisSqlSessionFactory.getSqlSession();
+
+	      int res = 0;
+	      
+	      try {
+	         res = session.delete("board.deleteBoard", num);
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         session.commit();
+	         session.close();
+	      }
+	      
+	      
+	      return res; 
+	   }
+
+
+	   @Override
+	   public int updateHit(int num) {
+	      SqlSession session = MyBatisSqlSessionFactory.getSqlSession();
+
+	      int res = 0;
+	      
+	      try {
+	         res = session.update("board.updateHit", num);
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         session.commit();
+	         session.close();
+	      }
+	      
+	      
+	      return res; 
+	   }
+
+	@Override
+	public int updateReply(ReplyVO vo) {
+		SqlSession session = MyBatisSqlSessionFactory.getSqlSession();
+
+	      int res = 0;
+	      
+	      try {
+	         res = session.update("reply.updateReply", vo);
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         session.commit();
+	         session.close();
+	      }
+	      
+	      
+	     return res; 
+	 }
+	
+
+	@Override
+	public int deleteReply(int renum) {
+		SqlSession session = MyBatisSqlSessionFactory.getSqlSession();
+
+	      int res = 0;
+	      
+	      try {
+	         res = session.delete("reply.deleteReply", renum);
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         session.commit();
+	         session.close();
+	      }
+	      
+	      
+	      return res; 
+	}
+
+	@Override
+	public int insertReply(ReplyVO vo) {
+		int res = 0;
+		SqlSession session = MyBatisSqlSessionFactory.getSqlSession();
+		
+		try {
+			res = session.insert("reply.insertReply",vo);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			session.commit();
+			session.close();
+			
+		}
+		return res;
+	}
+
+	@Override
+	public List<ReplyVO> listReply(int bonum) {
+				int count = 0;
+				List<ReplyVO> list = null;
+				
+				SqlSession session = MyBatisSqlSessionFactory.getSqlSession();
+				
+				try {
+					list = session.selectList("reply.listReply", bonum);
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					session.commit();
+					session.close();
+				}
+				return list;
 	}
 
 }
