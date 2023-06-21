@@ -63,9 +63,19 @@ nav a {
 	border: 1px solid midnightblue;
 	background: lightyellow;
 }
+
+#modiform {
+	display: none;
+}
 </style>
-</head>
+</head> 
 <body>
+
+	<div id="modiform">
+		<textarea rows="5" cols="30"></textarea>
+		<input type="button" value="확인" id="modisend">
+		<input type="button" value="취소" id="modireset">
+	</div>
    <input data-bs-toggle="modal" data-bs-target="#wModal" type="button"
       value="글쓰기" id="write">
    <br>
@@ -201,16 +211,28 @@ $('#search').on('click', function() {
 
 // 다음(Next) 버튼 이벤트    - 처음부터 있었던 것 아니니까 
 $(document).on('click', '#next', function() {
+	if($('#modiform').css('display')!='none'){
+    	// 열려있다
+    	replyReset();	// 이미 열려있는 modiform을 body만으로 이동 
+      }
    currentPage = parseInt($('.pageno').last().text()) + 1;
    listPageServer(currentPage);
 })
 // 이전(Prev) 버튼 이벤트 
 $(document).on('click', '#prev', function() {
+	if($('#modiform').css('display')!='none'){
+    	// 열려있다
+    	replyReset();	// 이미 열려있는 modiform을 body만으로 이동 
+      }
    currentPage = parseInt($('.pageno').first().text()) - 1;
    listPageServer(currentPage);
 })
 // 페이지 번호 클릭 이벤트 
 $(document).on('click', '.pageno', function() {
+	if($('#modiform').css('display')!='none'){
+    	// 열려있다
+    	replyReset();	// 이미 열려있는 modiform을 body만으로 이동 
+      }
    currentPage = parseInt($(this).text().trim());
    listPageServer(currentPage);
 })
@@ -239,7 +261,7 @@ $('#msend').on('click', function() {
 
 })
 
-// 수정, 삭제, 등록 이벤트 
+// 수정, 삭제, 등록, 댓글 수정, 댓글 삭제 이벤트 
 $(document).on('click', '.action', function() {
    vname = $(this).attr('name');
    vidx = $(this).attr('idx');
@@ -295,9 +317,48 @@ $(document).on('click', '.action', function() {
       rdata.name = name;
       // 서버로 전송
       replyInsertSever();
+   } else if (vname == "r_delete") {
+	   alert(vidx + "번 댓글을 삭제합니다.");
+	   vdelete = $(this);
+	   replyDeleteServer();
+   } else if(vname == "r_modify") {
+	      alert(vidx + "번 댓글을 수정합니다");
+	      // 다른 곳에 modiform이 열려있는지 확인 
+	      if($('#modiform').css('display')!='none'){
+	    	// 열려있다
+	    	replyReset();	// 이미 열려있는 modiform을 body만으로 이동 
+	      }
+	      //vp3 = $(this).parents('.p12').next()
+	      vp3 = $(this).parents('.reply-body').find('.p3');
+	      
+	      //원래 내용을 가져온다
+	      rcont = $(vp3).html(); // <br>태그가 포함
+	      // 원래 내용에서 <br> 태그를 \n으로 변경 
+	      cont = rcont.replace(/<br>/g, "\n");
+	      // \n으로 변경한 내용을 수정창에 출력 
+	      $('#modiform textarea').val(cont);
+	      // 
+	      $(vp3).empty().append($('#modiform'));
+	      
+	      $('#modiform').show();
+	      //$('#modiform').css('display', 'block');
    }
- 
 })
+
+replyReset = function() {
+	//현재 열려있는 modiform을 기준으로 p3 태그를 찾는다 
+	p3 = $('#modiform').parent();
+	// modiform을 body로 이동 
+	//$('#modiform').appendTo('body');
+	$('body').append($('#modiform'));
+	// modiform을 안보이게 설정 
+	$('#modiform').hide();
+	//$('#modiform').css('display','none');
+	
+	// 원래 내용을 p3으로 보이게 한다.
+	$(p3).html(rcont);
+}
+
 // 수정 모달창에서 데이터 수정 후 전송 버튼 클릭 이벤트 
 $('#usend').on('click', function() {
 // 수정해서 입력한 모든 값을 가져온다 
@@ -318,7 +379,7 @@ boardUpdateServer();
 // 제목을 클릭해서 조회수 증가
 $(document).on('click', '.card a', function(){
    vreply = $(this);
-   vhidx = $(this).attr('idx');
+   vidx = $(this).attr('idx');
    // alert($(this).attr('aria-expanded'));
    hitattr = $(this).attr('aria-expanded');
    
@@ -334,6 +395,36 @@ $(document).on('click', '.card a', function(){
    
    replyListServer();
 })
+
+// modiform - 댓글 수정에서 취소 버튼 클릭 이벤트 
+$('#modireset').on('click',function(){
+	replyReset();
+})
+
+// modiform - 댓글 수정에서 확인 버튼 클릭 이벤트 
+$('#modisend').on('click',function(){
+	// 새롭게 입력한 값을 가져온다.
+	newcont = $("#modiform textarea").val()		// 엔터기호 포함
+	
+	// 엔터기호를 <br> 태그로 변환 
+	cont = newcont.replace(/\n/g,"<br>");
+	// p3을 찾는다 - modiform을 기준으로 
+	p3 = $('#modiform').parent();
+	// modiform을 body로 이동 - 안보이게 설정 
+	$('#modiform').appendTo($('body'));
+	$('#modiform').hide();
+	
+	// 서버로 전송 - db 수정 - newcont, vidx
+	reply = {};
+	reply.cont = newcont;
+	reply.renum = vidx;
+	reply.name = "ssss"
+	replyUpdateServer()
+	// <br> 변경한 새로 입력한 내용을 p3에 출력 -db 수정 성공 후 
+	
+})
+
+
 </script>
 </body>
 </html>

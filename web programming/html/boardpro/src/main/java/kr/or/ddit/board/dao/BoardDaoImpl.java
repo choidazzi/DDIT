@@ -193,7 +193,6 @@ public class BoardDaoImpl implements IBoardDao{
 		} finally {
 			session.commit();
 			session.close();
-			
 		}
 		return res;
 	}

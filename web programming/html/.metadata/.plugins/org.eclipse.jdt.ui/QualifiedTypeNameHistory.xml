@@ -29,9 +29,9 @@
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="kr.or.ddit.mybatis.config.MyBatisSqlSessionFactory"/>
     <fullyQualifiedTypeName name="kr.or.ddit.board.vo.BoardVO"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.board.vo.ReplyVO"/>
     <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
     <fullyQualifiedTypeName name="kr.or.ddit.board.service.IBoardService"/>
     <fullyQualifiedTypeName name="kr.or.ddit.board.service.BoardServiceImpl"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.board.vo.ReplyVO"/>
 </qualifiedTypeNameHistroy>

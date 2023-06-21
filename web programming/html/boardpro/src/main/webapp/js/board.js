@@ -1,74 +1,118 @@
-replyListServer = function(){
+/**
+ * 
+ */
+replyUpdateServer = function () {
 	$.ajax({
-		url:`${myPath}/ReplyList.do`,
-		data: {"bonum": vidx},
-		type: 'get',
+		url: `${myPath}/ReplyUpdate.do`,
+		data: reply,
+		type: 'post',
 		success: function(res){
-			// 결과 res 를 출력 
-			
-			rcode = "";
-			
-			$.each(res, function(i,v){
-				cont = v.cont;
-				
-				cont = cont.replace(/\n/g,"<br>")
-				rcode += `<div class="reply-body">
-				            <div class="p12">
-				               <p class="p1">
-				                  작성자: <span class="wr">${v.name}</span> &nbsp;&nbsp;&nbsp; 
-				                  날짜: <span class="da">${v.redate}</span>
-				               </p>
-				               <p class="p2">
-				                  <input type="button" idx="${v.renum}" value="댓글 수정" name="r_modify" class="action">
-				                  <input type="button" idx="${v.renum}" value="댓글 삭제" name="r_delete" class="action">
-				               </p>
-				            </div>
-				            <p class="p3">${cont}</p>
-				          </div>`;
-			})
-			// 등록버튼(vreply) 또는 제목 (this=vreply)을 기준으로 card-body 를 찾아서 reply-body 
-			// 추가한다.
-			
-			vreply.parents('.card').find('.reply-body').remove();
-			vreply.parents('.card').find('.card-body').append(rcode);
+			// 화면 수정 
+			if(res.flag == "성공"){
+			$(p3).html(cont);
+			}
 		},
 		error: function(xhr) {
 			alert(xhr.status);
 		},
 		dataType: 'json'
+	})
+}
+replyDeleteServer = function() {
+	$.ajax({
+		url:`${myPath}/ReplyDelete.do`,
+		data: {"renum" : vidx},
+		type: 'get',
+		success: function(res) {
+			alert(res.flag);
+			// 화면 삭제 
+			vdelete.parents('.reply-body').remove();
+		},
+		error: function(xhr) {
+			alert(xhr.status);
+		}
 	})	
 }
 
-replyInsertSever = function(){
-	$.ajax({
-		url: `${myPath}/ReplyInsert.do`,
-		/*
-		data: {
-			"bonum" : vidx,
-			"cont" : vtval,
-			"name" : name
-		}
-		*/
-		data: rdata,
-		type: 'post',
-		success: function(res){
-			//alert(res.flag);
-			if(res.flag == "성공") {
-				// 입력한 댓글을 출력 
-				replyListServer();
-			}
-		},
-		error: function(xhr) {
-			alert("condition: " + xhr.status);
-		},
-		dataType: 'json'
-	})
+replyListServer = function(){
+   
+   $.ajax({
+      url : `${myPath}/ReplyList.do`,
+      data : {"bonum" : vidx},
+      type : 'get',
+      success : function(res){
+            
+      rcode = "";
+      
+      $.each(res, function(i, v){
+         
+         cont = v.cont;
+         
+         cont = cont.replace(/\n/g, "<br>")
+         
+         rcode += `<div class="reply-body">
+               <div class="p12">
+                  <p class="p1">
+                     작성자: <span class="wr">${v.name}</span> &nbsp;&nbsp;&nbsp; 
+                     날짜: <span class="da">${v.redate}</span>
+                  </p>
+                  <p class="p2">
+                     <input type="button" idx="${v.renum}" value="댓글수정" name="r_modify" class="action">
+                     <input type="button" idx="${v.renum}" value="댓글삭제" name="r_delete" class="action">
+                  </p>
+               </div>
+               <p class="p3">${cont}</p>
+
+             </div>`
+      })
+      
+      //등록버튼 또는 제목(this=vreply)을 기준으로 card-body를 찾아서 reply-body
+      //추가한다
+      //vreply.parent().next().remove();
+      
+      vreply.parents('.card').find('.reply-body').remove();
+      vreply.parents('.card').find('.card-body').append(rcode);
+            
+      },
+      error : function(xhr){
+         alert(xhr.status);
+      },
+      dataType : 'json'
+   })
 }
+
+
+replyInsertServer = function() {
+   
+   $.ajax({
+      url : `${myPath}/ReplyInsert.do`,
+      /*data : {
+         "bonum" : vidx,
+         "cont" : vtval,
+         "name" : name
+      }*/
+      data : rdata,
+      type : 'post',
+      success : function(res) {
+         //alert(res.flag);
+         if(res.flag == "성공") {
+            //입력한 댓글을 추가해서 출력하기
+            replyListServer();
+         }
+      },
+      error : function(xhr){
+         alert(xhr.status);
+      },
+      dataType : 'json'
+      
+   })
+}
+
 
 boardHitUpdate = function(){
    $.ajax({
       url: `${myPath}/BoardHit.do`,
-      data: {"num" : vhidx},
+      data: {"num" : vidx},
       type: 'get',
       success: function(res) {
          // 성공하면 화면의 조회수 변경
