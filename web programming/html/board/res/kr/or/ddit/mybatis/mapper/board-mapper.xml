@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+   <sql id="dynamicCondition">
+         <where>
+            <if test="!(stype == '' or sword == '')">
+                 ${stype} like  '%'||#{sword}||'%'
+             </if>
+         </where>
+   </sql>
+   
+   
+   <select id="listPerPage" resultType="boardvo" parameterType="map">
+      select A.* from 
+        (select rownum as rnum , B.* from
+           ( select * from boardtab
+             <include refid="dynamicCondition"/> 
+                  order by  num desc ) B 
+       <![CDATA[
+          where rownum <= #{end}) A
+          where A.rnum >= #{start} 
+        ]]>            
+      
+   </select>
+   
+   <select id="totalCount" parameterType="map" resultType="int">
+      select count(*) from boardtab
+         <include refid="dynamicCondition"/> 
+   </select>
+   
+   <insert id="insertBoard" parameterType="boardvo">
+      insert into boardtab 
+      values(
+      boardtab_num_seq.nextval, 
+      #{subject},
+      #{writer},
+      #{mail},
+      #{password},
+      #{content},
+      0,
+      #{wip},
+      sysdate
+      )
+   </insert>
+   
+   <update id="updateBoard" parameterType="boardvo"> 
+      update boardtab set writer = #{writer},
+	                     mail = #{mail},
+	                     password = #{password},
+	                     subject = #{subject},
+	                     content = #{content}
+                     where num = #{num}
+   </update>
+   
+   
+   <delete id="deleteBoard" parameterType="int">
+      delete from boardtab where num = #{data}
+   </delete>
+   
+   
+   <update id="updateHit" parameterType="int">
+      update boardtab 
+         set   hit = hit + 1
+         where num = #{data}
+   </update>
+   
+   
+
+
+</mapper>

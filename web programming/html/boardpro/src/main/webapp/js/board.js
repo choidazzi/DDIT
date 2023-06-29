@@ -209,7 +209,8 @@ listPageServer = function(cpage) {
       type: 'post',
       success: function(res) {
          code = "";
-         code += `<div class="container mt-3">
+         code += `
+         <div class="container mt-3">
            <h2>Accordion Example</h2>
            <div id="accordion">`
          $.each(res.datas, function(i, v) {
@@ -220,31 +221,31 @@ listPageServer = function(cpage) {
 
             code += `<div class="card">
            <div class="card-header">
-          <a idx="${v.num}" class="btn" data-bs-toggle="collapse" href="#collapse${v.num}">
-            ${v.subject}
-          </a>
-        </div>
-        <div id="collapse${v.num}" class="collapse" data-bs-parent="#accordion">
-          <div class="card-body">
-            <div class="p12">
-               <p class="p1">
-                  작성자: <span class="wr">${v.writer}</span> &nbsp;&nbsp;&nbsp; 
-                  이메일: <span class="ma">${v.mail}</span> &nbsp;&nbsp;&nbsp; 
-                  조회수: <span class="hit">${v.hit}</span> &nbsp;&nbsp;&nbsp; 
-                  날짜: <span class="da">${v.wdate}</span>
-               </p>
-               <p class="p2">
-                  <input type="button" idx="${v.num}" value="수정" name="modify" class="action">
-                  <input type="button" idx="${v.num}" value="삭제" name="delete" class="action">
-               </p>
-            </div>
-            <p class="p3">${content}</p>
-            <p class="p4">
-                  <textarea rows="" cols="50"></textarea>
-                  <input type="button" idx="${v.num}" value="등록" name="reply" class="action">
-            </p>
-          </div>
-        </div>
+	          <a idx="${v.num}" class="btn" data-bs-toggle="collapse" href="#collapse${v.num}">
+	            ${v.subject}
+	          </a>
+       	  </div>
+          <div id="collapse${v.num}" class="collapse" data-bs-parent="#accordion">
+	          <div class="card-body">
+	            <div class="p12">
+	               <p class="p1">
+	                  작성자: <span class="wr">${v.writer}</span> &nbsp;&nbsp;&nbsp; 
+	                  이메일: <span class="ma">${v.mail}</span> &nbsp;&nbsp;&nbsp; 
+	                  조회수: <span class="hit">${v.hit}</span> &nbsp;&nbsp;&nbsp; 
+	                  날짜: <span class="da">${v.wdate}</span>
+	               </p>
+	               <p class="p2">
+	                  <input type="button" idx="${v.num}" value="수정" name="modify" class="action">
+	                  <input type="button" idx="${v.num}" value="삭제" name="delete" class="action">
+	               </p>
+	           	</div>
+	            <p class="p3">${content}</p>
+	            <p class="p4">
+	                  <textarea rows="" cols="50"></textarea>
+	                  <input type="button" idx="${v.num}" value="등록" name="reply" class="action">
+	            </p>
+	       </div>
+         </div>
       </div>`
          }) // $.each
 

@@ -1,20 +1,14 @@
 MemberFilterActionGroup.org.eclipse.jdt.ui.JavaOutlinePage.2=true
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="kr.or.ddit.buyer.service.IBuyerService"><rhs name\="kr.or.ddit.buyer.service.BuyerServiceImpl"/></lhs><lhs name\="kr.or.ddit.prod.dao.IProdDao"><rhs name\="kr.or.ddit.prod.dao.ProdDaoImpl"/></lhs><lhs name\="kr.or.ddit.prod.dao.ProdDaoImpl"><rhs name\="kr.or.ddit.prod.dao.ProdDaoImpl"/></lhs><lhs name\="kr.or.ddit.lprod.dao.ILprodDao"><rhs name\="kr.or.ddit.lprod.dao.LprodDaoImpl"/></lhs><lhs name\="kr.or.ddit.lprod.service.ILprodService"><rhs name\="kr.or.ddit.lprod.service.LprodServiceImpl"/></lhs><lhs name\="kr.or.ddit.prod.service.IProdService"><rhs name\="kr.or.ddit.prod.service.ProdServiceImpl"/></lhs><lhs name\="kr.or.ddit.member.dao.IMemberDao"><rhs name\="kr.or.ddit.member.dao.MemberDaoImpl"/></lhs><lhs name\="kr.or.ddit.member.dao.MemberDaoImpl"><rhs name\="kr.or.ddit.member.dao.MemberDaoImpl"/></lhs><lhs name\="kr.or.ddit.member.service.IMemberService"><rhs name\="kr.or.ddit.member.service.MemberServiceImpl"/></lhs><lhs name\="kr.or.ddit.member.vo.MemberVO"><rhs name\="kr.or.ddit.member.vo.MemberVO"/></lhs><lhs name\="kr.or.ddit.board.dao.IBoardDao"><rhs name\="kr.or.ddit.board.dao.BoardDaoImpl"/></lhs><lhs name\="kr.or.ddit.board.service.IBoardService"><rhs name\="kr.or.ddit.board.service.BoardServiceImpl"/></lhs><lhs name\="java.util.Map"><rhs name\="java.util.HashMap"/></lhs><lhs name\="kr.or.ddit.board.vo.BoardVO"><rhs name\="kr.or.ddit.board.vo.BoardVO"/></lhs><lhs name\="kr.or.ddit.board.vo.ReplyVO"><rhs name\="kr.or.ddit.board.vo.ReplyVO"/></lhs></history>
-content_assist_number_of_computers=17
-content_assist_proposals_background=255,255,255
-content_assist_proposals_foreground=0,0,0
+content_assist_autoactivation_triggers_java=<{.qwertyuioplkjhgfdsazxcvbnm_QWERTYUIOPLKJHGFDSAZXCVBNM
+content_assist_favorite_static_members=org.junit.Assert.*;org.junit.Assume.*;org.junit.jupiter.api.Assertions.*;org.junit.jupiter.api.Assumptions.*;org.junit.jupiter.api.DynamicContainer.*;org.junit.jupiter.api.DynamicTest.*;org.mockito.ArgumentMatchers.*;org.mockito.Mockito.*;org.assertj.core.api.Assertions.*
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="kr.or.ddit.buyer.service.IBuyerService"><rhs name\="kr.or.ddit.buyer.service.BuyerServiceImpl"/></lhs><lhs name\="kr.or.ddit.prod.dao.IProdDao"><rhs name\="kr.or.ddit.prod.dao.ProdDaoImpl"/></lhs><lhs name\="kr.or.ddit.prod.dao.ProdDaoImpl"><rhs name\="kr.or.ddit.prod.dao.ProdDaoImpl"/></lhs><lhs name\="kr.or.ddit.lprod.dao.ILprodDao"><rhs name\="kr.or.ddit.lprod.dao.LprodDaoImpl"/></lhs><lhs name\="kr.or.ddit.lprod.service.ILprodService"><rhs name\="kr.or.ddit.lprod.service.LprodServiceImpl"/></lhs><lhs name\="kr.or.ddit.prod.service.IProdService"><rhs name\="kr.or.ddit.prod.service.ProdServiceImpl"/></lhs><lhs name\="kr.or.ddit.member.dao.IMemberDao"><rhs name\="kr.or.ddit.member.dao.MemberDaoImpl"/></lhs><lhs name\="kr.or.ddit.member.dao.MemberDaoImpl"><rhs name\="kr.or.ddit.member.dao.MemberDaoImpl"/></lhs><lhs name\="kr.or.ddit.member.service.IMemberService"><rhs name\="kr.or.ddit.member.service.MemberServiceImpl"/></lhs><lhs name\="kr.or.ddit.member.vo.MemberVO"><rhs name\="kr.or.ddit.member.vo.MemberVO"/></lhs><lhs name\="kr.or.ddit.board.dao.IBoardDao"><rhs name\="kr.or.ddit.board.dao.BoardDaoImpl"/></lhs><lhs name\="kr.or.ddit.board.service.IBoardService"><rhs name\="kr.or.ddit.board.service.BoardServiceImpl"/><rhs name\="kr.or.ddit.board.service.BoardService"/></lhs><lhs name\="java.util.Map"><rhs name\="java.util.HashMap"/></lhs><lhs name\="kr.or.ddit.board.vo.BoardVO"><rhs name\="kr.or.ddit.board.vo.BoardVO"/></lhs><lhs name\="kr.or.ddit.board.vo.ReplyVO"><rhs name\="kr.or.ddit.board.vo.ReplyVO"/></lhs><lhs name\="kr.or.ddit.board.dao.IBoardDAO"><rhs name\="kr.or.ddit.board.dao.IBoardDAO"/><rhs name\="kr.or.ddit.board.dao.BoardDAO"/></lhs><lhs name\="kr.or.ddit.board.vo.PageVO"><rhs name\="kr.or.ddit.board.vo.PageVO"/></lhs></history>
+content_assist_number_of_computers=23
+content_assist_proposals_background=52,57,61
+content_assist_proposals_foreground=238,238,238
 eclipse.preferences.version=1
-java_keyword=255,0,78
-java_keyword_return=255,0,78
-java_string=18,80,200
 org.eclipse.jdt.internal.ui.navigator.layout=2
 org.eclipse.jdt.internal.ui.navigator.librariesnode=true
 org.eclipse.jdt.ui.formatterprofiles.version=22
-semanticHighlighting.field.color=18,80,200
-semanticHighlighting.localVariable.color=246,103,46
-semanticHighlighting.restrictedKeywords.color=255,0,78
-semanticHighlighting.staticField.color=18,80,200
-sourceHoverBackgroundColor=236,235,236
 spelling_locale_initialized=true
 typefilter_migrated_2=true
 useAnnotationsPrefPage=true

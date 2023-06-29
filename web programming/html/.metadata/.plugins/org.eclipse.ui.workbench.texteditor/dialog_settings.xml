@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="다음"/>
+		<item key="selection" value="stype"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="wrap" value="true"/>
+		<item key="incremental" value="false"/>
 		<list key="findhistory">
+			<item value="stype"/>
+			<item value="vword"/>
+			<item value="vtype"/>
 			<item value="modi"/>
 			<item value="click"/>
 			<item value="else if"/>
@@ -23,6 +28,13 @@
 		<item key="DIALOG_Y_ORIGIN" value="32"/>
 		<item key="DIALOG_WIDTH" value="664"/>
 		<item key="DIALOG_HEIGHT" value="427"/>
+		<item key="DIALOG_FONT_NAME" value="1|Fira Code Light|11.0|0|COCOA|1|FiraCode-Regular"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="720"/>
+		<item key="DIALOG_Y_ORIGIN" value="271"/>
+		<item key="DIALOG_WIDTH" value="352"/>
+		<item key="DIALOG_HEIGHT" value="414"/>
 		<item key="DIALOG_FONT_NAME" value="1|Fira Code Light|11.0|0|COCOA|1|FiraCode-Regular"/>
 	</section>
 </section>
