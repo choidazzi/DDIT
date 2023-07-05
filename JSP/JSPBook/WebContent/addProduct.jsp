@@ -9,6 +9,7 @@
 	: 보이는 것 그대로 얻을 수 있다. (DB) 
 -->
 <script src="/ckeditor/ckeditor.js"></script>
+<script src="/js/jquery-3.6.0.js"></script>
 </head>
 <body>
 	<!-- header.jsp -->
@@ -40,7 +41,8 @@
 		-->
 		<!-- name: 폼을 식별할 수 있는 식별자 -->
 		<form name="newProduct" action="processAddProduct.jsp"
-				   class="form-horizontal" method="post">
+				   class="form-horizontal" method="post"
+				   enctype="multipart/form-data">
 			<div class="form-group row">
 				<label class="col-sm-2">상품 코드</label>
 				<div class="col-sm-3">
@@ -94,6 +96,19 @@
 					<label for="condition3">재생 제품</label> 
 				</div>
 			</div>
+			<!--  상품 이미지 -->
+			<div class="form-group row">
+				<label class="col-sm-2">상품 이미지</label>
+				<div class="col-sm-5">
+					<input type="file" id="productImage" name="productImage" class="form-control">
+				</div>
+			</div>
+			<!--  상품 이미지 미리보기-->
+			<div class="form-group row">
+				<label class="col-sm-2">이미지 미리보기</label>
+				<div class="col-sm-5 divImg"></div>
+			</div>
+			
 			<div class="form-group row">
 				<div class="col-sm-offset-2 col-sm-10">
 					<input type="submit" value="등록" class="btn btn-primary">
@@ -108,6 +123,33 @@
 	
 <script>
 CKEDITOR.replace("description");
+
+// 이미지 미리보기 시작 
+$('#productImg').on('change',handleImg);
+
+//change event
+function handleImg(e) {
+	// 첨부 파일들 
+	let files = e.target.files;
+	// 파일 배열 Object
+	let fileArr =Array.prototype.slice.call(files);
+	// 파일 반복 
+	fileArr.forEach(function(f) {
+		if(!f.type.match("image.*")) {
+			alert("이미지 확장자만 가능합니다.");
+			// 함수 종료 
+			return;
+		}
+		let reader = new FileReader();
+		// e : 파일 읽을 때 이벤트 
+		reader.onload = function(e) {
+			let img_html = "<img src='"+e.target.result+"' style='width: 100px;''>";
+			//class = "colsm-5 divImg"
+			$(".divImg").html(img_html);
+		}
+		reader.readAsDataURL(f);
+	})
+}
 </script>
 </body>
 </html>

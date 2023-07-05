@@ -1,5 +1,3 @@
-<%@page import="java.io.File"%>
-<%@page import="org.apache.commons.fileupload.FileItem"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="org.apache.commons.fileupload.DiskFileUpload"%>
 <%@page import="java.util.List"%>
@@ -38,67 +36,36 @@
 	List items = upload.parseRequest(request); 
 	Iterator params = items.iterator();	// 열거형 
 	
+	while(params.hasNext()) {
+		
+	}
 	// 폼페이지에서 입력된 값들을 얻어오기 위해 request 내장 객체의 getParameter() 메서드를 작성 
-	// 파라미터의 모든 값의 데이터 타입은 String 임
-	String productId		 	 = "";
-	String pname			     = "";
-	String unitPrice		     = "";
-	String description		 = "";
-	String manufacturer    = "";
-	String category		     = "";
-	String unitsInStock	     = "";
-	String condition           = "";
-
+	// 파라미터의 모든 값의 데이터 타입은 String 타이
+	String productId		 	 = request.getParameter("productId");
+	String pname			     = request.getParameter("pname");
+	String unitPrice		     = request.getParameter("unitPrice");
+	String description		 = request.getParameter("description"); 
+	String manufacturer    = request.getParameter("manufacturer");   
+	String category		     = request.getParameter("category");
+	String unitsInStock	     = request.getParameter("unitsInStock"); 
+	String condition          = request.getParameter("condition");
+	 
 	// 폼페이지에서 상품 가격이 입력되지 않은 경우 0으로, 입력된 경우 int형으로 변경 
-	int price = 0;
+	int price;
+	if(unitPrice.isEmpty()) {
+		price = 0;
+	} else {
+		price = Integer.parseInt(unitPrice);
+	}
 	
 	// 폼페이지에서 상품 재고 수가 입력되지 않은 경우 0으로, 입력된 경우 int형으로 변경 
 	// int 타입의 허용범위 : -21억 ~ 21억 
-	int stock = 0;
-	
-	String fileFieldName 	= "";
-	String fileName 	 		= "";
-	String contentType   	= "";
-	long fileSize 	     		= 0;
-	
-	while(params.hasNext()) {//다음 있니? 
-		FileItem item = (FileItem)params.next();// 있으면 가져와~ 
-		if(item.isFormField()) { //일반항목 
-			//item : {productId = P1234}
-			String name = item.getFieldName(); 
-			if(name.equals("productId")) {
-				productId = item.getString("UTF-8");
-			} else if (name.equals("pname")) {
-				pname = item.getString("UTF-8");
-			} else if (name.equals("unitPrice")) {
-				unitPrice = item.getString("UTF-8");
-				price = Integer.parseInt(unitPrice);
-			} else if (name.equals("description")) {
-				description = item.getString("UTF-8");
-			} else if (name.equals("manufacturer")) {
-				manufacturer = item.getString("UTF-8");
-			} else if (name.equals("category")) {
-				category = item.getString("UTF-8");
-			} else if (name.equals("unitsInStock")) {
-				unitsInStock = item.getString("UTF-8");
-				stock = Integer.parseInt(unitsInStock);
-			} else if (name.equals("condition")) {
-				condition = item.getString("UTF-8");
-			} 
-		} else { //파일 객체
-			fileFieldName = item.getFieldName();		// productImage
-			fileName 		= item.getName()/* .substring(fileName.lastIndexOf("\\")+1)*/;			// Users/ChoiSeoYeon/Downloads/P1237.jpg
-			contentType 	= item.getContentType();	// MIME타입: images.jpg 
-			fileSize 			= item.getSize();				// 파일 크기 
-			
-			// 설계 => 복사될 위치, 파일명(결합연산자)
-			// /Users/ChoiSeoYeon/DDIT/JSP/JSPBook/WebContent/images/P1237.jpg
-			File file = new File(path + "/" + fileName);
-			// 설계대로 복사 실행 
-			item.write(file);
-		}
+	int stock;
+	if(unitsInStock.isEmpty()) {
+		stock = 0;
+	} else {
+		stock = Integer.parseInt(unitsInStock);
 	}
-	 
 	
 	// 넘어온 Parameter값들을 => ProductVO productVO 객체에 setting 해보자 
 	ProductVO productVO = new ProductVO();
@@ -110,7 +77,7 @@
 	productVO.setCategory(category);
 	productVO.setUnitsInStock(stock);
 	productVO.setCondition(condition);
-	productVO.setFilename(fileName);
+	productVO.setFilename(productId+".jpg");
 	
 	out.print("productVO: " + productVO); 
 	
@@ -124,7 +91,7 @@
 		out.print("<p>" + vo + "</p>");
 	}
 	// 목록으로 강제 이동. response 내장 객체의 sendRedirect()
-	response.sendRedirect("products.jsp");
+	//response.sendRedirect("products.jsp");
 %>
 
 

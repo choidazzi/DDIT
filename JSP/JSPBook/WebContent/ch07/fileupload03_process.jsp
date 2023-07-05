@@ -1,6 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@page import="java.io.File"%>
 <%@page import="org.apache.commons.fileupload.FileItem"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@page import="org.apache.commons.fileupload.DiskFileUpload"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>

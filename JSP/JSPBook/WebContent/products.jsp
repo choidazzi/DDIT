@@ -60,7 +60,6 @@ scope객체	: pageContext /request  		  / session			   /application
 </div>
 <!-- body끝 -->
 
-
 <!-- footer -->
 <jsp:include page="footer.jsp" />
 </body>
