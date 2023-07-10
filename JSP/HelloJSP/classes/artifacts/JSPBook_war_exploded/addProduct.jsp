@@ -33,7 +33,9 @@
 	<div class="container">
 		<div class="text-right">
 				<%-- ?language=ko: addProduct.jsp?language=ko/en --%>
-			<a href="?language=ko">Korean</a> <a href="?language=en">English</a>
+			<a href="?language=ko">Korean </a> | <a href="?language=en"> English</a>
+			<!-- 로그아웃 페이지 호출 -->
+			<a href="logout.jsp" class="btn btn-sm btn-success pull-right">logout</a>
 		</div>
 		<!-- 폼 필드 
 		요청 URL			: processAddProduct.jsp

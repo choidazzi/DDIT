@@ -53,5 +53,5 @@ role : 역할(ROLE_ADMIN, ROLE_STUDENT, ROLE_PROF)       N
   <user username="both" password="java" roles="tomcat,role1"/> <!-- 학생이면서교수 -->
   <!-- 아이디가 role1이고, 비밀번호가 java로 로그인하면 role1이라는 권한(role)을 갖음 -->
   <user username="role1" password="java" roles="role1"/> <!-- 교수 -->
-
+  <user username="admin" password="java" roles="admin"/> <!-- 관리자 -->    
 </tomcat-users>

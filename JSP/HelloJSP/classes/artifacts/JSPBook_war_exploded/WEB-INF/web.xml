@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-         version="4.0">
-    <display-name>JSPBOOK</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+    <display-name>JSPBook</display-name>
+    <!-- 시큐리티 역할(role) 설정 -->
     <security-role>
         <role-name>tomcat</role-name>
     </security-role>
     <security-role>
         <role-name>role1</role-name>
     </security-role>
-    <!-- 시큐리티의 제약 사항 (constraint)을 설정  -->
-    <!--  JSPBook이라는 웹 애플리케이션에서 해당 URL을 GET방식으로 요청하려면
-          role1이라는 권한이 있어야 함 (both, role1 아이디)-->
+    <security-role>
+        <role-name>admin</role-name>
+    </security-role>
+    <!-- 시큐리티의 제약 사항(constraint)을 설정 -->
+    <!-- JSPBook이라는 웹 애플리케이션에서 해당 url로 get방식으로 요청하려면
+          role1이라는 권한이 있어야 함(both, role1 아이디) -->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>JSPBook</web-resource-name>
@@ -24,14 +25,59 @@
             <role-name>role1</role-name>
         </auth-constraint>
     </security-constraint>
-    <!-- 인증(authentication)-로그인/로그아웃 처리를 위한 페이지를 설정 -->
+
+    <!-- 접근제한 URL : /ch10/security02.jsp -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>JSPBook</web-resource-name>
+            <url-pattern>/ch10/security02.jsp</url-pattern>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description></description>
+            <role-name>tomcat</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <!--  접근 제한 URL: /addProduct.jsp
+          허용 권한     : admin
+          허용 user    : admin
+    -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>JSPBook</web-resource-name>
+            <url-pattern>/addProduct.jsp</url-pattern>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description></description>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <!--  접근 제한 URL: /product.jsp
+          허용 권한     : admin
+          허용 user    : admin
+    -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>JSPBook</web-resource-name>
+            <url-pattern>/product.jsp</url-pattern>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description></description>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <!-- 인증(authentication) - 로그인/로그아웃 처리를 위한 페이지를 설정 -->
     <login-config>
-    <!-- <auth-method>BASIC</auth-method>-->
+        <!-- <auth-method>BASIC</auth-method> -->
         <auth-method>FORM</auth-method>
+        <!-- 폼으로 로그인할 때 환경 설정 -->
         <form-login-config>
-            <!-- 로그인 URL 설정 -->
-            <form-login-page>/ch10/login.jsp</form-login-page>
-            <form-error-page>/ch10/login_faild.jsp</form-error-page>
+            <!-- 로그인 -->
+            <form-login-page>/login.jsp</form-login-page>
+            <!-- 인증(로그인) 실패 시 실패 페이지 설정 -->
+            <form-error-page>/login_failed.jsp</form-error-page>
         </form-login-config>
     </login-config>
 </web-app>

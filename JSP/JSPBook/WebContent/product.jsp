@@ -46,7 +46,8 @@ ProductVO product = productDAO.getProductById(productId);
 				</div>
 				<!-- 6크기의 1열(컬럼= -->
 				<div class="col">
-						<h3>${product.pname}</h3>
+						<h3 style="display: inline; margin-right: 8px;">${product.pname}</h3>
+						<a href="logout.jsp" class="btn btn-sm btn-success pull-right">logout</a>
 						<p>${product.description}</p>
 						<p>
 							<b>상품코드:</b>
