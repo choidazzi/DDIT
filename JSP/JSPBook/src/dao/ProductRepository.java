@@ -5,6 +5,8 @@ import java.util.List;
 
 import vo.ProductVO;
 
+import javax.servlet.http.HttpServlet;
+
 public class ProductRepository {
 	// 상품목록 (전역변수)
 	private List<ProductVO> listOfProducts = new ArrayList<ProductVO>();

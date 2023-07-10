@@ -14,11 +14,7 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
--->
-<tomcat-users xmlns="http://tomcat.apache.org/xml"
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
-              version="1.0">
+--><tomcat-users version="1.0" xmlns="http://tomcat.apache.org/xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd">
 <!--
   By default, no user is included in the "manager-gui" role required
   to operate the "/manager/html" web application.  If you wish to use this app,
@@ -47,10 +43,15 @@
   them. You will also need to set the passwords to something appropriate.
 -->
 <!--
-  <role rolename="tomcat"/>
-  <role rolename="role1"/>
-  <user username="tomcat" password="<must-be-changed>" roles="tomcat"/>
-  <user username="both" password="<must-be-changed>" roles="tomcat,role1"/>
-  <user username="role1" password="<must-be-changed>" roles="role1"/>
+user : 사용자(아이디: username / 비밀번호: password)    1
+role : 역할(ROLE_ADMIN, ROLE_STUDENT, ROLE_PROF)       N
 -->
+  <role rolename="tomcat"/> <!-- 학생 -->
+  <role rolename="role1"/> <!-- 교수 -->
+  <role rolename="admin"/> <!-- 관리자 -->
+  <user username="tomcat" password="java" roles="tomcat"/> <!-- 학생 -->
+  <user username="both" password="java" roles="tomcat,role1"/> <!-- 학생이면서교수 -->
+  <!-- 아이디가 role1이고, 비밀번호가 java로 로그인하면 role1이라는 권한(role)을 갖음 -->
+  <user username="role1" password="java" roles="role1"/> <!-- 교수 -->
+
 </tomcat-users>

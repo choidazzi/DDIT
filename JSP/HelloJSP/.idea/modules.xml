@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HelloJSP.iml" filepath="$PROJECT_DIR$/HelloJSP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JSPBook/JSPBook.iml" filepath="$PROJECT_DIR$/../JSPBook/JSPBook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WebMarket/WebMarket.iml" filepath="$PROJECT_DIR$/../WebMarket/WebMarket.iml" />
+    </modules>
+  </component>
+</project>
