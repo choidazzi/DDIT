@@ -1,83 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-    <display-name>JSPBook</display-name>
-    <!-- 시큐리티 역할(role) 설정 -->
-    <security-role>
-        <role-name>tomcat</role-name>
-    </security-role>
-    <security-role>
+  <display-name>JSPBook</display-name>
+  <!-- 시큐리티 역할(role) 설정 -->
+  <security-role>
+     <role-name>tomcat</role-name>
+  </security-role>
+  <security-role>
+     <role-name>role1</role-name>
+  </security-role>
+  <!-- 시큐리티의 제약 사항(constraint)을 설정 -->
+  <!-- JSPBook이라는 웹 애플리케이션에서 해당 url로 get방식으로 요청하려면
+        role1이라는 권한이 있어야 함(both, role1 아이디) -->
+  <security-constraint>
+     <web-resource-collection>
+        <web-resource-name>JSPBook</web-resource-name>
+        <url-pattern>/ch10/security01.jsp</url-pattern>
+        <http-method>GET</http-method>
+     </web-resource-collection>
+     <auth-constraint>
+        <description></description>
         <role-name>role1</role-name>
-    </security-role>
-    <security-role>
+     </auth-constraint>
+  </security-constraint>
+  <!-- 접근제한 URL : /ch10/security02.jsp -->
+  <security-constraint>
+     <web-resource-collection>
+        <web-resource-name>JSPBook</web-resource-name>
+        <url-pattern>/ch10/security02.jsp</url-pattern>
+        <http-method>GET</http-method>
+     </web-resource-collection>
+     <auth-constraint>
+        <description></description>
+        <role-name>tomcat</role-name>
+     </auth-constraint>
+  </security-constraint>
+  <!-- 접근 제한 URL : /addProduct.jsp
+        허용권한 : admin
+        허용user : admin
+  -->
+  <security-constraint>
+     <web-resource-collection>
+        <web-resource-name>JSPBook</web-resource-name>
+        <url-pattern>/addProduct.jsp</url-pattern>
+        <http-method>GET</http-method>
+     </web-resource-collection>
+     <auth-constraint>
+        <description></description>
         <role-name>admin</role-name>
-    </security-role>
-    <!-- 시큐리티의 제약 사항(constraint)을 설정 -->
-    <!-- JSPBook이라는 웹 애플리케이션에서 해당 url로 get방식으로 요청하려면
-          role1이라는 권한이 있어야 함(both, role1 아이디) -->
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>JSPBook</web-resource-name>
-            <url-pattern>/ch10/security01.jsp</url-pattern>
-            <http-method>GET</http-method>
-        </web-resource-collection>
-        <auth-constraint>
-            <description></description>
-            <role-name>role1</role-name>
-        </auth-constraint>
-    </security-constraint>
-
-    <!-- 접근제한 URL : /ch10/security02.jsp -->
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>JSPBook</web-resource-name>
-            <url-pattern>/ch10/security02.jsp</url-pattern>
-            <http-method>GET</http-method>
-        </web-resource-collection>
-        <auth-constraint>
-            <description></description>
-            <role-name>tomcat</role-name>
-        </auth-constraint>
-    </security-constraint>
-    <!--  접근 제한 URL: /addProduct.jsp
-          허용 권한     : admin
-          허용 user    : admin
-    -->
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>JSPBook</web-resource-name>
-            <url-pattern>/addProduct.jsp</url-pattern>
-            <http-method>GET</http-method>
-        </web-resource-collection>
-        <auth-constraint>
-            <description></description>
-            <role-name>admin</role-name>
-        </auth-constraint>
-    </security-constraint>
-    <!--  접근 제한 URL: /product.jsp
-          허용 권한     : admin
-          허용 user    : admin
-    -->
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>JSPBook</web-resource-name>
-            <url-pattern>/product.jsp</url-pattern>
-            <http-method>GET</http-method>
-        </web-resource-collection>
-        <auth-constraint>
-            <description></description>
-            <role-name>admin</role-name>
-        </auth-constraint>
-    </security-constraint>
-    <!-- 인증(authentication) - 로그인/로그아웃 처리를 위한 페이지를 설정 -->
-    <login-config>
-        <!-- <auth-method>BASIC</auth-method> -->
-        <auth-method>FORM</auth-method>
-        <!-- 폼으로 로그인할 때 환경 설정 -->
-        <form-login-config>
-            <!-- 로그인 -->
-            <form-login-page>/login.jsp</form-login-page>
-            <!-- 인증(로그인) 실패 시 실패 페이지 설정 -->
-            <form-error-page>/login_failed.jsp</form-error-page>
-        </form-login-config>
-    </login-config>
+     </auth-constraint>
+  </security-constraint>
+  <!-- 접근 제한 URL : /product.jsp
+        허용권한 : admin
+        허용user : admin
+  -->
+  <security-constraint>
+     <web-resource-collection>
+        <web-resource-name>JSPBook</web-resource-name>
+        <url-pattern>/product.jsp</url-pattern>
+        <http-method>GET</http-method>
+     </web-resource-collection>
+     <auth-constraint>
+        <description></description>
+        <role-name>admin</role-name>
+     </auth-constraint>
+  </security-constraint>
+  <!-- 인증(authentication) - 로그인/로그아웃 처리를 위한 페이지를 설정 -->
+  <login-config>
+     <!-- <auth-method>BASIC</auth-method> -->
+     <auth-method>FORM</auth-method>
+     <!-- 폼으로 로그인할 때 환경 설정 -->
+     <form-login-config>
+        <!-- 로그인 -->
+        <form-login-page>/login.jsp</form-login-page>
+        <!-- 인증(로그인) 실패 시 실패 페이지 설정 -->
+        <form-error-page>/login_failed.jsp</form-error-page>
+     </form-login-config>
+  </login-config>
+  
+  <!-- 오류가 발생하면 오류 코드에 맞춰 오류 처리 jsp로 매핑
+        [대표 오류 코드]
+        404 : 지정된 URL을 처리하기 위한 자원이 없음
+        500 : 개발자 오류
+  -->
+  <error-page>
+     <!-- 오류 코드
+     오류 코드 : 웹 서버가 제공하는 기본 오류. (=응답 상태 코드)
+     JSP페이지에서 발생된 오류가 이 오류 코드와 일치 시 매핑된 오류 페이지로 이동
+     -->
+     <error-code>404</error-code>
+     <!-- 오류 페이지 설정 -->
+     <location>/exceptionNoPage.jsp</location>
+  </error-page>
+  <error-page>
+     <!-- 오류 코드 설정. ex) 10/0과 같은 잘못도니 코드를 실행 시 -->
+     <error-code>500</error-code>
+     <location>/error/error500.jsp</location>
+  </error-page>
+  <error-page>
+     <exception-type>java.lang.NullPointerException</exception-type>
+     <location>/error/errorNullPointer.jsp</location>
+  </error-page>
+  <!-- Filter인터페이스의 구현 클래스 -->
+  <filter>
+     <filter-name>Filter01</filter-name>
+     <filter-class>filter.AuthenFilter</filter-class>
+  </filter>
+  <!-- Filter01로 연결된 필터를 사용할 URL -->
+  <filter-mapping>
+     <filter-name>Filter01</filter-name>
+     <url-pattern>/ch12/filter01_process.jsp</url-pattern>
+  </filter-mapping>
+  <filter>
+     <filter-name>Filter02</filter-name>
+     <filter-class>filter.InitParamFilter</filter-class>
+     <init-param>
+        <param-name>param1</param-name>
+        <param-value>admin</param-value>
+     </init-param>
+     <init-param>
+        <param-name>param2</param-name>
+        <param-value>1234</param-value>
+     </init-param>
+  </filter>
+  <!-- Filter02로 연결된 필터를 사용할 요청 URL -->
+  <filter-mapping>
+     <filter-name>Filter02</filter-name>
+     <url-pattern>/ch12/filter02_process.jsp</url-pattern>
+  </filter-mapping>
+  <!-- 로그 파일 저장 -->
+  <filter>
+     <filter-name>LogFileFilter</filter-name>
+     <filter-class>filter.LogFileFilter</filter-class>
+     <!-- 로그가 저장될 파일의 위치 지정. LogFileFilter의 init() 메소드에 초기화 파라미터를 보냄 -->
+     <init-param>
+        <param-name>filename</param-name>
+        <param-value>/Users/ChoiSeoYeon/logs/monitor.log</param-value>
+     </init-param>
+  </filter>
+  <filter-mapping>
+     <filter-name>LogFileFilter</filter-name>
+   <url-pattern>/*</url-pattern>     
+  </filter-mapping>
+  <!-- Webmarket 콘솔 로그 -->
+  <filter>
+     <filter-name>LogFilter</filter-name>
+     <filter-class>filter.LogFilter</filter-class>
+  </filter>
+  <filter-mapping>
+     <filter-name>LogFilter</filter-name>
+     <url-pattern>/*</url-pattern> <!-- '/*' => 모든 요청에 필터를 걸겠다 -->
+  </filter-mapping>
 </web-app>

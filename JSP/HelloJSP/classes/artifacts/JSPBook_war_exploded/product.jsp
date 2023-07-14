@@ -2,6 +2,7 @@
 <%@page import="vo.ProductVO"%>
 <%@page import="dao.ProductRepository"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page errorPage="exceptionNoProductId.jsp" %>
 <%
 		//싱글톤: 메모리에 객체가1회 생성 . 
 		ProductRepository productDAO = ProductRepository.getInstance();
@@ -39,7 +40,7 @@ ProductVO product = productDAO.getProductById(productId);
 		<div class="row">
 				<!-- 상품 이미지 -->
 				<div class="col-md-5">
-						<img src="/images/${product.filename}"  
+						<img src="/images/<%=product.getFilename()%>"
 								alt="${product.pname }" 
 								title="${product.pname}" 
 								style="width: 100%">

@@ -13,9 +13,8 @@
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
           <deploymentDescriptor name="context.xml" url="file://$MODULE_DIR$/META-INF/context.xml" />
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/WebContent" relative="/" />
@@ -34,7 +33,25 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../HelloJSP/WebContent/WEB-INF/lib/jstl-1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../C_Lib/commons-fileupload-1.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../C_Lib/commons-io-2.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../C_Lib/jstl-1.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

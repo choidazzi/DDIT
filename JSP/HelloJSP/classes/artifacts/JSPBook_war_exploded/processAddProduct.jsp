@@ -62,7 +62,7 @@
 	long fileSize 	     		= 0;
 	
 	while(params.hasNext()) {//다음 있니? 
-		FileItem item = (FileItem)params.next();// 있으면 가져와~ 
+		FileItem item = (FileItem) params.next();// 있으면 가져와~
 		if(item.isFormField()) { //일반항목 
 			//item : {productId = P1234}
 			String name = item.getFieldName(); 

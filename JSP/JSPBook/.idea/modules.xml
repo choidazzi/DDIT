@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JSPBook.iml" filepath="$PROJECT_DIR$/JSPBook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WebMarket/WebMarket.iml" filepath="$PROJECT_DIR$/../WebMarket/WebMarket.iml" />
     </modules>
   </component>
 </project>

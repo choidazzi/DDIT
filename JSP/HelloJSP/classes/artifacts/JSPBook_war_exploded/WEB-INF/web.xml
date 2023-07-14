@@ -80,4 +80,70 @@
             <form-error-page>/login_failed.jsp</form-error-page>
         </form-login-config>
     </login-config>
+    <!--
+        오류가 나면 오류 코드에 맞춰 오류 처리 jsp 로 매핑
+        [대표 오류 코드]
+        404: 지정된 URL을 처리하기 위한 자원이 없음
+        500: 개발자 오류
+    -->
+    <error-page>
+        <!-- 오류코드
+             오류 코드: 웹 서버가 제공하는 기본 오류. 응답 상태 코드.
+             JSP 페이지에서 발생된 오류가 이 오류 코드와 일치 시 매핑된 오류 페이지로 이동
+         -->
+        <error-code>404</error-code>
+        <!-- 오류 페이지 설정 -->
+        <location>/exceptionNoPage.jsp</location>
+    </error-page>
+    <error-page>
+        <!-- 오류 코드 설정. ex) 10/0과 같이 잘못된 코드를 실행 시 -->
+        <error-code>500</error-code>
+        <location>/error/error500.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/error/errorNullPointer.jsp</location>
+    </error-page>
+    <!--  Filter인터페이스의 구현 클래스  -->
+    <!--  Filter01로 연결된 필터를 사용할 요청 URL  -->
+    <filter>
+        <filter-name>Filter01</filter-name>
+        <filter-class>filter.AuthenFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter01</filter-name>
+        <url-pattern>/ch12/filter01_process.jsp</url-pattern>
+    </filter-mapping>
+    <!-- ***************************************************** -->
+    <filter>
+        <filter-name>Filter02</filter-name>
+        <filter-class>filter.InitParamFilter</filter-class>
+        <init-param>
+            <param-name>param1</param-name>
+            <param-value>admin</param-value>
+        </init-param>
+        <init-param>
+            <param-name>param2</param-name>
+            <param-value>1234</param-value>
+        </init-param>
+    </filter>
+    <!-- Filter02로 연결된 필터를 사용할 요청 URL -->
+    <filter-mapping>
+        <filter-name>Filter02</filter-name>
+        <url-pattern>/ch12/filter02_process.jsp</url-pattern>
+    </filter-mapping>
+    <!-- 로그 파일 저장 -->
+    <filter>
+        <filter-name>LogFileFilter</filter-name>
+        <filter-class>filter.LogFileFilter</filter-class>
+        <!-- 로그가 저장될 파일의 위치 지정. LogFileFilter의 init()메서드에 초기화 파라미터를 보냄 -->
+        <init-param>
+            <param-name>filename</param-name>
+            <param-value>Users/ChoiSeoYeon/logs/monitor.log</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>LogFileFilter</filter-name>
+        <url-pattern>/ch12/filter02_process.jsp</url-pattern>
+    </filter-mapping>
 </web-app>

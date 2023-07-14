@@ -1,0 +1,12 @@
+1. 예외처리 (우선순위 순)
+    1) try-catch
+    2) page-directive
+    3) web.xml
+            => code (200: OK, 500:개발자 오류, 404: page not found)
+            =>type (ex. index out of bound) - 오류시 이동하는 url 지정
+    4) 웹 브라우저
+2. security
+    1) 인증 :: 로그인
+    2) 인가 :: 권한
+3. process
+    : 실행 중인 프로그램 , CPU 점유
