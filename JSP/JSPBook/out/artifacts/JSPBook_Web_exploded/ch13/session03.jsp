@@ -12,7 +12,7 @@
 
     session.setAttribute("a", a);
     session.setAttribute("b", b);
-    session.setAttribute("c",c);
+    session.setAttribute("c", c);
 
     out.println(session.getAttribute("a"));
     out.println(session.getAttribute("b"));

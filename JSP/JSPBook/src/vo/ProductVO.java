@@ -18,7 +18,7 @@ public class ProductVO implements Serializable{
 	private int unitsInStock;
 	private String condition;
 	private String filename;
-	private int quantity;
+	private int quantity;	//장바구니에 담은 개수
 	
 	// 기본생성자 
 	public ProductVO() {

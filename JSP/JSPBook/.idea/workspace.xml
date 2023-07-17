@@ -10,48 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="401392ef-01a3-4034-b007-40a3a0161f87" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../HelloJSP/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloJSP/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloJSP/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloJSP/HelloJSP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloJSP/HelloJSP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloJSP/classes/artifacts/JSPBook_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloJSP/classes/artifacts/JSPBook_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloJSP/classes/artifacts/JSPBook_war_exploded/processAddProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloJSP/classes/artifacts/JSPBook_war_exploded/processAddProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloJSP/classes/artifacts/JSPBook_war_exploded/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloJSP/classes/artifacts/JSPBook_war_exploded/product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JSPBook_Web_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JSPBook_Web_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JSPBook_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSPBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JSPBook.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/processAddProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/processAddProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/ch13/session03.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/ch13/session03.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/dao/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/dao/ProductRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/vo/MemberVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/vo/MemberVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/vo/ProductVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/vo/ProductVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/vo/UsersVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/vo/UsersVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servers/Tomcat v8.5 Server at localhost-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Servers/Tomcat v8.5 Server at localhost-config/server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebMarket/WebMarket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebMarket/WebMarket.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/.idea/artifacts/WebMarket_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/JSPBook.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/META-INF/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/WEB-INF/classes/dao/BookRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/WEB-INF/classes/vo/BookVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/book.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/books.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/footer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/menu.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSPBook/out/artifacts/WebMarket_war_exploded/welcome.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JSPBook_Web_exploded/ch13/session03.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/JSPBook_Web_exploded/ch13/session03.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JSPBook_Web_exploded/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/JSPBook_Web_exploded/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vo/ProductVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vo/ProductVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebMarket/build/classes/dao/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../WebMarket/build/classes/dao/BookRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebMarket/build/classes/vo/BookVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../WebMarket/build/classes/vo/BookVO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +68,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17217788&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -231,6 +197,9 @@
       <workItem from="1689213716525" duration="1135000" />
       <workItem from="1689215749095" duration="3945000" />
       <workItem from="1689222671480" duration="482000" />
+      <workItem from="1689292770753" duration="10638000" />
+      <workItem from="1689493178284" duration="92000" />
+      <workItem from="1689552265448" duration="1708000" />
     </task>
     <servers />
   </component>
